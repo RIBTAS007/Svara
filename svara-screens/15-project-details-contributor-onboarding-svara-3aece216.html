@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Project Details &amp; Contributor Onboarding - Svara</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-base": "#FFFFFF", "on-tertiary": "#ffffff", "surface-tint": "#005cba", "surface-dim": "#d9dadc", "on-secondary-fixed-variant": "#474649", "surface-container-lowest": "#ffffff", "text-muted": "#86868B", "tertiary-container": "#af4900", "outline": "#727784", "primary-fixed-dim": "#aac7ff", "surface-container": "#eeeef0", "primary": "#004e9f", "secondary-fixed": "#e4e2e4", "on-tertiary-fixed": "#341100", "on-tertiary-fixed-variant": "#793000", "primary-fixed": "#d7e3ff", "on-primary": "#ffffff", "error": "#ba1a1a", "border-subtle": "#E5E5EA", "surface-container-high": "#e8e8ea", "background": "#f9f9fb", "surface-bright": "#f9f9fb", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb692", "secondary": "#5f5e60", "tertiary-fixed": "#ffdbcb", "tertiary": "#883700", "surface-container-highest": "#e2e2e4", "outline-variant": "#c1c6d5", "on-primary-fixed": "#001b3e", "inverse-surface": "#2f3132", "on-error-container": "#93000a", "secondary-fixed-dim": "#c8c6c8", "surface": "#f9f9fb", "on-surface-variant": "#414753", "border-muted": "#D1D1D6", "on-primary-fixed-variant": "#00458e", "primary-container": "#0066cc", "on-secondary-fixed": "#1b1b1d", "primary-active": "#0077ED", "on-tertiary-container": "#ffe3d6", "on-secondary-container": "#636264", "on-surface": "#1a1c1d", "primary-subtle": "#EBF4FF", "on-primary-container": "#dfe8ff", "secondary-container": "#e2dfe1", "on-background": "#1a1c1d", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-container-low": "#f3f3f5", "inverse-primary": "#aac7ff", "inverse-on-surface": "#f0f0f2", "primary-hover": "#0052A3", "surface-variant": "#e2e2e4" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1.25rem", "margin": "3rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem" }, fontFamily: { "body-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "display-hero": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "display-hero-mobile": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col pb-24"><!-- Unified State Switcher Simulation Toolbar -->
+<aside aria-label="Lifecycle state simulator toolbar" class="fixed top-0 left-0 right-0 z-[60] bg-[#0b0f19] text-white border-b border-gray-800 text-xs px-3 py-1.5 flex flex-wrap items-center justify-between gap-2 shadow-md"><div class="flex items-center gap-2"><span class="flex items-center gap-1.5 text-cyan-400 font-semibold tracking-wider uppercase text-[11px]"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Lifecycle State Demo Switcher:</span><span class="text-gray-400 hidden md:inline text-[11px]">Select lifecycle stage to preview dynamic CTAs &amp; checklists</span></div><div class="flex items-center gap-1.5 overflow-x-auto py-0.5"><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="INVITED">1. INVITED</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="ACCEPTED">2. ACCEPTED</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-semibold bg-primary-container text-white border border-primary-fixed" data-state="ONBOARDING_IN_PROGRESS">3. ONBOARDING (Active)</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="TRAINING_COMPLETED">4. TRAINING DONE</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="CERTIFICATION_IN_PROGRESS">5. CERT IN PROGRESS</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="CERTIFICATION_UNDER_REVIEW">6. UNDER REVIEW</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors" data-state="READY_FOR_ALLOCATION">7. ALLOCATION</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-emerald-900/60 text-emerald-300 hover:bg-emerald-800 transition-colors" data-state="ACTIVE">8. ACTIVE</button><button class="state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-rose-950/60 text-rose-300 hover:bg-rose-900 transition-colors" data-state="PAUSED">9. PAUSED</button></div></aside><!-- Standard Svara Contributor Top Navigation Bar -->
+<header class="fixed top-8 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-border-subtle shadow-sm"><div class="h-16 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-[#0b0f19] flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden"><svg class="w-5 h-5" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M5 16C5 12 7 9 9 9" stroke="#06b6d4" stroke-linecap="round" stroke-width="2.5"></path><path d="M27 16C27 20 25 23 23 23" stroke="#06b6d4" stroke-linecap="round" stroke-width="2.5"></path><path d="M9 16C9 10 11.5 6 14 6" stroke="#d946ef" stroke-linecap="round" stroke-width="2.5"></path><path d="M23 16C23 22 20.5 26 18 26" stroke="#d946ef" stroke-linecap="round" stroke-width="2.5"></path><path d="M13 16C13 13 14.5 11 16 11C17.5 11 19 12.5 19 14.5C19 17.5 13 18.5 13 21.5C13 23.5 14.5 25 16.5 25C18 25 19 23.5 19 22" stroke="#8b5cf6" stroke-linecap="round" stroke-width="2.5"></path><circle cx="16" cy="16" fill="#06b6d4" r="1.5"></circle></svg></div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Svara</span><span class="h-4 w-[1px] bg-border-subtle mx-space-xs"></span></div></div><nav class="hidden lg:flex items-center gap-space-md h-16"><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Dashboard</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Assessments</a><a class="text-primary font-semibold border-b-2 border-primary font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Projects</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Tasks</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Earnings</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" href="#">Performance</a></nav></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-subtle border border-primary-fixed" id="nav-active-status-badge"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-md text-label-md text-primary font-medium" id="nav-status-text">Onboarding Active</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Notifications"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md font-semibold cursor-pointer shadow-sm">PN</div><div class="hidden md:flex flex-col"><span class="text-[12px] font-semibold text-on-surface leading-tight">Priya Nair</span><span class="text-[10px] text-text-muted font-mono leading-tight">SV-88204</span></div><span class="material-symbols-outlined text-[16px] text-text-muted hidden md:inline">keyboard_arrow_down</span></div></div></div></header><main class="w-full flex-1 pt-24 bg-surface max-w-7xl mx-auto px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Status Pill -->
+<div class="flex flex-col gap-space-xs pb-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-text-muted font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<a class="hover:text-primary transition-colors font-medium text-text-muted" href="#">Projects</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors text-text-muted" href="#">Opportunities</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Project Details</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-subtle border border-primary-fixed text-primary font-label-md text-label-md font-semibold tracking-wide shadow-xs" id="top-lifecycle-pill">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse" id="top-lifecycle-dot"></span>
+<span id="top-lifecycle-text">Invitation Accepted • Onboarding in Progress (Step 2 of 5)</span>
+</span>
+</div>
+</div>
+<!-- Main Title & Operational Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs pb-space-sm">
+<div class="space-y-1.5 max-w-4xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+          Indic Conversational Audio &amp; Regional Dialect QA
+        </h1>
+<!-- Sub-header metadata badges strip -->
+<div class="flex flex-wrap items-center gap-2 pt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium"><span class="material-symbols-outlined text-[15px] text-primary">record_voice_over</span> Speech Transcription &amp; Dialect QA</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[15px] text-text-muted">translate</span> Hindi, Bhojpuri &amp; Maithili (Eastern Indic Cluster)</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[15px] text-text-muted">home_work</span> 100% Remote • Flexible Pacing</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[15px] text-text-muted">pace</span> 12 – 15 hrs / week</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[15px] text-text-muted">calendar_today</span> 6-Week Engagement (Batch Alpha-09)</span>
+</div>
+</div>
+<!-- Unified Top Action Buttons Container -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0" id="header-action-container">
+<!-- Injected dynamically via state manager -->
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-medium" id="header-secondary-btn"><span class="material-symbols-outlined text-[18px] text-text-muted">download</span><span id="header-secondary-text">Download Guidelines PDF (v2.4)</span></button>
+<button class="px-4 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-semibold" id="header-primary-btn"><span class="material-symbols-outlined text-[18px]" id="header-primary-icon">school</span><span id="header-primary-text">Continue Training (Module 1/3) →</span></button>
+</div>
+</div>
+<!-- State-driven Onboarding Hero Banner -->
+<div class="p-space-md rounded-xl bg-gradient-to-r from-primary-subtle via-surface-container-low to-surface-container-lowest border border-primary-fixed/60 flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm shadow-xs" id="lifecycle-banner-card">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-xs" id="lifecycle-banner-icon-wrapper">
+<span class="material-symbols-outlined text-[20px]" id="lifecycle-banner-icon">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold" id="lifecycle-banner-title">
+            Onboarding in Progress: Complete the required training modules and certification benchmark to activate your task queue.
+          </p>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5" id="lifecycle-banner-subtitle">
+            You've completed 2 of 5 setup steps. Estimated time to completion: ~45 minutes.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-mono text-label-sm font-bold text-primary px-2.5 py-1 rounded bg-surface-container-lowest border border-border-subtle" id="lifecycle-banner-badge">Step 3: Training Pending</span>
+</div>
+</div>
+</div>
+<!-- KPI Strip / 5 Concise Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm py-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-medium">Base Compensation</span>
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">$38.50 <span class="font-body-sm text-body-sm text-text-muted font-normal">/ approved audio-hr</span></div>
+<div class="font-label-sm text-label-sm text-primary font-medium mt-0.5">Base $32.00 + $6.50 dialect bonus</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-medium">Pipeline Volume</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">inventory_2</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Active Batch Intake</div>
+<div class="font-label-sm text-label-sm text-text-muted mt-0.5">Awaiting certified annotators</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-medium">Clip Duration</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">timer</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">15s – 45s</div>
+<div class="font-label-sm text-label-sm text-text-muted mt-0.5">Conversational snippets</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-medium">Quality SLA Benchmark</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">≥ 94.0% <span class="font-body-sm text-body-sm text-text-muted font-normal">consensus</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-0.5">Double-blind reviewed</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-border-subtle/80 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-medium">Payout Schedule</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">event_repeat</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Weekly Direct Payout</div>
+<div class="font-label-sm text-label-sm text-text-muted mt-0.5">Tuesdays via Payout Ledger</div>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Workspace Layout (70% Left Dossier / 30% Right Sidebar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start pb-space-xl">
+<!-- LEFT MAIN DOSSIER (8 Cols / ~67%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- Section A: About this project -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">About this project</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Project ID: PRJ-8842</span>
+</div>
+<div class="space-y-3 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p class="">
+<strong class="text-on-surface font-semibold">Purpose:</strong> This initiative aims to train state-of-the-art conversational Indic AI speech models to accurately recognize and comprehend everyday colloquial Hindi and eastern regional dialects as they are actually spoken in real life.
+          </p>
+<p class="">
+<strong class="text-on-surface font-semibold">What you'll do:</strong> As an approved contributor, you will listen to authentic real-world telephony audio snippets, transcribe conversational turns into verbatim Devanagari, faithfully preserve regional vocabulary and idioms (Bhojpuri, Awadhi, Maithili), and tag speaker overlaps and acoustic background events.
+          </p>
+<p class="">
+<strong class="text-on-surface font-semibold">Why dialect matters:</strong> Standard speech-to-text models routinely fail on non-urban Indian speakers because regional vernacular possesses unique verbal inflections, polite plural agreement, and uncodified phonetic shifts. Your expert contributions directly bridge this digital divide.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs border-t border-border-subtle mt-1">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider font-medium">Domain &amp; Medium</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Conversational Telephony</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dual-speaker phone conversations</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider font-medium">Target Dialect Group</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Bhojpuri &amp; Eastern Hindi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Purvanchal &amp; Western Bihar cluster</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider font-medium">Primary Focus</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Verbatim Phonetic Fidelity</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero normalization policy</span>
+</div>
+</div>
+</section>
+<!-- Section B: See what you'll work on (Interactive Sample Task Preview) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">See what you'll work on</h2>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Explore a real conversational snippet and test the verbatim annotation standard.</p>
+</div>
+<span class="font-mono text-label-sm px-2.5 py-0.5 rounded bg-primary-subtle text-primary font-semibold">Interactive Task Preview</span>
+</div>
+<!-- Audio snippet player with custom waveform scrubber -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-xs font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[18px] text-primary">graphic_eq</span>
+<span class="font-semibold">Sample Telephony Audio Snippet (#BH-209-X)</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface text-label-sm font-mono font-medium hover:bg-surface-container-high transition-colors">1.0x</button>
+<span class="font-mono font-label-sm text-label-sm text-text-muted">00:28.4 / 00:34.1</span>
+</div>
+</div>
+<!-- Waveform with player controls -->
+<div class="w-full bg-surface-container-lowest p-3 rounded-lg border border-border-subtle/80 flex items-center gap-3">
+<button class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 hover:bg-primary-hover transition-colors shadow-xs" title="Play / Pause Audio">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+<div class="flex-1 h-10 flex items-center gap-[2.5px] overflow-hidden cursor-pointer" title="Click waveform to scrub">
+<div class="w-1 bg-outline-variant h-2 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-3 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-5 rounded-full"></div>
+<div class="w-1 bg-primary h-7 rounded-full"></div>
+<div class="w-1 bg-primary h-9 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-5 rounded-full"></div>
+<div class="w-1 bg-primary h-3 rounded-full"></div>
+<div class="w-1 bg-primary h-6 rounded-full"></div>
+<div class="w-1 bg-primary h-9 rounded-full"></div>
+<div class="w-1 bg-primary h-10 rounded-full"></div>
+<div class="w-1 bg-primary h-7 rounded-full"></div>
+<div class="w-1 bg-primary h-4 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-6 rounded-full"></div>
+<div class="w-1 bg-primary h-3 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-2 rounded-full"></div>
+<div class="w-1 bg-primary h-5 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-9 rounded-full"></div>
+<div class="w-1 bg-primary h-4 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-2 rounded-full"></div>
+<div class="w-1 bg-primary h-6 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-10 rounded-full"></div>
+<div class="w-1 bg-primary h-7 rounded-full"></div>
+<div class="w-1 bg-primary h-4 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-3 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-2 rounded-full"></div>
+<div class="w-1 bg-primary h-6 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-5 rounded-full"></div>
+<div class="w-1 bg-outline-variant h-2 rounded-full"></div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="p-1 rounded text-text-muted hover:text-on-surface" title="Volume"><span class="material-symbols-outlined text-[20px]">volume_up</span></button>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-mono text-label-sm font-semibold">Spk_01 (Bhojpuri)</span>
+</div>
+</div>
+<!-- Real sample conversational utterance preview -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest border border-border-subtle flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider font-semibold">Transcript Preview</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Bhojpuri / Eastern Hindi</span>
+</div>
+<div class="font-mono text-[16px] leading-relaxed text-on-surface font-medium">
+              “हँ... ऊ लोगन त बोललन्हि कि कतहूँ ना जाइब बा आजु।”
+            </div>
+<!-- Annotations / Tags -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-primary-subtle text-primary border border-primary-fixed">[Colloquial Elision: 'हँ...']</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-secondary-fixed text-on-secondary-fixed">[Regional Verb: 'बोललन्हि']</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-tertiary-fixed text-on-tertiary-fixed">[Locative: 'कतहूँ ना']</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-primary-subtle text-primary border border-primary-fixed">[Dialect Inflection: 'जाइब बा']</span>
+</div>
+</div>
+</div>
+<!-- Exemplar Comparison: Compliant vs Rejected -->
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-text-muted font-semibold">Exemplar Adjudication Comparison</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Why Standardizing Fails the ASR Model</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Good Example Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle shadow-xs flex flex-col gap-space-xs relative overflow-hidden">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary-active"></div>
+<div class="flex items-center justify-between pl-2">
+<div class="flex items-center gap-1.5 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="">Compliant Verbatim (Passed • 100%)</span>
+</div>
+<span class="font-mono text-label-sm text-text-muted font-medium">Valid Entry</span>
+</div>
+<div class="pl-2 mt-1 font-body-md text-body-md text-on-surface bg-surface-container-lowest p-2.5 rounded-lg leading-relaxed font-mono border border-border-subtle/60">
+                “हँ... ऊ लोगन त बोललन्हि कि कतहूँ ना जाइब बा आजु।”
+              </div>
+<p class="pl-2 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<strong class="text-on-surface">Why it passed:</strong> Exact phonetic preservation of rural verbal agreement suffix <span class="font-mono font-medium">'-लन्हि'</span> and pause particle <span class="font-mono font-medium">'हँ...'</span> without modernization.
+              </p>
+</div>
+<!-- Bad Example Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle shadow-xs flex flex-col gap-space-xs relative overflow-hidden">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-error"></div>
+<div class="flex items-center justify-between pl-2">
+<div class="flex items-center gap-1.5 text-error font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span class="">Normalized / Rejected (WER Breach • Rejected)</span>
+</div>
+<span class="font-mono text-label-sm text-error font-semibold">WER Breach: 32%</span>
+</div>
+<div class="pl-2 mt-1 font-body-md text-body-md text-on-surface bg-surface-container-lowest p-2.5 rounded-lg leading-relaxed font-mono line-through opacity-75 border border-border-subtle/60">
+                “हाँ, वो लोग बोले कि कहीं नहीं जाना है आज।”
+              </div>
+<p class="pl-2 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<strong class="text-error">Why it failed:</strong> Unacceptable normalization to standard Khariboli Hindi. Dialectal morphology was erased, causing automated consensus rejection.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section C: Who can work on this project? (Requirements & Contributor Status) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Who can work on this project? (Requirements &amp; Status)</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded bg-primary-subtle text-primary font-semibold">Priya Nair Profile</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Contributors must meet qualification criteria and maintain validated hardware telemetry to access production audio queues.
+        </p>
+<div class="space-y-2 pt-1">
+<!-- Req 1: Indic Speech Transcription L2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Indic Speech Transcription L2</div>
+<div class="font-label-sm text-label-sm text-text-muted">High-accuracy phonetic transcription qualification credential</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary"><span class="material-symbols-outlined text-[16px]">verified</span> Met (Verified Credential)</span>
+</div>
+<!-- Req 2: Bhojpuri & Eastern Dialect Familiarity -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Bhojpuri &amp; Eastern Dialect Familiarity</div>
+<div class="font-label-sm text-label-sm text-text-muted">Native / Professional bilingual competence verified in portal profile</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary"><span class="material-symbols-outlined text-[16px]">verified</span> Met (Profile Verified)</span>
+</div>
+<!-- Req 3: Acoustic Rig Telemetry -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Acoustic Rig Telemetry (Headphones &amp; SNR)</div>
+<div class="font-label-sm text-label-sm text-text-muted">Studio closed-back or open-ear calibrated monitor (Sennheiser HD 600)</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary"><span class="material-symbols-outlined text-[16px]">verified</span> Met (Hardware Calibrated)</span>
+</div>
+<!-- Req 4: Project Guideline Certification (Pending) -->
+<div class="flex items-center justify-between p-3 rounded-lg transition-all" id="req-cert-card">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0" id="req-cert-icon-wrap">
+<span class="material-symbols-outlined text-[14px]" id="req-cert-icon">pending</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold" id="req-cert-title">Project Guideline Certification</div>
+<div class="font-label-sm text-label-sm" id="req-cert-sub">Requires completion of Training Modules 1–3 and the Certification Exam</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-bold" id="req-cert-badge"><span class="material-symbols-outlined text-[16px]">schedule</span> Pending (In Progress)</span>
+</div>
+<!-- Req 5: Weekly Availability -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Weekly Availability (≥ 12 hrs)</div>
+<div class="font-label-sm text-label-sm text-text-muted">Current allocated capacity: 12.5 hrs available this billing cycle</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-primary"><span class="material-symbols-outlined text-[16px]">verified</span> Met (12.5 hrs available)</span>
+</div>
+</div>
+</section>
+<!-- Section D: Project Guidelines & Standards v2.4 -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Project Guidelines &amp; Standards</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle border border-primary-fixed text-primary font-label-sm text-label-sm font-semibold">v2.4</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Published Nov 12, 2026 • Curated by Indic Computational Linguistics Team</p>
+</div>
+<div class="flex items-center gap-1 font-label-md text-label-md text-primary hover:underline cursor-pointer">
+<span class="">View Full Changelog</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</div>
+</div>
+<!-- Interactive Tabs Interface -->
+<div class="flex flex-wrap items-center gap-2 p-1 rounded-lg bg-surface-container">
+<button class="tab-btn px-4 py-1.5 rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-sm transition-all" data-tab="tab-transcription">Transcription Rules</button>
+<button class="tab-btn px-4 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-tab="tab-dialect">Dialect Conventions</button>
+<button class="tab-btn px-4 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-tab="tab-acoustic">Audio &amp; Speaker Tags</button>
+<button class="tab-btn px-4 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-all" data-tab="tab-quality">Quality Requirements</button>
+</div>
+<!-- Tab Content: Transcription Rules -->
+<div class="tab-panel flex flex-col gap-space-md" id="tab-transcription">
+<!-- Explicit Rule 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Strict Verbatim Devanagari Transcription</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Core Directive</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Never autocorrect colloquial filler or phonetic stutters into standard Khariboli. Transcribe phonetic stutters, filler tokens (<span class="font-mono bg-surface-container px-1 py-0.5 rounded text-on-surface">हँ...</span>, <span class="font-mono bg-surface-container px-1 py-0.5 rounded text-on-surface">मतलब</span>), and non-standard vowel lengthening exactly as uttered.
+            </p>
+</div>
+<!-- Explicit Rule 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Regional Retroflex &amp; Inflection Rules</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Phonological Standard</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Follow Rohtas-Bhojpuri virama (्) and nukta (़) spelling conventions consistently for phonemic retroflex flap representation (<span class="font-mono bg-surface-container px-1 py-0.5 rounded text-on-surface">ड़/ढ़</span>) and regional loanwords without substituting modern Hindi approximations.
+            </p>
+</div>
+<!-- Explicit Rule 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Timestamp Boundary Tightness</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Acoustic Alignment</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Speech boundary segments must be pinned within <span class="font-mono font-semibold text-primary">±20ms</span> of acoustic onset and offset. Do not leave audible breath bursts, consonant clicks, or vocalized plosives unbracketed.
+            </p>
+</div>
+</div>
+<!-- Tab Content: Dialect Conventions (Hidden by default) -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-dialect">
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 font-semibold">Bhojpuri Orthographic &amp; Pronoun Conventions</h3>
+<p class="mb-3">Refer to the phonetic dictionary lookup table below for homophonic variants in Eastern Uttar Pradesh and Western Bihar audio recordings:</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-label-md text-label-md">
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">राउर</span><span class="text-text-muted">(Polite 2nd)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">तोहार</span><span class="text-text-muted">(Familiar)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">बाटे</span><span class="text-text-muted">(Is/Exists)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">हवे</span><span class="text-text-muted">(Dialectal)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">इहाँ</span><span class="text-text-muted">(Proximal)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">उहाँ</span><span class="text-text-muted">(Distal)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">केकरा</span><span class="text-text-muted">(Whom)</span></div>
+<div class="p-2 rounded bg-surface-container-lowest border border-border-subtle/60 flex justify-between"><span class="">जेकरा</span><span class="text-text-muted">(Whomever)</span></div>
+</div>
+</div>
+</div>
+<!-- Tab Content: Audio & Speaker Tags (Hidden by default) -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-acoustic">
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 text-on-surface-variant font-body-sm text-body-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 font-semibold">Standard Acoustic Annotation Tags</h3>
+<div class="space-y-2">
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60 flex items-center justify-between"><span class="font-mono text-primary font-semibold">[applause]</span><span class="">Audible collective clapping or cheering</span></div>
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60 flex items-center justify-between"><span class="font-mono text-primary font-semibold">[laughter]</span><span class="">Vocalized chuckles, giggles, or amusement during conversational turn</span></div>
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60 flex items-center justify-between"><span class="font-mono text-primary font-semibold">[telephony_static]</span><span class="">Carrier line packet drop, high background hum, or severe line jitter</span></div>
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60 flex items-center justify-between"><span class="font-mono text-primary font-semibold">[speaker_overlap]</span><span class="">Simultaneous speech by secondary speaker exceeding 250ms</span></div>
+</div>
+</div>
+</div>
+<!-- Tab Content: Quality Requirements (Hidden by default) -->
+<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-quality">
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 text-on-surface-variant font-body-sm text-body-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 font-semibold">Quality &amp; Adjudication Thresholds</h3>
+<p class="leading-relaxed mb-3">Tasks undergo automated Levenshtein-WER distance validation against consensus baselines. Annotators whose rolling consensus score drops below 92.0% are temporarily routed back to refresher modules.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-label-md">
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60"><strong class="text-on-surface">Target Consensus:</strong> ≥ 94.0%</div>
+<div class="p-2.5 rounded bg-surface-container-lowest border border-border-subtle/60"><strong class="text-on-surface">WER Ceiling:</strong> &lt; 4.5%</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section E: How your work is reviewed (Transparent quality workflow) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">How your work is reviewed</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded bg-primary-subtle text-primary font-medium">Transparent Quality Lifecycle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Svara operates a transparent, contributor-first review cycle designed to give you instant clarity and prompt payouts without opaque rejections.
+        </p>
+<!-- 4 Clear Contributor Milestones -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+<!-- Milestone 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-text-muted">01</span>
+<span class="material-symbols-outlined text-[18px] text-primary">touch_app</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Task Claim &amp; Draft</div>
+<div class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">Reserve task batch, listen, and autosave turns with keyboard shortcuts.</div>
+</div>
+<div class="font-label-sm text-label-sm text-primary font-medium">60m lease lock</div>
+</div>
+<!-- Milestone 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-text-muted">02</span>
+<span class="material-symbols-outlined text-[18px] text-primary">spellcheck</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Submission &amp; Syntax Check</div>
+<div class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">Instant automated checks verify Devanagari Unicode and boundary syntax.</div>
+</div>
+<div class="font-label-sm text-label-sm text-primary font-medium">Instant pre-validation</div>
+</div>
+<!-- Milestone 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle/60 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-text-muted">03</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-surface">Hybrid Review &amp; Sampling</div>
+<div class="font-body-sm text-body-sm text-text-muted mt-1 leading-snug">Double-blind peer review by Senior Indic Phonologists with clear feedback.</div>
+</div>
+<div class="font-label-sm text-label-sm text-primary font-medium">Rework grace period</div>
+</div>
+<!-- Milestone 4 -->
+<div class="p-space-md rounded-xl bg-primary text-on-primary flex flex-col justify-between gap-3 shadow-xs">
+<div class="flex items-center justify-between text-on-primary">
+<span class="font-mono text-label-sm font-bold opacity-80">04</span>
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-primary">Task Approval &amp; Ledger Credit</div>
+<div class="font-body-sm text-body-sm text-on-primary/90 mt-1 leading-snug">Immediate credit posted to your Contributor Payout Ledger for Tuesday payout.</div>
+</div>
+<div class="font-label-sm text-label-sm text-on-primary opacity-80 font-medium">Weekly Direct Deposit</div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT ONBOARDING & SUPPORT SIDEBAR (4 Cols / ~33%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg min-w-0">
+<!-- Card A: Complete your project setup (Sticky Onboarding Checklist) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md" id="sidebar-setup-card">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Complete your project setup</h3>
+<span class="font-mono text-label-sm text-primary font-bold px-2 py-0.5 rounded bg-primary-subtle border border-primary-fixed" id="setup-progress-pill">2 of 5 Steps Completed</span>
+</div>
+<div class="space-y-space-sm" id="setup-steps-list">
+<!-- Dynamically populated by JS depending on state -->
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm" id="sidebar-primary-btn">
+<span id="sidebar-primary-btn-text">Launch Module 1: Eastern Dialects (15 min) →</span>
+</button>
+</div>
+<!-- Card B: Training Modules Overview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md" id="sidebar-modules-card">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Training Modules Overview</h3>
+<span class="font-mono text-label-sm text-text-muted" id="modules-overview-sub">Estimated: 50 min total</span>
+</div>
+<div class="space-y-2" id="modules-list-container">
+<!-- Modules rendered via state -->
+</div>
+</div>
+<!-- Card C: Transparent Compensation & Payment Terms -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Transparent Compensation</h3>
+<span class="material-symbols-outlined text-text-muted text-[18px]">price_change</span>
+</div>
+<div class="space-y-space-xs text-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle">
+<span class="text-on-surface-variant">Base Speech Rate</span>
+<span class="font-mono text-on-surface font-medium">$32.00 / hr</span>
+</div>
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">Tier-2 Specialist Bonus</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted" title="Unlocked by Contributor Credential">info</span>
+</div>
+<span class="font-mono text-primary font-medium">+$4.00 / hr</span>
+</div>
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">Dialect Complexity Incentive</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted" title="Bhojpuri high-entropy regional lexicon incentive">info</span>
+</div>
+<span class="font-mono text-primary font-medium">+$2.50 / hr</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-semibold text-on-surface">Effective Total Rate</span>
+<span class="font-mono text-headline-sm font-semibold text-primary">$38.50 <span class="font-body-sm text-body-sm text-text-muted font-normal">/ approved hr</span></span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low text-text-muted font-label-sm text-label-sm flex items-start gap-2 border border-border-subtle/60">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mt-0.5">schedule</span>
+<span class="">An audio hour refers to the cumulative duration of validated audio recordings transcribed, processed bi-weekly via standard automated direct deposit.</span>
+</div>
+<a class="text-primary hover:underline font-label-md text-label-md font-semibold flex items-center gap-1" href="#">
+<span class="">View Full Project Payment Agreement</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card D: Need help with this project? (Project Support) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-border-subtle/80 shadow-sm flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Need help with this project?</h3>
+<!-- Lead Reviewer Profile -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-semibold text-body-md shrink-0 shadow-xs">
+            AV
+          </div>
+<div class="min-w-0">
+<div class="font-body-md text-body-md text-on-surface font-semibold truncate">Dr. A. Verma</div>
+<div class="font-label-sm text-label-sm text-text-muted truncate">Senior Indic Phonologist &amp; Batch Lead</div>
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm mt-0.5 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="">Online • Typical reply &lt; 20m</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between text-label-md text-label-md">
+<span class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">tag</span>
+<span class="">Dedicated Project Channel</span>
+</span>
+<span class="font-mono font-semibold text-on-surface">#syntropic-indic-qa-batch4</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 border border-border-subtle">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span class="">Ask Lead</span>
+</button>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5 border border-border-subtle">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span class="">Project FAQ</span>
+</button>
+</div>
+</div>
+<!-- Card E: Recent Project Updates -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-border-subtle/80 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-semibold">Recent Project Updates</span>
+<span class="font-mono text-label-sm text-text-muted">Changelog</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">update</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<span class="font-semibold text-primary">Guideline v2.4 released:</span> Added specific virama notation rules for Maithili loanwords (Nov 12).
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></main><!-- Sticky Bottom Action Bar --><div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl border-t border-border-subtle shadow-xl px-gutter py-3" id="sticky-action-bar"><div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3"><div class="flex items-center gap-3 w-full sm:w-auto"><div class="hidden md:flex flex-col"><span class="text-[11px] uppercase tracking-wider font-semibold text-text-muted">Indic Audio &amp; Dialect QA</span><span class="text-body-sm font-semibold text-on-surface">PRJ-8842 • Batch Alpha-09</span></div><div class="hidden sm:block h-7 w-[1px] bg-border-subtle"></div><div class="flex items-center gap-2"><span class="font-mono font-semibold text-primary text-headline-sm">$38.50</span><span class="text-label-sm text-text-muted">/ approved hr</span></div><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-medium" id="sticky-status-badge"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span id="sticky-status-text">Onboarding Step 3/5</span></span></div><div class="flex items-center gap-2.5 w-full sm:w-auto justify-end" id="sticky-actions-container"><button class="px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors border border-border-subtle" id="sticky-secondary-btn">View Guidelines</button><button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md font-semibold transition-colors shadow-sm flex items-center gap-1.5" id="sticky-primary-btn"><span id="sticky-primary-text">Continue Training (Module 1/3)</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div><!-- Accept Project Invitation Confirmation Modal --><div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" id="accept-modal"><div class="bg-surface-container-lowest rounded-2xl max-w-xl w-full border border-border-subtle shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-150"><div class="p-6 border-b border-border-subtle flex items-start justify-between gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary border border-primary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[24px]">verified_user</span></div><div><h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Accept Project Invitation?</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5">Indic Conversational Audio &amp; Regional Dialect QA</p></div></div><button class="p-1 rounded-lg text-text-muted hover:text-on-surface hover:bg-surface-container" id="modal-close-btn"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-6 space-y-4 font-body-md text-body-md text-on-surface-variant overflow-y-auto max-h-[60vh]"><div class="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-surface-container-low border border-border-subtle/80"><div><span class="text-label-sm text-text-muted block">Project Compensation</span><span class="text-headline-sm font-semibold text-primary font-mono">$38.50 <span class="text-xs font-normal text-text-muted">/ audio-hr</span></span></div><div><span class="text-label-sm text-text-muted block">Expected Commitment</span><span class="text-headline-sm font-semibold text-on-surface">12 – 15 <span class="text-xs font-normal text-text-muted">hrs / week</span></span></div></div><div class="space-y-2"><h4 class="font-semibold text-on-surface text-body-md">Onboarding Requirements after Acceptance:</h4><ul class="space-y-2 text-body-sm"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span><span>Complete 3 self-paced audio dialect training modules (~50 minutes).</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span><span>Pass the Project Benchmark Certification Exam (Passing grade ≥ 90%).</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span><span>Strict adherence to non-disclosure and phonetic verbatim transcription policy.</span></li></ul></div><div class="p-3 rounded-lg bg-surface-container text-xs text-text-muted leading-relaxed">By clicking "Confirm &amp; Accept Invitation", you acknowledge participation availability for 6 weeks and commit to completing the initial qualification modules.</div></div><div class="p-4 bg-surface-container-low border-t border-border-subtle flex items-center justify-end gap-3"><button class="px-4 py-2 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium transition-colors" id="modal-cancel-btn">Go Back</button><button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md font-semibold transition-colors shadow-sm flex items-center gap-1.5" id="modal-confirm-btn"><span class="material-symbols-outlined text-[18px]">how_to_reg</span><span>Confirm &amp; Accept Invitation</span></button></div></div></div><!-- Decline Invitation Modal --><div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" id="decline-modal"><div class="bg-surface-container-lowest rounded-2xl max-w-md w-full border border-border-subtle shadow-2xl overflow-hidden p-6 flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[24px]">cancel</span></div><div><h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Decline Invitation?</h3><p class="font-body-sm text-body-sm text-text-muted">This project allocation will be reassigned</p></div></div><p class="font-body-sm text-body-sm text-on-surface-variant">Are you sure you want to decline this invitation? You will not be penalized, and new opportunities matching your profile will continue to be posted.</p><div class="flex items-center justify-end gap-2 pt-2"><button class="px-4 py-2 rounded-lg text-on-surface hover:bg-surface-container font-label-md text-label-md font-medium" id="decline-modal-cancel">Keep Invitation</button><button class="px-4 py-2 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-md text-label-md font-semibold shadow-sm" id="decline-modal-confirm">Decline Project</button></div></div></div><!-- Standard Svara Systems Inc. Footer --><footer class="w-full bg-surface-container-lowest mt-auto border-t border-border-subtle shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-gutter py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-text-muted font-body-sm text-body-sm"><div class="">© 2026 Svara Systems Inc. All rights reserved.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Portal Guidelines</a><a class="hover:text-on-surface transition-colors" href="#">Task Policy</a><a class="hover:text-on-surface transition-colors" href="#">Support</a></div></div></footer><!-- Client State Management & Interaction Script --><script>
+    // State Definitions
+    const STATE_CONFIGS = {
+      INVITED: {
+        badgeText: "Invitation Received • Pending Contributor Acceptance",
+        badgeStyle: "bg-surface-container text-on-surface-variant border-border-muted",
+        navBadgeText: "Invitation Pending",
+        bannerIcon: "mark_email_unread",
+        bannerTitle: "Project Invitation Received: Review scope, compensation, and accept to begin onboarding.",
+        bannerSubtitle: "Accepting reserves your seat in Batch Alpha-09. Training modules unlock immediately upon acceptance.",
+        bannerStep: "Pending Contributor Response",
+        headerPrimary: "Accept Invitation",
+        headerPrimaryIcon: "check_circle",
+        headerSecondary: "Decline",
+        headerSecondaryIcon: "close",
+        isInviteState: true,
+        stickyPrimary: "Accept Invitation",
+        stickySecondary: "Decline",
+        stickyBadge: "Invitation Pending",
+        stickyBadgeStyle: "bg-surface-container text-on-surface-variant border border-border-muted",
+        completedSteps: 0,
+        reqCertStatus: "locked", // locked, pending, passed
+        modulesLocked: true,
+        modulesMsg: "Locked: Accept project invitation to begin onboarding",
+        sidebarBtnText: "Accept Invitation to Unlock Training →"
+      },
+      ACCEPTED: {
+        badgeText: "Invitation Accepted • Onboarding Ready (Step 1 of 5)",
+        badgeStyle: "bg-primary-subtle text-primary border-primary-fixed",
+        navBadgeText: "Onboarding Ready",
+        bannerIcon: "assignment",
+        bannerTitle: "Invitation Accepted: You are confirmed for Batch Alpha-09. Next, complete Contributor Agreement.",
+        bannerSubtitle: "Please review and complete the 3 self-paced training modules before attempting certification.",
+        bannerStep: "Step 2: Sign Agreement",
+        headerPrimary: "Start Project Training (Module 1/3)",
+        headerPrimaryIcon: "school",
+        headerSecondary: "View Guidelines",
+        headerSecondaryIcon: "menu_book",
+        isInviteState: false,
+        stickyPrimary: "Start Project Training (Module 1/3)",
+        stickySecondary: "View Guidelines",
+        stickyBadge: "Step 1 of 5 Done",
+        stickyBadgeStyle: "bg-primary-subtle text-primary border border-primary-fixed",
+        completedSteps: 1,
+        reqCertStatus: "pending",
+        modulesLocked: false,
+        modulesMsg: "Ready to start • 0/3 Completed",
+        sidebarBtnText: "Start Training: Module 1 (15 min) →"
+      },
+      ONBOARDING_IN_PROGRESS: {
+        badgeText: "Invitation Accepted • Onboarding in Progress (Step 2 of 5)",
+        badgeStyle: "bg-primary-subtle text-primary border-primary-fixed",
+        navBadgeText: "Onboarding Active",
+        bannerIcon: "assignment_turned_in",
+        bannerTitle: "Onboarding in Progress: Complete the required training modules and certification benchmark to activate your task queue.",
+        bannerSubtitle: "You've completed 2 of 5 setup steps. Estimated time to completion: ~45 minutes.",
+        bannerStep: "Step 3: Training Pending",
+        headerPrimary: "Continue Training (Module 1/3) →",
+        headerPrimaryIcon: "school",
+        headerSecondary: "Download Guidelines PDF (v2.4)",
+        headerSecondaryIcon: "download",
+        isInviteState: false,
+        stickyPrimary: "Continue Training (Module 1/3)",
+        stickySecondary: "View Guidelines",
+        stickyBadge: "Onboarding Step 3/5",
+        stickyBadgeStyle: "bg-primary-subtle text-primary border border-primary-fixed",
+        completedSteps: 2,
+        reqCertStatus: "pending",
+        modulesLocked: false,
+        modulesMsg: "Estimated: 50 min total",
+        sidebarBtnText: "Launch Module 1: Eastern Dialects (15 min) →"
+      },
+      TRAINING_COMPLETED: {
+        badgeText: "Training Completed • Ready for Certification (Step 3 of 5)",
+        badgeStyle: "bg-primary-subtle text-primary border-primary-fixed",
+        navBadgeText: "Training 100% Passed",
+        bannerIcon: "verified",
+        bannerTitle: "All 3 Training Modules Completed! You are now eligible to take the Project Benchmark Certification.",
+        bannerSubtitle: "Score ≥ 90.0% to instantly qualify for high-priority production task dispatch.",
+        bannerStep: "Step 4: Take Exam",
+        headerPrimary: "Start Project Certification",
+        headerPrimaryIcon: "quiz",
+        headerSecondary: "Review Training",
+        headerSecondaryIcon: "history_edu",
+        isInviteState: false,
+        stickyPrimary: "Start Project Certification",
+        stickySecondary: "Review Training",
+        stickyBadge: "Eligible for Exam",
+        stickyBadgeStyle: "bg-emerald-50 text-emerald-700 border border-emerald-200",
+        completedSteps: 3,
+        reqCertStatus: "exam_ready",
+        modulesLocked: false,
+        modulesMsg: "3/3 Completed • 100% Score",
+        sidebarBtnText: "Launch Certification Benchmark Exam →"
+      },
+      CERTIFICATION_IN_PROGRESS: {
+        badgeText: "Certification in Progress (Step 4 of 5)",
+        badgeStyle: "bg-amber-50 text-amber-800 border-amber-300",
+        navBadgeText: "Exam In Progress",
+        bannerIcon: "edit_document",
+        bannerTitle: "Benchmark Certification in Progress: Complete 10 audio verification tasks.",
+        bannerSubtitle: "Time remaining in exam session: 38 minutes. Minimum consensus target: 90%.",
+        bannerStep: "Step 4: Exam In Progress",
+        headerPrimary: "Continue Certification",
+        headerPrimaryIcon: "edit_note",
+        headerSecondary: "View Guidelines",
+        headerSecondaryIcon: "menu_book",
+        isInviteState: false,
+        stickyPrimary: "Continue Certification",
+        stickySecondary: "View Guidelines",
+        stickyBadge: "Exam in Progress",
+        stickyBadgeStyle: "bg-amber-50 text-amber-800 border border-amber-300",
+        completedSteps: 3,
+        reqCertStatus: "exam_in_progress",
+        modulesLocked: false,
+        modulesMsg: "Exam session active",
+        sidebarBtnText: "Resume Certification Exam (38m left) →"
+      },
+      CERTIFICATION_UNDER_REVIEW: {
+        badgeText: "Certification Submitted • In Review (Step 4 of 5)",
+        badgeStyle: "bg-surface-container text-on-surface-variant border-border-muted",
+        navBadgeText: "Adjudication Pending",
+        bannerIcon: "hourglass_top",
+        bannerTitle: "Certification Submitted: Double-blind acoustic adjudication in progress.",
+        bannerSubtitle: "Phonology lead review typically concludes within 4 hours. You will receive an email notice.",
+        bannerStep: "Step 4: Under Review",
+        headerPrimary: "Awaiting Certification Result",
+        headerPrimaryIcon: "hourglass_empty",
+        headerPrimaryDisabled: true,
+        headerSecondary: "View Guidelines",
+        headerSecondaryIcon: "menu_book",
+        isInviteState: false,
+        stickyPrimary: "Awaiting Certification Result",
+        stickyPrimaryDisabled: true,
+        stickySecondary: "View Guidelines",
+        stickyBadge: "Reviewing (approx 2h)",
+        stickyBadgeStyle: "bg-surface-container text-on-surface-variant border border-border-muted",
+        completedSteps: 3,
+        reqCertStatus: "under_review",
+        modulesLocked: false,
+        modulesMsg: "Exam submitted for audit",
+        sidebarBtnText: "Awaiting Lead Review (Disabled)"
+      },
+      READY_FOR_ALLOCATION: {
+        badgeText: "Certification Passed (96.4%) • Ready for Queue Allocation",
+        badgeStyle: "bg-emerald-50 text-emerald-800 border-emerald-300",
+        navBadgeText: "Certified Specialist",
+        bannerIcon: "task_alt",
+        bannerTitle: "Certification Passed with Distinction (96.4%)! Queue allocation initializing.",
+        bannerSubtitle: "Your verified credentials have been synced. Production task dispatch begins momentarily.",
+        bannerStep: "Step 5: Dispatch Queue",
+        headerPrimary: "View Allocation Status",
+        headerPrimaryIcon: "insights",
+        headerSecondary: "Update Availability",
+        headerSecondaryIcon: "tune",
+        isInviteState: false,
+        stickyPrimary: "View Allocation Status",
+        stickySecondary: "Update Availability",
+        stickyBadge: "Certified Specialist",
+        stickyBadgeStyle: "bg-emerald-50 text-emerald-800 border border-emerald-300",
+        completedSteps: 4,
+        reqCertStatus: "passed",
+        modulesLocked: false,
+        modulesMsg: "Qualified • Ready for work",
+        sidebarBtnText: "Check Queue Dispatch Status →"
+      },
+      ACTIVE: {
+        badgeText: "Project Active • Live Task Batch Queued",
+        badgeStyle: "bg-emerald-50 text-emerald-800 border-emerald-300",
+        navBadgeText: "Live Production",
+        bannerIcon: "bolt",
+        bannerTitle: "Active Contributor: Telephony Audio Batch Alpha-09 queue is open.",
+        bannerSubtitle: "Rate: $38.50/audio-hr. Double-blind verification active. Next payout: Tuesday.",
+        bannerStep: "Fully Activated (5 of 5)",
+        headerPrimary: "Open Project Workspace",
+        headerPrimaryIcon: "launch",
+        headerSecondary: "View Project Details",
+        headerSecondaryIcon: "info",
+        isInviteState: false,
+        stickyPrimary: "Open Project Workspace",
+        stickySecondary: "View Project Details",
+        stickyBadge: "Live Production Active",
+        stickyBadgeStyle: "bg-emerald-600 text-white font-semibold",
+        completedSteps: 5,
+        reqCertStatus: "passed",
+        modulesLocked: false,
+        modulesMsg: "All modules passed",
+        sidebarBtnText: "Launch Production Annotation Tool →"
+      },
+      PAUSED: {
+        badgeText: "Engagement Concluded / Paused",
+        badgeStyle: "bg-rose-50 text-rose-800 border-rose-300",
+        navBadgeText: "Batch Paused",
+        bannerIcon: "pause_circle",
+        bannerTitle: "Project Batch Alpha-09 is currently paused for weekly scheduled re-indexing.",
+        bannerSubtitle: "All approved earnings have been credited to your Ledger. Resumes next intake cycle.",
+        bannerStep: "Batch Suspended",
+        headerPrimary: "View Payout Ledger",
+        headerPrimaryIcon: "account_balance_wallet",
+        headerSecondary: "Contact Lead Lead",
+        headerSecondaryIcon: "mail",
+        isInviteState: false,
+        stickyPrimary: "View Payout Ledger",
+        stickySecondary: "Contact Lead",
+        stickyBadge: "Queue Paused",
+        stickyBadgeStyle: "bg-rose-50 text-rose-800 border border-rose-300",
+        completedSteps: 4,
+        reqCertStatus: "passed",
+        modulesLocked: false,
+        modulesMsg: "Queue cycle paused",
+        sidebarBtnText: "View Completed Ledger Entries"
+      }
+    };
+
+    let currentStateKey = "ONBOARDING_IN_PROGRESS";
+
+    function renderState(stateKey) {
+      currentStateKey = stateKey;
+      const config = STATE_CONFIGS[stateKey];
+      if (!config) return;
+
+      // Update Toolbar buttons active styling
+      document.querySelectorAll('.state-pill-btn').forEach(btn => {
+        if (btn.getAttribute('data-state') === stateKey) {
+          btn.className = "state-pill-btn px-2.5 py-1 rounded text-[11px] font-semibold bg-primary-container text-white border border-primary-fixed";
+        } else {
+          btn.className = "state-pill-btn px-2.5 py-1 rounded text-[11px] font-medium bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors";
+        }
+      });
+
+      // Top Breadcrumb Pill
+      const topPill = document.getElementById('top-lifecycle-pill');
+      topPill.className = `inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-md font-semibold tracking-wide shadow-xs border ${config.badgeStyle}`;
+      document.getElementById('top-lifecycle-text').textContent = config.badgeText;
+      const topDot = document.getElementById('top-lifecycle-dot');
+      if (stateKey === 'ACTIVE') {
+        topDot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+      } else if (stateKey === 'PAUSED') {
+        topDot.className = "w-2 h-2 rounded-full bg-rose-500";
+      } else {
+        topDot.className = "w-2 h-2 rounded-full bg-primary-container animate-pulse";
+      }
+
+      // Nav Status
+      document.getElementById('nav-status-text').textContent = config.navBadgeText;
+
+      // Lifecycle Hero Banner
+      document.getElementById('lifecycle-banner-icon').textContent = config.bannerIcon;
+      document.getElementById('lifecycle-banner-title').textContent = config.bannerTitle;
+      document.getElementById('lifecycle-banner-subtitle').textContent = config.bannerSubtitle;
+      document.getElementById('lifecycle-banner-badge').textContent = config.bannerStep;
+
+      // Header Actions container
+      const headerContainer = document.getElementById('header-action-container');
+      if (config.isInviteState) {
+        headerContainer.innerHTML = `
+          <button id="header-decline-btn" class="px-3.5 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-on-surface font-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-medium">
+            <span class="material-symbols-outlined text-[18px] text-text-muted">close</span>
+            <span>Decline</span>
+          </button>
+          <button id="header-accept-btn" class="px-4 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-semibold">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+            <span>Accept Invitation</span>
+          </button>
+        `;
+        document.getElementById('header-accept-btn').addEventListener('click', openAcceptModal);
+        document.getElementById('header-decline-btn').addEventListener('click', openDeclineModal);
+      } else {
+        const disabledAttr = config.headerPrimaryDisabled ? 'disabled class="px-4 py-2 rounded-lg bg-surface-container-high text-text-muted font-label-md cursor-not-allowed flex items-center justify-center gap-1.5 shadow-sm font-medium"' : 'class="px-4 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-semibold"';
+        headerContainer.innerHTML = `
+          <button id="header-secondary-btn" class="px-3.5 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-on-surface font-label-md transition-colors flex items-center justify-center gap-1.5 shadow-sm font-medium">
+            <span class="material-symbols-outlined text-[18px] text-text-muted">${config.headerSecondaryIcon}</span>
+            <span>${config.headerSecondary}</span>
+          </button>
+          <button id="header-primary-btn" ${disabledAttr}>
+            <span class="material-symbols-outlined text-[18px]">${config.headerPrimaryIcon}</span>
+            <span>${config.headerPrimary}</span>
+          </button>
+        `;
+        const primaryBtn = document.getElementById('header-primary-btn');
+        if (!config.headerPrimaryDisabled) {
+          primaryBtn.addEventListener('click', () => triggerPrimaryAction(stateKey));
+        }
+      }
+
+      // Sticky Bottom Bar
+      const stickyActions = document.getElementById('sticky-actions-container');
+      const stickyBadge = document.getElementById('sticky-status-badge');
+      stickyBadge.className = `inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-medium ${config.stickyBadgeStyle}`;
+      document.getElementById('sticky-status-text').textContent = config.stickyBadge;
+
+      if (config.isInviteState) {
+        stickyActions.innerHTML = `
+          <button id="sticky-decline-btn" class="px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md font-medium transition-colors border border-border-subtle">
+            Decline
+          </button>
+          <button id="sticky-accept-btn" class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md font-semibold transition-colors shadow-sm flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+            <span>Accept Invitation</span>
+          </button>
+        `;
+        document.getElementById('sticky-accept-btn').addEventListener('click', openAcceptModal);
+        document.getElementById('sticky-decline-btn').addEventListener('click', openDeclineModal);
+      } else {
+        const disabledSticky = config.stickyPrimaryDisabled ? 'disabled class="px-5 py-2 rounded-lg bg-surface-container-high text-text-muted font-label-md cursor-not-allowed flex items-center gap-1.5"' : 'class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md font-semibold transition-colors shadow-sm flex items-center gap-1.5"';
+        stickyActions.innerHTML = `
+          <button id="sticky-secondary-btn" class="px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md font-medium transition-colors border border-border-subtle">
+            ${config.stickySecondary}
+          </button>
+          <button id="sticky-primary-btn" ${disabledSticky}>
+            <span>${config.stickyPrimary}</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+        `;
+        if (!config.stickyPrimaryDisabled) {
+          document.getElementById('sticky-primary-btn').addEventListener('click', () => triggerPrimaryAction(stateKey));
+        }
+      }
+
+      // Sidebar Checklist Steps
+      renderSidebarSteps(config);
+
+      // Training Modules Overview Card
+      renderModulesList(config);
+
+      // Requirement 4 in Section C (Certification requirement status)
+      renderRequirementCert(config);
+    }
+
+    function renderSidebarSteps(config) {
+      const list = document.getElementById('setup-steps-list');
+      const progressPill = document.getElementById('setup-progress-pill');
+      progressPill.textContent = `${config.completedSteps} of 5 Steps Completed`;
+
+      const steps = [
+        {
+          num: 1,
+          title: "Accept Project Invitation",
+          subDone: "Accepted & Confirmed for Batch Alpha-09",
+          subPending: "Pending: Review & Accept project invitation"
+        },
+        {
+          num: 2,
+          title: "Sign NDA & Contributor Project Agreement",
+          subDone: "Signed via DocuSign • Verified",
+          subPending: "DocuSign portal link ready post-acceptance"
+        },
+        {
+          num: 3,
+          title: "Complete 3 Training Modules",
+          subDone: "Completed (3/3) • 100% Score",
+          subPending: "Self-paced dialect & orthography training (50 min)"
+        },
+        {
+          num: 4,
+          title: "Pass Project Benchmark Certification",
+          subDone: "Passed with 96.4% Consensus",
+          subPending: "Target: ≥ 90.0% consensus accuracy"
+        },
+        {
+          num: 5,
+          title: "Production Task Dispatch",
+          subDone: "Queue Active: Tasks streamed automatically",
+          subPending: "Auto-activates queue post-certification"
+        }
+      ];
+
+      let html = '';
+      steps.forEach(step => {
+        const isDone = config.completedSteps >= step.num;
+        const isCurrent = (config.completedSteps + 1) === step.num;
+
+        if (isDone) {
+          html += `
+            <div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/60">
+              <div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-body-sm text-on-surface font-semibold">${step.title}</div>
+                <div class="font-label-sm text-text-muted">${step.subDone}</div>
+              </div>
+            </div>
+          `;
+        } else if (isCurrent) {
+          html += `
+            <div class="flex items-start gap-3 p-2.5 rounded-lg bg-primary-subtle border border-primary-fixed">
+              <div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5 animate-pulse">
+                <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-sm text-primary font-semibold">${step.title}</span>
+                  <span class="font-label-sm text-primary font-bold">In Progress</span>
+                </div>
+                <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-1.5 overflow-hidden">
+                  <div class="bg-primary-container h-full ${step.num === 3 ? 'w-1/3' : 'w-1/2'} rounded-full"></div>
+                </div>
+                <div class="font-label-sm text-primary font-medium mt-1">Active step: Action required →</div>
+              </div>
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/40 opacity-60">
+              <div class="w-6 h-6 rounded-full bg-surface-container text-text-muted flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[14px]">lock</span>
+              </div>
+              <div class="min-w-0">
+                <div class="font-body-sm text-on-surface font-semibold">${step.title}</div>
+                <div class="font-label-sm text-text-muted">${step.subPending}</div>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      list.innerHTML = html;
+
+      // Sidebar CTA
+      const sidebarBtn = document.getElementById('sidebar-primary-btn');
+      const sidebarBtnText = document.getElementById('sidebar-primary-btn-text');
+      sidebarBtnText.textContent = config.sidebarBtnText;
+
+      sidebarBtn.onclick = () => {
+        if (config.isInviteState) {
+          openAcceptModal();
+        } else if (!config.headerPrimaryDisabled) {
+          triggerPrimaryAction(currentStateKey);
+        }
+      };
+    }
+
+    function renderModulesList(config) {
+      document.getElementById('modules-overview-sub').textContent = config.modulesMsg;
+      const container = document.getElementById('modules-list-container');
+
+      if (config.modulesLocked) {
+        container.innerHTML = `
+          <div class="p-3.5 rounded-lg bg-surface-container-low border border-dashed border-border-muted text-center flex flex-col items-center gap-1.5">
+            <span class="material-symbols-outlined text-text-muted text-[24px]">lock</span>
+            <span class="font-body-sm font-semibold text-on-surface">Modules Locked</span>
+            <span class="font-label-sm text-text-muted">Accept project invitation to unlock Eastern Dialect curriculum modules.</span>
+          </div>
+        `;
+      } else {
+        const isModuleDone = config.completedSteps >= 3;
+        container.innerHTML = `
+          <div class="p-3 rounded-lg ${isModuleDone ? 'bg-surface-container-low border-border-subtle/60' : 'bg-primary-subtle border-primary-fixed'} border flex items-center justify-between">
+            <div>
+              <div class="font-body-sm text-on-surface font-semibold">Module 1: Eastern Dialects &amp; Phonetic Idiosyncrasies</div>
+              <div class="font-label-sm ${isModuleDone ? 'text-emerald-700' : 'text-primary'} font-medium mt-0.5">${isModuleDone ? '15 min • Completed (100%)' : '15 min • In Progress'}</div>
+            </div>
+            <span class="material-symbols-outlined ${isModuleDone ? 'text-emerald-700' : 'text-primary'} text-[20px]">${isModuleDone ? 'check_circle' : 'play_circle'}</span>
+          </div>
+          <div class="p-3 rounded-lg ${isModuleDone ? 'bg-surface-container-low border-border-subtle/60' : 'bg-surface-container-low border-border-subtle/60 opacity-75'} border flex items-center justify-between">
+            <div>
+              <div class="font-body-sm text-on-surface font-semibold">Module 2: Annotation Schema &amp; Boundary Pinned Tags</div>
+              <div class="font-label-sm text-text-muted mt-0.5">${isModuleDone ? '20 min • Completed' : '20 min • Locked'}</div>
+            </div>
+            <span class="material-symbols-outlined text-text-muted text-[18px]">${isModuleDone ? 'check_circle' : 'lock'}</span>
+          </div>
+          <div class="p-3 rounded-lg ${isModuleDone ? 'bg-surface-container-low border-border-subtle/60' : 'bg-surface-container-low border-border-subtle/60 opacity-75'} border flex items-center justify-between">
+            <div>
+              <div class="font-body-sm text-on-surface font-semibold">Module 3: Gold Standard Exemplars &amp; Pitfall Avoidance</div>
+              <div class="font-label-sm text-text-muted mt-0.5">${isModuleDone ? '15 min • Completed' : '15 min • Locked'}</div>
+            </div>
+            <span class="material-symbols-outlined text-text-muted text-[18px]">${isModuleDone ? 'check_circle' : 'lock'}</span>
+          </div>
+        `;
+      }
+    }
+
+    function renderRequirementCert(config) {
+      const card = document.getElementById('req-cert-card');
+      const iconWrap = document.getElementById('req-cert-icon-wrap');
+      const icon = document.getElementById('req-cert-icon');
+      const title = document.getElementById('req-cert-title');
+      const sub = document.getElementById('req-cert-sub');
+      const badge = document.getElementById('req-cert-badge');
+
+      if (config.reqCertStatus === 'passed') {
+        card.className = "flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/60";
+        iconWrap.className = "w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0";
+        icon.textContent = "check";
+        title.className = "font-body-md text-on-surface font-semibold";
+        title.textContent = "Project Guideline Certification";
+        sub.className = "font-label-sm text-text-muted";
+        sub.textContent = "Score: 96.4% • Certified for Telephony Dialect QA";
+        badge.className = "inline-flex items-center gap-1 font-label-md font-semibold text-primary";
+        badge.innerHTML = '<span class="material-symbols-outlined text-[16px]">verified</span> Met (Certified)';
+      } else if (config.reqCertStatus === 'locked') {
+        card.className = "flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-border-subtle/40 opacity-70";
+        iconWrap.className = "w-6 h-6 rounded-full bg-surface-container text-text-muted flex items-center justify-center shrink-0";
+        icon.textContent = "lock";
+        title.className = "font-body-md text-on-surface font-semibold";
+        title.textContent = "Project Guideline Certification";
+        sub.className = "font-label-sm text-text-muted";
+        sub.textContent = "Locked until project invitation is accepted";
+        badge.className = "inline-flex items-center gap-1 font-label-md font-medium text-text-muted";
+        badge.innerHTML = '<span class="material-symbols-outlined text-[16px]">lock</span> Locked';
+      } else {
+        card.className = "flex items-center justify-between p-3 rounded-lg bg-primary-subtle border border-primary-fixed/80";
+        iconWrap.className = "w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 animate-pulse";
+        icon.textContent = "pending";
+        title.className = "font-body-md text-primary font-semibold";
+        title.textContent = "Project Guideline Certification";
+        sub.className = "font-label-sm text-on-surface-variant";
+        sub.textContent = "Requires completion of Training Modules 1–3 and the Certification Exam";
+        badge.className = "inline-flex items-center gap-1 font-label-md font-bold text-primary";
+        badge.innerHTML = '<span class="material-symbols-outlined text-[16px]">schedule</span> Pending (In Progress)';
+      }
+    }
+
+    // Modal Operations
+    const acceptModal = document.getElementById('accept-modal');
+    const declineModal = document.getElementById('decline-modal');
+
+    function openAcceptModal() {
+      acceptModal.classList.remove('hidden');
+    }
+    function closeAcceptModal() {
+      acceptModal.classList.add('hidden');
+    }
+
+    function openDeclineModal() {
+      declineModal.classList.remove('hidden');
+    }
+    function closeDeclineModal() {
+      declineModal.classList.add('hidden');
+    }
+
+    document.getElementById('modal-close-btn').addEventListener('click', closeAcceptModal);
+    document.getElementById('modal-cancel-btn').addEventListener('click', closeAcceptModal);
+    document.getElementById('modal-confirm-btn').addEventListener('click', () => {
+      closeAcceptModal();
+      // Simulate transition to ACCEPTED state
+      renderState('ACCEPTED');
+    });
+
+    document.getElementById('decline-modal-cancel').addEventListener('click', closeDeclineModal);
+    document.getElementById('decline-modal-confirm').addEventListener('click', () => {
+      closeDeclineModal();
+      renderState('PAUSED');
+    });
+
+    function triggerPrimaryAction(stateKey) {
+      if (stateKey === 'ACCEPTED') {
+        renderState('ONBOARDING_IN_PROGRESS');
+      } else if (stateKey === 'ONBOARDING_IN_PROGRESS') {
+        renderState('TRAINING_COMPLETED');
+      } else if (stateKey === 'TRAINING_COMPLETED') {
+        renderState('CERTIFICATION_IN_PROGRESS');
+      } else if (stateKey === 'CERTIFICATION_IN_PROGRESS') {
+        renderState('CERTIFICATION_UNDER_REVIEW');
+      } else if (stateKey === 'READY_FOR_ALLOCATION') {
+        renderState('ACTIVE');
+      } else if (stateKey === 'ACTIVE') {
+        alert('Launching Svara Production Workspace Annotation Interface...');
+      }
+    }
+
+    // State switcher toolbar hooks
+    document.querySelectorAll('.state-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const state = btn.getAttribute('data-state');
+        renderState(state);
+      });
+    });
+
+    // Interactive Tabs Script
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          btn.classList.add('text-on-surface-variant', 'font-medium');
+        });
+        button.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        button.classList.remove('text-on-surface-variant', 'font-medium');
+
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+          panel.classList.add('hidden');
+        });
+        const targetId = button.getAttribute('data-tab');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Initialize Default State
+    renderState('ONBOARDING_IN_PROGRESS');
+  </script></body></html>

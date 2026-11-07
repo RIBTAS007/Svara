@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-error-container": "#93000a",
+        "on-primary-fixed-variant": "#00458e",
+        "tertiary-fixed-dim": "#ffb692",
+        "tertiary-fixed": "#ffdbcb",
+        "on-secondary-container": "#636264",
+        "secondary-container": "#e2dfe1",
+        "primary-hover": "#0052A3",
+        "text-muted": "#86868B",
+        "tertiary-container": "#af4900",
+        "secondary-fixed": "#e4e2e4",
+        "on-secondary-fixed-variant": "#474649",
+        "on-surface-variant": "#414753",
+        "inverse-surface": "#2f3132",
+        "inverse-primary": "#aac7ff",
+        "on-primary": "#ffffff",
+        "tertiary": "#883700",
+        "on-background": "#1a1c1d",
+        "secondary-fixed-dim": "#c8c6c8",
+        "surface-container": "#eeeef0",
+        "on-secondary-fixed": "#1b1b1d",
+        "on-error": "#ffffff",
+        "on-primary-container": "#dfe8ff",
+        "outline": "#727784",
+        "error": "#ba1a1a",
+        "surface-container-lowest": "#ffffff",
+        "outline-variant": "#c1c6d5",
+        "secondary": "#5f5e60",
+        "surface-tint": "#005cba",
+        "on-surface": "#1a1c1d",
+        "primary-fixed-dim": "#aac7ff",
+        "primary-active": "#0077ED",
+        "primary": "#004e9f",
+        "on-primary-fixed": "#001b3e",
+        "error-container": "#ffdad6",
+        "surface-dim": "#d9dadc",
+        "background": "#f9f9fb",
+        "inverse-on-surface": "#f0f0f2",
+        "surface-base": "#FFFFFF",
+        "surface-container-highest": "#e2e2e4",
+        "on-tertiary-container": "#ffe3d6",
+        "on-tertiary-fixed": "#341100",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#e2e2e4",
+        "border-muted": "#D1D1D6",
+        "surface": "#f9f9fb",
+        "surface-container-low": "#f3f3f5",
+        "surface-container-high": "#e8e8ea",
+        "primary-container": "#0066cc",
+        "primary-fixed": "#d7e3ff",
+        "border-subtle": "#E5E5EA",
+        "on-tertiary-fixed-variant": "#793000",
+        "on-secondary": "#ffffff",
+        "surface-bright": "#f9f9fb",
+        "primary-subtle": "#EBF4FF"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xl": "2.5rem",
+        "space-lg": "1.5rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1.25rem",
+        "space-sm": "0.5rem",
+        "margin": "3rem",
+        "gutter-mobile": "1rem",
+        "space-md": "1rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "label-md": ["Inter"],
+        "display-hero": ["Inter"],
+        "headline-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "display-hero-mobile": ["Inter"],
+        "headline-lg": ["Inter"],
+        "headline-md": ["Inter"],
+        "label-sm": ["Inter"],
+        "body-lg": ["Inter"]
+      },
+      "fontSize": {
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm cursor-pointer select-none"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">graphic_eq</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Svara</span></div><div class="hidden sm:flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-high rounded-full cursor-pointer hover:bg-surface-container-highest transition-colors"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-label-sm text-on-surface">Contributor</span><span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span></div></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md px-3 py-1.5 rounded-lg"><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contributor-dashboard" href="#">Dashboard</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="assessments" href="#">Assessments</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#">Projects</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="tasks" href="#">Tasks</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="earnings" href="#">Earnings</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="performance" href="#">Performance</a><a class="px-3 py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">Support</a></nav><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Operational</span></div><div class="relative flex items-center justify-center p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></div><div class="flex items-center gap-2 cursor-pointer pl-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px] hidden sm:block">keyboard_arrow_down</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="max-w-7xl mx-auto w-full px-gutter py-space-lg space-y-space-lg">
+<!-- TOP HEADER & METADATA BAR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<!-- Breadcrumb navigation -->
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant flex-wrap">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">task</span>
+              Tasks
+            </a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface">#TSK-8942-0041</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-medium">Submission Audit (#SUB-9941-REV1)</span>
+</div>
+<div class="flex items-center gap-3 flex-wrap pt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Audio QA Submission Audit</h1>
+<!-- Status badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+              REWORK REQUIRED (MINOR)
+            </div>
+</div>
+<!-- Project & Session metadata -->
+<div class="flex items-center gap-x-4 gap-y-1 font-body-sm text-body-sm text-on-surface-variant flex-wrap pt-1">
+<span class="flex items-center gap-1.5 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">folder_open</span>
+              Indic Conversational Audio QA (#PRJ-8842)
+            </span>
+<span class="text-outline-variant">•</span>
+<span>Batch Delta-3</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+              Audio: 18.2s
+            </span>
+<span class="text-outline-variant">•</span>
+<span>Submitted 5h ago (v1.0)</span>
+<span class="text-outline-variant">•</span>
+<span class="font-medium text-on-surface">Attempt 1 of 2</span>
+</div>
+</div>
+<!-- Right Side: Urgency & Primary CTA actions -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md lg:self-center">
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>SLA Window: <strong class="font-semibold text-on-tertiary-fixed">18h 42m remaining</strong> (Auto-reassigns after deadline)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">help_center</span>
+              Dispute / Clarify
+            </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer font-semibold">
+<span>Launch Workspace &amp; Apply Fixes</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- EVALUATION PIPELINE & SUMMARY CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span>Automated QA Status</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">flag</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-tertiary font-semibold flex items-center gap-2">
+            Flagged (Non-blocking)
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+            WER: 3.2% vs ASR • Dialect concordance: 98.4%
+          </p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Algorithmic Confidence</span>
+<span class="font-semibold text-on-surface">96.8%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 96.8%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span>Reviewer Decision</span>
+<span class="material-symbols-outlined text-primary text-[18px]">rate_review</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+            Rework (Minor)
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+            QC-Agent #12 / Dr. Arpita Sen • Indic Phonetics
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium">
+            Pending Contributor Revision
+          </span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span>Pending Escrow</span>
+<span class="material-symbols-outlined text-primary text-[18px]">lock_clock</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-1.5">
+<span>$1.92</span>
+<span class="text-label-md text-on-surface-variant font-normal">Locked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+            Base: $1.60 + Dialect Bonus: $0.32
+          </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            Auto-disbursed on approval
+          </span>
+<span class="text-primary font-medium cursor-pointer hover:underline">Rates</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span>Revision Quota</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">sync</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            Attempt 1 of 2
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+            1 quota remaining before peer adjudication
+          </p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low rounded-lg p-2.5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Attempts Consumed</span>
+<span class="font-semibold text-on-surface">50%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4-STAGE PIPELINE STEPPER -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<!-- Stage 1 -->
+<div class="flex items-start gap-3 relative">
+<div class="w-8 h-8 rounded-full bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Stage 1: Submission Received</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Today 06:14 UTC • Ingestion complete</div>
+<span class="inline-block mt-1 text-[11px] font-medium text-primary">Ingested (18.2s audio)</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="flex items-start gap-3 relative">
+<div class="w-8 h-8 rounded-full bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Stage 2: AI Diagnostics</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">4 heuristics processed in 420ms</div>
+<span class="inline-block mt-1 text-[11px] font-medium text-tertiary">1 Advisory Flag</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="flex items-start gap-3 relative">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 ring-4 ring-tertiary-fixed/30 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-tertiary">Stage 3: Reviewer Inspection</div>
+<div class="font-body-sm text-body-sm text-on-surface">11:24 UTC • Rework Requested</div>
+<span class="inline-block mt-1 text-[11px] font-semibold text-tertiary">Action Required</span>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="flex items-start gap-3 relative opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Stage 4: Settlement &amp; Ingest</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Awaiting rework pass</div>
+<span class="inline-block mt-1 text-[11px] font-medium text-on-surface-variant">$1.92 Escrow Release</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN CONTENT AREA (2-COLUMN: 65% left, 35% right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (65% -> 8 cols on desktop) -->
+<div class="lg:col-span-8 space-y-space-lg">
+<!-- A. REVIEWER FEEDBACK CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<!-- Reviewer Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pb-space-sm bg-surface-container-low/50 -mx-space-lg -mt-space-lg p-space-lg rounded-t-xl">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-semibold text-body-lg shadow-sm">
+                AS
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dr. Arpita Sen</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Senior Indic Lead</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span>Reviewed today at 11:24 UTC</span>
+<span>•</span>
+<span>Indic Phonology &amp; Diagnostics</span>
+</div>
+</div>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-medium self-start sm:self-center">
+              Minor Acoustic Shift (±18ms)
+            </div>
+</div>
+<!-- Filter tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto py-1">
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors">
+              All Findings (2)
+            </button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors">
+              Critical (0)
+            </button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md font-semibold text-on-primary bg-primary-container shadow-sm transition-colors">
+              Actionable Rework (2)
+            </button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors">
+              Accepted Rules (4)
+            </button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors">
+              Disputed (0)
+            </button>
+</div>
+<!-- Quote / Direct Feedback Callout -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                "Turn 2 boundary marker is off by <strong class="text-tertiary font-semibold">+18ms</strong> on speaker transition between Seg 02 and Seg 03. Also please verify Devanagari honorific suffix on token #7 (<span class="font-semibold text-primary">‘जी’</span> enclitic missing on polite address). Shift boundary backward to align with the unvoiced bilabial stop."
+              </p>
+</div>
+<!-- Rule Citations -->
+<div class="flex items-center gap-2 flex-wrap pt-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">menu_book</span>
+                Guideline Ref: v2.4 Sec 3.2 (±15ms boundary tolerance)
+              </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">equalizer</span>
+                Speaker Separation SNR: 24.1 dB
+              </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">translate</span>
+                Dialect Honorific Rule: Bihari-Bhojpuri v1.8
+              </span>
+</div>
+</div>
+</div>
+<!-- B. AUDIO & WAVEFORM BOUNDARY INSPECTOR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Boundary Inspector</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">50ms/div</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Segment 02: 00:04.102 — 00:08.450 (High-Resolution Zoom)</p>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="text-on-surface-variant">Contributor (00:04.120)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface font-semibold">Target Spec (00:04.102)</span>
+</div>
+</div>
+</div>
+<!-- Waveform Canvas Display -->
+<div class="bg-surface-container-high rounded-xl p-space-md relative overflow-hidden select-none">
+<!-- Timeline header ticks -->
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-2 px-2">
+<span>00:03.800</span>
+<span>00:04.000</span>
+<span class="text-primary font-semibold">00:04.102 (Target)</span>
+<span class="text-tertiary font-semibold">00:04.120 (+18ms)</span>
+<span>00:04.300</span>
+<span>00:04.500</span>
+<span>00:04.700</span>
+</div>
+<!-- SVG Waveform visualization -->
+<div class="relative h-28 w-full flex items-center">
+<svg class="w-full h-24 overflow-visible" preserveaspectratio="none" viewbox="0 0 800 100">
+<!-- Background grid lines -->
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="100" x2="100" y1="0" y2="100"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="250" x2="250" y1="0" y2="100"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="400" x2="400" y1="0" y2="100"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="550" x2="550" y1="0" y2="100"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" x1="700" x2="700" y1="0" y2="100"></line>
+<!-- Waveform Bars -->
+<path class="text-on-surface-variant" d="
+                  M 10,50 L 10,54 M 20,50 L 20,44 M 30,50 L 30,58 M 40,50 L 40,40 M 50,50 L 50,62 M 60,50 L 60,35
+                  M 70,50 L 70,68 M 80,50 L 80,30 M 90,50 L 90,72 M 100,50 L 100,28 M 110,50 L 110,65 M 120,50 L 120,38
+                  M 130,50 L 130,55 M 140,50 L 140,42 M 150,50 L 150,50 M 160,50 L 160,52 M 170,50 L 170,48 M 180,50 L 180,51
+                  M 190,50 L 190,49 M 200,50 L 200,50 M 210,50 L 210,50 M 220,50 L 220,51 M 230,50 L 230,49 M 240,50 L 240,50
+                  M 250,50 L 250,53 M 260,50 L 260,47 M 270,50 L 270,56 M 280,50 L 280,42 M 290,50 L 290,64 M 300,50 L 300,32
+                  M 310,50 L 310,75 M 320,50 L 320,20 M 330,50 L 330,85 M 340,50 L 340,12 M 350,50 L 350,92 M 360,50 L 360,8
+                  M 370,50 L 370,88 M 380,50 L 380,18 M 390,50 L 390,78 M 400,50 L 400,24 M 410,50 L 410,70 M 420,50 L 420,30
+                  M 430,50 L 430,62 M 440,50 L 440,36 M 450,50 L 450,58 M 460,50 L 460,40 M 470,50 L 470,66 M 480,50 L 480,32
+                  M 490,50 L 490,74 M 500,50 L 500,26 M 510,50 L 510,80 M 520,50 L 520,18 M 530,50 L 530,86 M 540,50 L 540,14
+                  M 550,50 L 550,90 M 560,50 L 560,10 M 570,50 L 570,82 M 580,50 L 580,22 M 590,50 L 590,72 M 600,50 L 600,28
+                  M 610,50 L 610,64 M 620,50 L 620,38 M 630,50 L 630,56 M 640,50 L 640,44 M 650,50 L 650,52 M 660,50 L 660,48
+                  M 670,50 L 670,54 M 680,50 L 680,46 M 690,50 L 690,51 M 700,50 L 700,49 M 710,50 L 710,53 M 720,50 L 720,47
+                  M 730,50 L 730,58 M 740,50 L 740,42 M 750,50 L 750,65 M 760,50 L 760,35 M 770,50 L 770,70 M 780,50 L 780,30
+                " stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- TARGET ONSET LINE (00:04.102) -->
+<line stroke="#0066cc" stroke-width="2.5" x1="315" x2="315" y1="0" y2="100"></line>
+<rect fill="#0066cc" height="18" rx="4" width="90" x="270" y="2"></rect>
+<text fill="#ffffff" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="315" y="14">Onset: 4.102s</text>
+<!-- CONTRIBUTOR MARKER (00:04.120) -->
+<line stroke="#af4900" stroke-dasharray="4 2" stroke-width="2" x1="355" x2="355" y1="0" y2="100"></line>
+<rect fill="#ffdbcb" height="18" rx="4" width="80" x="325" y="80"></rect>
+<text fill="#341100" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="365" y="92">Shift: +18ms</text>
+<!-- Shaded Delta Tolerance zone -->
+<rect fill="#af4900" fill-opacity="0.15" height="56" width="40" x="315" y="22"></rect>
+</svg>
+</div>
+<!-- Transport Control Bar -->
+<div class="mt-4 pt-3 flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest/80 backdrop-blur rounded-lg p-2.5">
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center text-on-surface transition-colors cursor-pointer" title="Replay 5s">
+<span class="material-symbols-outlined text-[18px]">replay_5</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-primary-container hover:bg-primary-hover text-on-primary flex items-center justify-center transition-all shadow-sm cursor-pointer" title="Play Segment">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center text-on-surface transition-colors cursor-pointer" title="Forward 5s">
+<span class="material-symbols-outlined text-[18px]">forward_5</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface ml-2 font-mono">00:04.102 / 00:18.200</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Speed:</span>
+<button class="px-1.5 py-0.5 rounded font-label-sm text-label-sm font-semibold text-primary bg-primary-subtle">1.0x</button>
+<button class="px-1.5 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">0.75x</button>
+<button class="px-1.5 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">0.5x</button>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded transition-colors cursor-pointer" title="Volume">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Side-by-Side Comparison Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-2">
+<!-- Left Card: Contributor Version -->
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Your Submission (v1.0)</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium">Offset Flagged</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                Segment Boundary: 00:04.120 — 00:08.450
+              </div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Transcript (Token 7 Highlighted)</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                  हमनी के घरे आजु <span class="bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded font-medium">बाटी-चोखा</span> बनल बा
+                </p>
+</div>
+<div class="font-body-sm text-body-sm text-tertiary flex items-start gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5">warning</span>
+<span>Start: 4.120s (Δ +18ms vs onset). Bhojpuri token #7 recorded without standard honorific particle marker 'जी'.</span>
+</div>
+</div>
+<!-- Right Card: Reviewer Correction / Baseline -->
+<div class="bg-primary-subtle/50 rounded-xl p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-primary">Reviewer Correction / Baseline</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-medium">Strict Compliance Match</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                Target Boundary: <span class="text-primary font-semibold">00:04.102 — 00:08.450</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Target Expected Transcript</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                  हमनी के घरे आजु <span class="bg-primary-subtle text-primary font-semibold px-1.5 py-0.5 rounded">बाटी-चोखा जी</span> बनल बा
+                </p>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">check_circle</span>
+<span>Shift Seg 02 start marker -18ms back to onset of plosive /b/. Append token honorific tag 'जी'.</span>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md font-medium transition-colors shadow-sm cursor-pointer text-center">
+                  Accept Correction Directly
+                </button>
+<button class="py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors cursor-pointer">
+                  Edit in Workspace
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- C. AUTOMATED QA PIPELINE SIGNALS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Automated QA Pipeline Signals</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Model-assisted verification suite run during initial ingestion</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              Executed in 420ms
+            </span>
+</div>
+<div class="space-y-3">
+<!-- Heuristic 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">Schema &amp; Serialization Validation</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">JSON-LD AudioAnnotationV3 strict structural conformity</div>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">100% Passed</span>
+</div>
+<!-- Heuristic 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">graphic_eq</span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">Whisper-ASR Consensus (Advisory)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Phonetic alignment consensus against fine-tuned Indic Whisper checkpoint</div>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">96.8% Agreement</span>
+</div>
+<!-- Heuristic 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">warning_amber</span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">Gold Benchmark Boundary Heuristics</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Boundary deviation detected +18ms vs ground truth (tolerance max ±15ms)</div>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Warning Flagged</span>
+</div>
+<!-- Heuristic 4 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">spellcheck</span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">Orthographic Dialect Filter</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Rohtas-Bhojpuri regional morphological lexicon validated</div>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Passed</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">info</span>
+<span><strong>Contributor Guarantee:</strong> Automated signals are advisory benchmarks used to route submissions to human phonologists. They never penalize your score autonomously.</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (35% -> 4 cols on desktop) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- A. ACTION REQUIRED CONSOLE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="space-y-1">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold inline-block">
+              SLA Active • 18h 42m remaining
+            </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-1">Action Required</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete revisions before the timer expires to secure escrow payout.</p>
+</div>
+<!-- Required Correction Checklist -->
+<div class="space-y-2.5 pt-1">
+<label class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Shift Seg 02 start marker -18ms</strong>
+<span class="block text-on-surface-variant text-[12px]">Snap boundary from 00:04.120 to 00:04.102</span>
+</span>
+</label>
+<label class="flex items-start gap-2.5 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<input class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Check token #7 honorific tag</strong>
+<span class="block text-on-surface-variant text-[12px]">Assign Devanagari honorific enclitic 'जी'</span>
+</span>
+</label>
+</div>
+<div class="space-y-2 pt-2">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+<span>Launch Workspace &amp; Fix</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+<button class="w-full py-2 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors cursor-pointer text-center">
+              Request 12h SLA Extension (Pause Clock)
+            </button>
+</div>
+</div>
+<!-- B. FAIR REVIEW APPEAL CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Fair Review Appeal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+            Believe Dr. Arpita's correction conflicts with your audio observation or regional Bhojpuri variant? Svara guarantees zero retaliation on fair disputes.
+          </p>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors cursor-pointer text-center">
+            Open Formal Dispute
+          </button>
+</div>
+<!-- C. ESCROW BREAKDOWN CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between font-label-md text-label-md font-semibold text-on-surface">
+<span>Escrow Breakdown</span>
+<span class="text-primary">$1.92 Total</span>
+</div>
+<div class="space-y-2 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<div class="flex justify-between">
+<span>Base Annotation Fee</span>
+<span class="text-on-surface font-medium">$1.60</span>
+</div>
+<div class="flex justify-between">
+<span>Dialect Complexity Bonus</span>
+<span class="text-on-surface font-medium">$0.32</span>
+</div>
+<div class="flex justify-between">
+<span>Tier-1 Speed Incentive</span>
+<span class="text-primary font-medium">Eligible (+$0.15)</span>
+</div>
+</div>
+<div class="pt-2 text-right">
+<a class="font-label-sm text-label-sm text-primary hover:underline inline-flex items-center gap-1" href="#">
+<span>View Payout Ledger Entry</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- D. PROVENANCE TIMELINE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">Provenance Timeline</h3>
+<div class="relative pl-4 space-y-4 pt-2">
+<!-- Vertical guide line -->
+<div class="absolute left-1.5 top-3 bottom-3 w-0.5 bg-surface-container-highest"></div>
+<!-- Event 1 -->
+<div class="relative flex items-start gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shrink-0 mt-1 ring-4 ring-surface-container-lowest"></span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">06:14 UTC: v1.0 Submitted</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Contributor IP 103.21.***.***</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex items-start gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shrink-0 mt-1 ring-4 ring-surface-container-lowest"></span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">06:15 UTC: Automated QA Complete</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">4 heuristics processed in 420ms</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex items-start gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shrink-0 mt-1 ring-4 ring-surface-container-lowest"></span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">09:30 UTC: Assigned to QC Queue</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Routed to Indic Lead pool</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex items-start gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary shrink-0 mt-1 ring-4 ring-surface-container-lowest"></span>
+<div>
+<div class="font-label-md text-label-md font-medium text-tertiary">11:24 UTC: Rework Requested</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Dr. Arpita Sen logged 2 actionable items</div>
+</div>
+</div>
+<!-- Event 5 (Pending) -->
+<div class="relative flex items-start gap-2.5 opacity-60">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant shrink-0 mt-1 ring-4 ring-surface-container-lowest"></span>
+<div>
+<div class="font-label-md text-label-md font-medium text-on-surface">Pending: Contributor v2.0</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">SLA window closes in 18h 42m</div>
+</div>
+</div>
+</div>
+</div>
+<!-- E. HELP & GUIDELINES LINKS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-2">
+<div class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider mb-2">Help &amp; Guidelines</div>
+<a class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container transition-colors text-on-surface font-body-sm text-body-sm" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">description</span>
+              Timestamp Tolerances Guide (Sec 3.2)
+            </span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container transition-colors text-on-surface font-body-sm text-body-sm" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">book</span>
+              Bhojpuri Honorific Particles Rulebook
+            </span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container transition-colors text-on-surface font-body-sm text-body-sm" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">support_agent</span>
+              Contact Lead Reviewer Secure Channel
+            </span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-gutter py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 DataLoop Systems, Inc. All rights reserved.</span></div><div class="flex items-center gap-space-lg font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Documentation</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">System Status</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a></div></div></footer>
+</body></html>

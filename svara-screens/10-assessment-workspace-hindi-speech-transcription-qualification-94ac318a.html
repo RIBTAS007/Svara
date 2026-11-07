@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Assessment Workspace — Hindi Speech Transcription Qualification | Svara</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0066cc",
+            "primary-hover": "#0052a3",
+            "primary-active": "#004080",
+            "primary-subtle": "#ebf4ff",
+            "primary-container": "#0066cc",
+            "background": "#f9f9fb",
+            "surface": "#f9f9fb",
+            "surface-base": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f4f5f7",
+            "surface-container": "#eeeeF2",
+            "surface-container-high": "#e5e7eb",
+            "surface-container-highest": "#d9dde3",
+            "border-subtle": "#e2e4e8",
+            "border-muted": "#d1d5db",
+            "on-surface": "#111827",
+            "on-surface-variant": "#4b5563",
+            "text-muted": "#6b7280",
+            "tertiary": "#d97706",
+            "tertiary-fixed": "#fef3c7",
+            "tertiary-fixed-dim": "#fde68a",
+            "on-tertiary-fixed-variant": "#92400e",
+            "error": "#dc2626",
+            "error-subtle": "#fee2e2",
+            "success": "#16a34a",
+            "success-subtle": "#dcfce7"
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; background-color: #f9f9fb; color: #111827; }
+    }
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 9999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+  </style>
+</head>
+<body class="font-sans bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- ========================================================================= -->
+<!-- 1. SIMPLIFIED PROFESSIONAL HEADER -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-50 bg-white border-b border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+<div class="w-full px-6 h-16 flex items-center justify-between gap-4">
+<!-- Brand & Test Hierarchy Breadcrumb -->
+<div class="flex items-center gap-4 min-w-0">
+<!-- Logo -->
+<div class="flex items-center gap-2.5 shrink-0">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white shadow-sm font-bold text-lg tracking-wider">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 leading-none">
+<span class="font-bold text-base tracking-tight text-on-surface">Svara</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded bg-primary-subtle text-primary border border-primary/20">Evaluation</span>
+</div>
+<span class="text-[11px] text-text-muted mt-0.5 font-medium">Assessment Workspace</span>
+</div>
+</div>
+<div class="h-6 w-px bg-border-subtle shrink-0"></div>
+<!-- Breadcrumb / Test Hierarchy -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs min-w-0">
+<span class="font-semibold text-on-surface truncate">Hindi Speech Transcription Qualification</span>
+<span class="text-border-muted shrink-0">/</span>
+<span class="text-on-surface-variant font-medium truncate">Module 2 of 4 (Conversational Multi-Speaker &amp; Overlap)</span>
+<span class="text-border-muted shrink-0">/</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-semibold text-[11px] shrink-0 border border-primary/20">Clip 4 of 8</span>
+</nav>
+</div>
+<!-- Live Assessment Controls & Actions -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Autosave Indicator Badge -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-xs border border-border-subtle/80" id="autosave-badge" title="State persists locally and securely syncs to server">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-medium text-on-surface" id="autosave-text">Synced to Svara Cloud</span>
+</div>
+<!-- Server-Authoritative Timer -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-subtle/80 text-primary border border-primary/20" title="Authoritative countdown timer synchronized with server">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span class="font-semibold text-xs tracking-tight font-mono">28:45 Remaining</span>
+</div>
+<!-- Quick Flag Button -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-border-subtle text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low text-xs font-medium transition-colors" id="header-flag-btn" title="Bookmark current clip for later review" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bookmark_border</span>
+<span class="hidden sm:inline">Flag Clip for Review</span>
+</button>
+<!-- Proctor Help Modal Trigger -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-border-subtle text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low text-xs font-medium transition-colors" title="Get in touch with an online assessment invigilator" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">support_agent</span>
+<span class="hidden md:inline">Proctor Help</span>
+</button>
+<!-- Review & Submit Assessment CTA -->
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold shadow-sm transition-all" type="button">
+<span>Review &amp; Submit Assessment</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-white text-[10px] font-bold">4/8</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 2. THREE-COLUMN WORKSPACE LAYOUT -->
+<!-- ========================================================================= -->
+<div class="w-full max-w-[1780px] mx-auto px-6 py-5 flex-1 flex gap-5 items-start">
+<!-- --------------------------------------------------------------------- -->
+<!-- LEFT SIDEBAR: Assessment Navigation (w-72) -->
+<!-- --------------------------------------------------------------------- -->
+<aside class="w-72 shrink-0 flex flex-col gap-4">
+<!-- Progress Overview Card -->
+<div class="bg-white rounded-xl border border-border-subtle p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted">Overall Progress</span>
+<span class="text-xs font-bold text-primary">4 of 8 Clips (50%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden mb-3 border border-border-subtle/50">
+<div class="bg-primary h-full rounded-full transition-all duration-300" style="width: 50%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-muted font-medium">
+<span>1 of 4 Modules Done</span>
+<span class="text-success font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> On Track
+          </span>
+</div>
+</div>
+<!-- Module & Clip Hierarchy Navigation -->
+<div class="bg-white rounded-xl border border-border-subtle p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1 border-b border-border-subtle">
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted">Modules &amp; Clips</span>
+<span class="text-[11px] text-text-muted font-medium">Click to navigate</span>
+</div>
+<nav aria-label="Assessment Navigation" class="flex flex-col gap-2.5">
+<!-- Module 1: Completed -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg bg-surface-container-low/60 border border-transparent">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-success">check_circle</span>
+                Module 1: Acoustic Check
+              </span>
+<span class="text-[10px] font-semibold text-success bg-success-subtle px-1.5 py-0.5 rounded">2/2</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 pl-5">
+<button class="flex items-center justify-between px-2 py-1 rounded bg-white border border-border-subtle text-xs text-on-surface hover:border-primary transition-colors text-left" title="Clip 01: Completed" type="button">
+<span class="font-medium text-[11px]">Clip 01</span>
+<span class="material-symbols-outlined text-[14px] text-success">done</span>
+</button>
+<button class="flex items-center justify-between px-2 py-1 rounded bg-white border border-border-subtle text-xs text-on-surface hover:border-primary transition-colors text-left" title="Clip 02: Completed" type="button">
+<span class="font-medium text-[11px]">Clip 02</span>
+<span class="material-symbols-outlined text-[14px] text-success">done</span>
+</button>
+</div>
+</div>
+<!-- Module 2: Active (Current Module) -->
+<div class="flex flex-col gap-1.5 p-2.5 rounded-lg bg-primary-subtle/50 border border-primary/30">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">radio_button_checked</span>
+                Module 2: Conversational Overlap
+              </span>
+<span class="text-[10px] font-bold text-primary bg-primary-subtle px-1.5 py-0.5 rounded border border-primary/20">Active</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 pl-5 pt-1">
+<!-- Clip 03: Completed -->
+<button class="flex items-center justify-between px-2 py-1 rounded bg-white border border-border-subtle text-xs text-on-surface hover:border-primary transition-colors text-left" title="Clip 03: Completed" type="button">
+<span class="font-medium text-[11px]">Clip 03</span>
+<span class="material-symbols-outlined text-[14px] text-success">done</span>
+</button>
+<!-- Clip 04: Active & Current with ring -->
+<button class="flex items-center justify-between px-2 py-1 rounded bg-primary text-white text-xs font-semibold ring-2 ring-primary ring-offset-1 text-left shadow-sm" title="Clip 04: Current Active Workspace" type="button">
+<span class="text-[11px]">Clip 04</span>
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</button>
+</div>
+<div class="pl-5 pt-1 flex items-center justify-between text-[10px] text-text-muted">
+<span class="flex items-center gap-1 text-tertiary font-medium">
+<span class="material-symbols-outlined text-[13px]">bookmark</span> 1 Draft Bookmark
+              </span>
+<span>18.4s clip</span>
+</div>
+</div>
+<!-- Module 3: Idle / Upcoming -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg bg-surface-container-low/40 border border-transparent">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-text-muted flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-muted">pending</span>
+                Module 3: Technical Hinglish
+              </span>
+<span class="text-[10px] text-text-muted">0/2</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 pl-5">
+<div class="flex items-center justify-between px-2 py-1 rounded bg-white/70 border border-border-subtle text-xs text-text-muted">
+<span class="text-[11px]">Clip 05</span>
+<span class="text-[9px] uppercase tracking-wider text-text-muted">Idle</span>
+</div>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-white/70 border border-border-subtle text-xs text-text-muted">
+<span class="text-[11px]">Clip 06</span>
+<span class="text-[9px] uppercase tracking-wider text-text-muted">Idle</span>
+</div>
+</div>
+</div>
+<!-- Module 4: Idle / Upcoming -->
+<div class="flex flex-col gap-1.5 p-2 rounded-lg bg-surface-container-low/40 border border-transparent">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-text-muted flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-muted">pending</span>
+                Module 4: Regional Accents
+              </span>
+<span class="text-[10px] text-text-muted">0/2</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 pl-5">
+<div class="flex items-center justify-between px-2 py-1 rounded bg-white/70 border border-border-subtle text-xs text-text-muted">
+<span class="text-[11px]">Clip 07</span>
+<span class="text-[9px] uppercase tracking-wider text-text-muted">Idle</span>
+</div>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-white/70 border border-border-subtle text-xs text-text-muted">
+<span class="text-[11px]">Clip 08</span>
+<span class="text-[9px] uppercase tracking-wider text-text-muted">Idle</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Status Legend -->
+<div class="pt-2 border-t border-border-subtle grid grid-cols-2 gap-y-1.5 text-[11px] text-text-muted">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span>Completed (3)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Active (1)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Flagged (1)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-gray-300"></span>
+<span>Idle / Next (4)</span>
+</div>
+</div>
+</div>
+<!-- Session Guard Card -->
+<div class="bg-white rounded-xl border border-border-subtle p-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col text-xs leading-relaxed">
+<span class="font-semibold text-on-surface">Proctor Guard Active</span>
+<span class="text-[11px] text-text-muted">Keyboard input &amp; audio timestamps monitored for qualification accreditation.</span>
+</div>
+</div>
+</aside>
+<!-- --------------------------------------------------------------------- -->
+<!-- CENTER WORKSPACE: Audio Suite & Ergonomic Transcription Canvas (Flex-1) -->
+<!-- --------------------------------------------------------------------- -->
+<main class="flex-1 flex flex-col gap-4 min-w-0">
+<!-- Task Info Strip -->
+<div class="bg-white rounded-xl border border-border-subtle px-5 py-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+<div class="flex items-center gap-1.5 font-bold text-on-surface text-sm">
+<span class="px-2 py-0.5 rounded bg-primary-subtle text-primary text-xs font-semibold border border-primary/20">Task 04</span>
+<span>Bilingual Conversational Hinglish with Overlap</span>
+</div>
+<div class="h-4 w-px bg-border-subtle hidden sm:block"></div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[15px]">language</span>
+<span>Hindi + Hinglish</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+<span>18.4s</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[15px]">group</span>
+<span>2 Speakers</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[15px]">volume_down</span>
+<span>Moderate Background Noise</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-medium text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-primary">replay</span>
+<span>Replays: <strong class="text-on-surface font-semibold">2 / 3 used</strong></span>
+</div>
+</div>
+<button class="text-xs font-semibold text-primary hover:text-primary-hover flex items-center gap-1 transition-colors" onclick="const p = document.getElementById('guidelines-panel'); if(p) p.scrollIntoView({behavior:'smooth'})" type="button">
+<span>Task Guidelines</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Professional Audio Player & Interactive Waveform -->
+<section class="bg-white rounded-xl border border-border-subtle p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-4">
+<!-- Timeline Segmentation Track -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-xs text-text-muted">
+<span class="font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">splitscreen</span>
+              Color-Coded Speaker Segments
+            </span>
+<div class="font-mono text-xs text-on-surface">
+              Playhead: <strong class="text-primary font-bold" id="playhead-display">08.20s</strong> / 18.40s
+            </div>
+</div>
+<!-- Color-coded speaker timeline bar -->
+<div class="relative w-full h-7 bg-surface-container-low rounded-lg overflow-hidden flex border border-border-subtle/80 cursor-pointer" title="Click to seek segment">
+<!-- Spk 1 Region (Cyan / Blue) -->
+<div class="h-full bg-blue-100 text-blue-800 flex items-center justify-center text-[11px] font-semibold px-2 border-r border-blue-200 transition-colors hover:bg-blue-200" style="width: 22.8%;">
+              Spk 1 [0.0s - 4.2s]
+            </div>
+<!-- Gap -->
+<div class="h-full bg-surface-container" style="width: 1.6%;"></div>
+<!-- Spk 2 Overlap Region (Amber / Orange) -->
+<div class="h-full bg-amber-100 text-amber-900 flex items-center justify-center text-[11px] font-bold px-2 border-r border-amber-200 transition-colors hover:bg-amber-200" style="width: 45.1%;">
+              Spk 2 [4.5s - 12.8s Overlap]
+            </div>
+<!-- Gap -->
+<div class="h-full bg-surface-container" style="width: 1.1%;"></div>
+<!-- Spk 1 Final (Cyan / Blue) -->
+<div class="h-full bg-blue-100 text-blue-800 flex items-center justify-center text-[11px] font-semibold px-2 transition-colors hover:bg-blue-200" style="width: 29.4%;">
+              Spk 1 [13.0s - 18.4s]
+            </div>
+<!-- Red Playhead Pointer -->
+<div class="absolute top-0 bottom-0 w-0.5 bg-error shadow-sm pointer-events-none z-10" style="left: 44.5%;">
+<div class="w-3 h-3 rounded-full bg-error -ml-1 -top-1 absolute shadow"></div>
+</div>
+</div>
+</div>
+<!-- Interactive Waveform Visualizer -->
+<div class="relative w-full bg-surface-container-low/70 rounded-xl p-3 border border-border-subtle select-none cursor-pointer" id="waveform-canvas">
+<!-- Waveform SVG with speaker colors -->
+<div class="h-20 w-full flex items-center">
+<svg class="w-full h-full" fill="currentColor" preserveaspectratio="none" viewbox="0 0 1000 70">
+<!-- Speaker 1 Initial Segment (Blue) -->
+<g class="text-blue-600">
+<rect height="14" opacity="0.4" rx="2" width="4" x="0" y="28"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="8" y="24"></rect>
+<rect height="38" opacity="0.8" rx="2" width="4" x="16" y="16"></rect>
+<rect height="50" rx="2" width="4" x="24" y="10"></rect>
+<rect height="40" rx="2" width="4" x="32" y="15"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="40" y="22"></rect>
+<rect height="34" opacity="0.9" rx="2" width="4" x="48" y="18"></rect>
+<rect height="14" opacity="0.5" rx="2" width="4" x="56" y="28"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="64" y="26"></rect>
+<rect height="46" rx="2" width="4" x="72" y="12"></rect>
+<rect height="38" opacity="0.9" rx="2" width="4" x="80" y="16"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="88" y="24"></rect>
+<rect height="14" opacity="0.4" rx="2" width="4" x="96" y="28"></rect>
+<rect height="10" opacity="0.3" rx="2" width="4" x="104" y="30"></rect>
+<rect height="6" opacity="0.3" rx="2" width="4" x="112" y="32"></rect>
+<rect height="14" opacity="0.5" rx="2" width="4" x="120" y="28"></rect>
+<rect height="30" opacity="0.7" rx="2" width="4" x="128" y="20"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="136" y="14"></rect>
+<rect height="50" rx="2" width="4" x="144" y="10"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="152" y="18"></rect>
+<rect height="18" opacity="0.5" rx="2" width="4" x="160" y="26"></rect>
+<rect height="8" opacity="0.3" rx="2" width="4" x="168" y="31"></rect>
+<rect height="14" opacity="0.5" rx="2" width="4" x="176" y="28"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="184" y="22"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="192" y="14"></rect>
+<rect height="54" rx="2" width="4" x="200" y="8"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="208" y="18"></rect>
+<rect height="16" opacity="0.4" rx="2" width="4" x="216" y="27"></rect>
+<rect height="6" opacity="0.3" rx="2" width="4" x="224" y="32"></rect>
+</g>
+<!-- Speaker 2 Overlapping Segment (Amber / Crosstalk Region) -->
+<g class="text-amber-600">
+<rect height="14" opacity="0.5" rx="2" width="4" x="236" y="28"></rect>
+<rect height="30" opacity="0.7" rx="2" width="4" x="244" y="20"></rect>
+<rect height="46" opacity="0.9" rx="2" width="4" x="252" y="12"></rect>
+<rect height="58" rx="2" width="4" x="260" y="6"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="268" y="14"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="276" y="22"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="284" y="18"></rect>
+<rect height="54" rx="2" width="4" x="292" y="8"></rect>
+<rect height="46" rx="2" width="4" x="300" y="12"></rect>
+<rect height="30" opacity="0.8" rx="2" width="4" x="308" y="20"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="316" y="26"></rect>
+<rect height="38" opacity="0.8" rx="2" width="4" x="324" y="16"></rect>
+<rect height="50" rx="2" width="4" x="332" y="10"></rect>
+<rect height="54" rx="2" width="4" x="340" y="8"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="348" y="14"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="356" y="22"></rect>
+<rect height="38" opacity="0.8" rx="2" width="4" x="364" y="16"></rect>
+<rect height="50" rx="2" width="4" x="372" y="10"></rect>
+<rect height="58" rx="2" width="4" x="380" y="6"></rect>
+<rect height="46" opacity="0.9" rx="2" width="4" x="388" y="12"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="396" y="18"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="404" y="24"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="412" y="14"></rect>
+<rect height="54" rx="2" width="4" x="420" y="8"></rect>
+<rect height="50" rx="2" width="4" x="428" y="10"></rect>
+<rect height="38" opacity="0.9" rx="2" width="4" x="436" y="16"></rect>
+<!-- Current Playhead position @ 44.5% (approx x=445) -->
+<rect height="58" rx="2" width="4" x="444" y="6"></rect>
+<rect height="46" rx="2" width="4" x="452" y="12"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="460" y="18"></rect>
+<rect height="22" opacity="0.7" rx="2" width="4" x="468" y="24"></rect>
+<rect height="46" opacity="0.9" rx="2" width="4" x="476" y="12"></rect>
+<rect height="54" rx="2" width="4" x="484" y="8"></rect>
+<rect height="50" rx="2" width="4" x="492" y="10"></rect>
+<rect height="38" opacity="0.9" rx="2" width="4" x="500" y="16"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="508" y="22"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="516" y="14"></rect>
+<rect height="54" rx="2" width="4" x="524" y="8"></rect>
+<rect height="46" rx="2" width="4" x="532" y="12"></rect>
+<rect height="30" opacity="0.8" rx="2" width="4" x="540" y="20"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="548" y="26"></rect>
+<rect height="38" opacity="0.8" rx="2" width="4" x="556" y="16"></rect>
+<rect height="50" rx="2" width="4" x="564" y="10"></rect>
+<rect height="46" rx="2" width="4" x="572" y="12"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="580" y="18"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="588" y="22"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="596" y="14"></rect>
+<rect height="54" rx="2" width="4" x="604" y="8"></rect>
+<rect height="46" rx="2" width="4" x="612" y="12"></rect>
+<rect height="30" opacity="0.8" rx="2" width="4" x="620" y="20"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="628" y="26"></rect>
+<rect height="10" opacity="0.4" rx="2" width="4" x="636" y="30"></rect>
+<rect height="6" opacity="0.3" rx="2" width="4" x="644" y="32"></rect>
+<rect height="14" opacity="0.4" rx="2" width="4" x="652" y="28"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="660" y="24"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="668" y="18"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="676" y="26"></rect>
+<rect height="6" opacity="0.3" rx="2" width="4" x="684" y="32"></rect>
+</g>
+<!-- Speaker 1 Final Segment (Blue) -->
+<g class="text-blue-600">
+<rect height="18" opacity="0.5" rx="2" width="4" x="696" y="26"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="704" y="18"></rect>
+<rect height="50" rx="2" width="4" x="712" y="10"></rect>
+<rect height="58" rx="2" width="4" x="720" y="6"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="728" y="14"></rect>
+<rect height="30" opacity="0.8" rx="2" width="4" x="736" y="20"></rect>
+<rect height="46" rx="2" width="4" x="744" y="12"></rect>
+<rect height="54" rx="2" width="4" x="752" y="8"></rect>
+<rect height="38" opacity="0.9" rx="2" width="4" x="760" y="16"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="768" y="24"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="776" y="18"></rect>
+<rect height="50" rx="2" width="4" x="784" y="10"></rect>
+<rect height="54" rx="2" width="4" x="792" y="8"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="800" y="14"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="808" y="22"></rect>
+<rect height="38" opacity="0.8" rx="2" width="4" x="816" y="16"></rect>
+<rect height="50" rx="2" width="4" x="824" y="10"></rect>
+<rect height="58" rx="2" width="4" x="832" y="6"></rect>
+<rect height="46" opacity="0.9" rx="2" width="4" x="840" y="12"></rect>
+<rect height="34" opacity="0.8" rx="2" width="4" x="848" y="18"></rect>
+<rect height="22" opacity="0.6" rx="2" width="4" x="856" y="24"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="864" y="14"></rect>
+<rect height="54" rx="2" width="4" x="872" y="8"></rect>
+<rect height="50" rx="2" width="4" x="880" y="10"></rect>
+<rect height="38" opacity="0.9" rx="2" width="4" x="888" y="16"></rect>
+<rect height="26" opacity="0.7" rx="2" width="4" x="896" y="22"></rect>
+<rect height="42" opacity="0.9" rx="2" width="4" x="904" y="14"></rect>
+<rect height="54" rx="2" width="4" x="912" y="8"></rect>
+<rect height="46" rx="2" width="4" x="920" y="12"></rect>
+<rect height="30" opacity="0.8" rx="2" width="4" x="928" y="20"></rect>
+<rect height="18" opacity="0.6" rx="2" width="4" x="936" y="26"></rect>
+<rect height="10" opacity="0.4" rx="2" width="4" x="944" y="30"></rect>
+<rect height="6" opacity="0.3" rx="2" width="4" x="952" y="32"></rect>
+<rect height="14" opacity="0.4" rx="2" width="4" x="960" y="28"></rect>
+<rect height="10" opacity="0.3" rx="2" width="4" x="968" y="30"></rect>
+<rect height="6" opacity="0.2" rx="2" width="4" x="976" y="32"></rect>
+<rect height="4" opacity="0.2" rx="2" width="4" x="984" y="33"></rect>
+<rect height="2" opacity="0.2" rx="1" width="4" x="992" y="34"></rect>
+</g>
+</svg>
+</div>
+<!-- Vertical Scrim Line on Waveform -->
+<div class="absolute inset-y-0 w-0.5 bg-error pointer-events-none" style="left: 44.5%;"></div>
+<!-- Time Ticks -->
+<div class="flex items-center justify-between text-[10px] text-text-muted font-mono pt-1.5 px-1 border-t border-border-subtle/50 mt-1">
+<span>0.00s</span>
+<span>3.00s</span>
+<span>6.00s</span>
+<span class="text-error font-semibold font-mono">08.20s (Playhead)</span>
+<span>12.00s</span>
+<span>15.00s</span>
+<span>18.40s</span>
+</div>
+</div>
+<!-- Audio Transport & DSP Controls -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-1">
+<!-- Transport Buttons -->
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-lg border border-border-subtle bg-white hover:bg-surface-container-low text-on-surface flex items-center justify-center transition-colors shadow-xs" id="seek-back-btn" title="Seek Back 2s (Ctrl + Left)" type="button">
+<span class="material-symbols-outlined text-[19px]">replay_10</span>
+</button>
+<!-- Main Play/Pause Button -->
+<button class="h-9 px-4 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all" id="play-btn" type="button">
+<span class="material-symbols-outlined text-[19px]">play_arrow</span>
+<span id="play-text">Play Segment</span>
+</button>
+<button class="w-9 h-9 rounded-lg border border-border-subtle bg-white hover:bg-surface-container-low text-on-surface flex items-center justify-center transition-colors shadow-xs" id="seek-fwd-btn" title="Seek Forward 2s (Ctrl + Right)" type="button">
+<span class="material-symbols-outlined text-[19px]">forward_10</span>
+</button>
+<!-- Replay Full Clip Button -->
+<button class="flex items-center gap-1 px-2.5 h-9 rounded-lg border border-border-subtle bg-white hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface text-xs font-medium transition-colors" id="replay-clip-btn" title="Replay clip from beginning (Consumes replay allowance)" type="button">
+<span class="material-symbols-outlined text-[17px] text-primary">replay</span>
+<span class="hidden sm:inline">Replay Clip</span>
+</button>
+</div>
+<!-- Speed Pills -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-border-subtle">
+<span class="text-[10px] uppercase font-bold text-text-muted px-1.5">Speed:</span>
+<button class="speed-btn px-2 py-0.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">0.75x</button>
+<button class="speed-btn px-2 py-0.5 rounded text-xs font-bold bg-white text-primary shadow-xs border border-border-subtle/80" type="button">1.0x</button>
+<button class="speed-btn px-2 py-0.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">1.25x</button>
+</div>
+<!-- DSP Enhancer & Volume -->
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-1.5 cursor-pointer text-xs font-medium text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 border-border-muted" type="checkbox"/>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Audio Clarifier DSP</span>
+</span>
+</label>
+<div class="h-4 w-px bg-border-subtle hidden sm:block"></div>
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+<input class="w-20 accent-primary cursor-pointer h-1.5 bg-surface-container-high rounded-lg appearance-none" max="100" min="0" type="range" value="85"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Annotation Toolbar -->
+<section class="bg-white rounded-xl border border-border-subtle p-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-2.5">
+<div class="flex items-center justify-between pb-1.5 border-b border-border-subtle">
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted">Contextual Annotation Toolbar</span>
+<span class="text-[11px] text-text-muted">Click or trigger via keyboard shortcuts</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<!-- Punctuation Group -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-border-subtle/70">
+<span class="text-[10px] font-bold uppercase text-text-muted px-1.5">Punct:</span>
+<!-- Purna Viram -->
+<button class="px-2.5 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs transition-colors flex items-center gap-1" onclick="insertToken('। ')" title="Insert Purna Viram (Ctrl + 1)" type="button">
+<span>। (Purna Viram)</span>
+<kbd class="text-[9px] font-mono text-text-muted bg-surface-container px-1 py-0.2 rounded">Ctrl+1</kbd>
+</button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs transition-colors" onclick="insertToken(', ')" title="Insert Comma" type="button">
+              ,
+            </button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs transition-colors" onclick="insertToken('? ')" title="Insert Question Mark" type="button">
+              ?
+            </button>
+</div>
+<!-- Speaker Tags -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-border-subtle/70">
+<span class="text-[10px] font-bold uppercase text-text-muted px-1.5">Speakers:</span>
+<button class="px-2.5 py-1 rounded bg-blue-50 text-blue-800 hover:bg-blue-100 border border-blue-200 text-xs font-semibold transition-colors flex items-center gap-1" onclick="insertToken('\n[Speaker 1:] ')" title="Insert Speaker 1 (Alt + 1)" type="button">
+<span>+ [Speaker 1]</span>
+<kbd class="text-[9px] font-mono text-blue-700 bg-blue-100/70 px-1 py-0.2 rounded">Alt+1</kbd>
+</button>
+<button class="px-2.5 py-1 rounded bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200 text-xs font-semibold transition-colors flex items-center gap-1" onclick="insertToken('\n[Speaker 2:] ')" title="Insert Speaker 2 (Alt + 2)" type="button">
+<span>+ [Speaker 2]</span>
+<kbd class="text-[9px] font-mono text-amber-800 bg-amber-100/70 px-1 py-0.2 rounded">Alt+2</kbd>
+</button>
+</div>
+<!-- Speech Events / Non-Speech -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-border-subtle/70">
+<span class="text-[10px] font-bold uppercase text-text-muted px-1.5">Events:</span>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-mono text-on-surface border border-border-subtle shadow-xs transition-colors flex items-center gap-1" onclick="insertToken('[crosstalk] ')" title="Simultaneous speech (Ctrl + K)" type="button">
+<span>[crosstalk]</span>
+<kbd class="text-[9px] font-mono text-text-muted bg-surface-container px-1 py-0.2 rounded">Ctrl+K</kbd>
+</button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-mono text-on-surface border border-border-subtle shadow-xs transition-colors flex items-center gap-1" onclick="insertToken('[inaudible] ')" title="Unclear audio segment (Ctrl + I)" type="button">
+<span>[inaudible]</span>
+<kbd class="text-[9px] font-mono text-text-muted bg-surface-container px-1 py-0.2 rounded">Ctrl+I</kbd>
+</button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-mono text-on-surface border border-border-subtle shadow-xs transition-colors" onclick="insertToken('[cough] ')" title="Human noise event" type="button">
+              [cough]
+            </button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container-high text-xs font-mono text-on-surface border border-border-subtle shadow-xs transition-colors" onclick="insertToken('[background_noise] ')" title="Acoustic environmental event" type="button">
+              [background_noise]
+            </button>
+</div>
+<!-- Diacritics -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg border border-border-subtle/70">
+<span class="text-[10px] font-bold uppercase text-text-muted px-1.5">Diacritics:</span>
+<button class="w-6 h-6 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs flex items-center justify-center transition-colors" onclick="insertToken('ँ')" title="Chandrabindu" type="button">ँ</button>
+<button class="w-6 h-6 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs flex items-center justify-center transition-colors" onclick="insertToken('ं')" title="Anusvara" type="button">ं</button>
+<button class="w-6 h-6 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs flex items-center justify-center transition-colors" onclick="insertToken('़')" title="Nukta" type="button">़</button>
+<button class="w-6 h-6 rounded bg-white hover:bg-surface-container-high text-xs font-bold text-on-surface border border-border-subtle shadow-xs flex items-center justify-center transition-colors" onclick="insertToken('्')" title="Virama / Halant" type="button">्</button>
+</div>
+</div>
+</section>
+<!-- Transcription Editor (Dominant Ergonomic Area) -->
+<section class="bg-white rounded-xl border border-border-subtle p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="text-sm font-bold text-on-surface flex items-center gap-1.5" for="transcript-box">
+<span>Orthographic Transcription Editor</span>
+<span class="material-symbols-outlined text-[16px] text-success" title="Formatting verified">verified</span>
+</label>
+<div class="flex items-center gap-2 text-[11px] text-text-muted">
+<span>Press <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[10px] text-on-surface">Space</kbd> to toggle audio</span>
+<span>•</span>
+<span><kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[10px] text-on-surface">Ctrl+S</kbd> to save</span>
+</div>
+</div>
+<!-- Textarea Container -->
+<div class="relative w-full rounded-xl border border-border-subtle focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all bg-white">
+<textarea class="w-full p-4 rounded-xl text-on-surface text-[15px] leading-relaxed focus:outline-none resize-y border-none font-normal" id="transcript-box" rows="6" spellcheck="false" style="font-family: 'Inter', -apple-system, sans-serif;">[Speaker 1:] हां जी, मैंने app open किया लेकिन login screen पे OTP receive नहीं हुआ। [crosstalk]
+[Speaker 2:] क्या आपने registered mobile number verify किया था? Please confirm कीजिए।
+[Speaker 1:] जी बिल्कुल, नंबर वही है पर server error 502 show हो रहा है।</textarea>
+</div>
+<!-- Metrics & Real-time Linguistic Validation -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex flex-wrap items-center justify-between text-xs text-text-muted">
+<div class="flex items-center gap-3">
+<span class="font-medium text-on-surface" id="word-count">34 words</span>
+<span>•</span>
+<span id="char-count">188 characters</span>
+<span>•</span>
+<span class="font-medium text-on-surface">3 Speaker Turns Tagged</span>
+</div>
+<div class="flex items-center gap-1.5 text-success font-medium text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+<span>Autosaved to Svara Cloud</span>
+</div>
+</div>
+<!-- Validation Chips -->
+<div class="flex flex-wrap gap-2 pt-1">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-success-subtle text-green-800 text-[11px] font-medium border border-green-200">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Latin loanwords preserved (app, login, OTP, server error)</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-success-subtle text-green-800 text-[11px] font-medium border border-green-200">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Purna Viram placed correctly</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-success-subtle text-green-800 text-[11px] font-medium border border-green-200">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Speaker overlap tagged ([crosstalk])</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="flex items-center justify-between pt-4 mt-2 border-t border-border-subtle">
+<!-- Previous Clip -->
+<button class="px-4 py-2 rounded-lg border border-border-subtle bg-white hover:bg-surface-container-low text-on-surface text-xs font-semibold flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">arrow_back</span>
+<span>Previous Clip (Clip 3)</span>
+</button>
+<!-- Save Draft & Next Clip -->
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg border border-border-subtle bg-white hover:bg-surface-container-low text-on-surface text-xs font-medium flex items-center gap-1.5 transition-colors" id="save-draft-btn" type="button">
+<span class="material-symbols-outlined text-[17px] text-primary">save</span>
+<span id="save-label">Save Draft</span>
+<span class="text-[10px] text-text-muted font-normal">(Last saved: Just now)</span>
+</button>
+<button class="px-5 py-2 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold shadow-sm flex items-center gap-1.5 transition-all" type="button">
+<span>Next Clip (Clip 5)</span>
+<span class="material-symbols-outlined text-[17px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- --------------------------------------------------------------------- -->
+<!-- RIGHT SIDEBAR: Guidelines, Keybinds & Security Panel (w-80) -->
+<!-- --------------------------------------------------------------------- -->
+<aside class="w-80 shrink-0 flex flex-col gap-4" id="guidelines-panel">
+<!-- Contextual Evaluation Guidelines for Module 2 -->
+<div class="bg-white rounded-xl border border-border-subtle p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1.5 border-b border-border-subtle">
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted">Module 2 Guidelines</span>
+<span class="px-2 py-0.5 rounded bg-primary-subtle text-primary font-bold text-[10px] border border-primary/20">Rubric Active</span>
+</div>
+<div class="flex flex-col gap-3 text-xs">
+<!-- Rule 05 -->
+<div class="p-3 rounded-lg bg-surface-container-low/70 border border-border-subtle/80 flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-bold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+<span>Rule 05: Code-Switching &amp; Hinglish</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+              Keep technical, software, and brand nouns strictly in Latin script (<strong class="text-primary font-mono">app</strong>, <strong class="text-primary font-mono">login</strong>, <strong class="text-primary font-mono">server error</strong>). Do <span class="text-error font-semibold">NOT</span> transliterate into Devanagari.
+            </p>
+</div>
+<!-- Rule 02 -->
+<div class="p-3 rounded-lg bg-surface-container-low/70 border border-border-subtle/80 flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-bold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-amber-600">record_voice_over</span>
+<span>Rule 02: Overlapping Speech</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+              When speakers overlap simultaneously, finish dominant phrase first, tag with <code class="font-mono text-primary bg-white px-1 rounded border border-border-subtle">[crosstalk]</code> before rendering the second turn.
+            </p>
+</div>
+<!-- Rule 08 -->
+<div class="p-3 rounded-lg bg-surface-container-low/70 border border-border-subtle/80 flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-bold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-text-muted">pin</span>
+<span>Rule 08: Numerical Codes &amp; Errors</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+              Numerical identifiers and error codes (<strong class="text-primary font-mono">502</strong>, <strong class="text-primary font-mono">OTP</strong>) must be transcribed using standard Arabic numerals, never spelled out in words.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Keybinds Reference Sheet -->
+<div class="bg-white rounded-xl border border-border-subtle p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-2.5">
+<span class="text-xs font-bold uppercase tracking-wider text-text-muted pb-1 border-b border-border-subtle">Quick Keybinds</span>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Play/Pause</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Space</kbd>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Force Save</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Ctrl+S</kbd>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Spk 1 Tag</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Alt+1</kbd>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Spk 2 Tag</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Alt+2</kbd>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Crosstalk</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Ctrl+K</kbd>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="text-text-muted text-[11px]">Purna Viram</span>
+<kbd class="px-1.5 py-0.5 rounded bg-white border border-border-subtle font-mono text-[10px] text-on-surface">Ctrl+1</kbd>
+</div>
+</div>
+</div>
+<!-- Integrity & Reassurance Card -->
+<div class="bg-white rounded-xl border border-border-subtle p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03)] flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">security</span>
+<span class="text-xs font-bold text-on-surface">Integrity &amp; Offline Assurance</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+          Drafts are continuously cached in local storage. In the event of an intermittent disconnect, you can continue annotating safely.
+        </p>
+<div class="p-2.5 rounded-lg bg-surface-container-low text-[11px] flex flex-col gap-1 border border-border-subtle/50">
+<div class="flex items-center justify-between">
+<span class="text-text-muted">Proctor Live SLA:</span>
+<span class="text-success font-semibold">&lt; 2 min response</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted">Background Sync:</span>
+<span class="text-on-surface font-medium">Non-invasive • Real-time</span>
+</div>
+</div>
+<button class="w-full mt-1 py-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-medium flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">chat</span>
+<span>Open Invigilator Chat</span>
+</button>
+</div>
+</aside>
+</div>
+<!-- Micro-Interactivity Script -->
+<script>
+    // Text insertion handler
+    function insertToken(token) {
+      const textarea = document.getElementById('transcript-box');
+      if (!textarea) return;
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const original = textarea.value;
+      textarea.value = original.substring(0, start) + token + original.substring(end);
+      textarea.focus();
+      textarea.selectionStart = textarea.selectionEnd = start + token.length;
+      updateWordCounts();
+      triggerAutosave();
+    }
+
+    // Word and character count updates
+    function updateWordCounts() {
+      const textarea = document.getElementById('transcript-box');
+      const wordBadge = document.getElementById('word-count');
+      const charBadge = document.getElementById('char-count');
+      if (!textarea || !wordBadge || !charBadge) return;
+      
+      const text = textarea.value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      const chars = textarea.value.length;
+      wordBadge.textContent = words + ' words';
+      charBadge.textContent = chars + ' characters';
+    }
+
+    // Autosave simulator
+    let saveTimeout = null;
+    function triggerAutosave() {
+      const badgeText = document.getElementById('autosave-text');
+      if (badgeText) badgeText.textContent = 'Saving draft...';
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        if (badgeText) badgeText.textContent = 'Synced to Svara Cloud';
+      }, 600);
+    }
+
+    // Audio Play/Pause simulation
+    const playBtn = document.getElementById('play-btn');
+    const playText = document.getElementById('play-text');
+    let playing = false;
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        playing = !playing;
+        if (playing) {
+          playBtn.innerHTML = '<span class="material-symbols-outlined text-[19px]">pause</span><span>Pause Clip</span>';
+        } else {
+          playBtn.innerHTML = '<span class="material-symbols-outlined text-[19px]">play_arrow</span><span>Play Segment</span>';
+        }
+      });
+    }
+
+    // Seek buttons feedback
+    const playheadDisplay = document.getElementById('playhead-display');
+    const seekBack = document.getElementById('seek-back-btn');
+    const seekFwd = document.getElementById('seek-fwd-btn');
+    let currentSeconds = 8.20;
+
+    if (seekBack && playheadDisplay) {
+      seekBack.addEventListener('click', () => {
+        currentSeconds = Math.max(0, currentSeconds - 2.0);
+        playheadDisplay.textContent = currentSeconds.toFixed(2).padStart(5, '0') + 's';
+      });
+    }
+    if (seekFwd && playheadDisplay) {
+      seekFwd.addEventListener('click', () => {
+        currentSeconds = Math.min(18.4, currentSeconds + 2.0);
+        playheadDisplay.textContent = currentSeconds.toFixed(2).padStart(5, '0') + 's';
+      });
+    }
+
+    // Speed Pill Selection
+    const speedPills = document.querySelectorAll('.speed-btn');
+    speedPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        speedPills.forEach(p => {
+          p.className = 'speed-btn px-2 py-0.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors';
+        });
+        pill.className = 'speed-btn px-2 py-0.5 rounded text-xs font-bold bg-white text-primary shadow-xs border border-border-subtle/80';
+      });
+    });
+
+    // Save Draft button interaction
+    const saveDraftBtn = document.getElementById('save-draft-btn');
+    const saveLabel = document.getElementById('save-label');
+    if (saveDraftBtn && saveLabel) {
+      saveDraftBtn.addEventListener('click', () => {
+        saveLabel.textContent = 'Saving...';
+        setTimeout(() => {
+          saveLabel.textContent = 'Saved!';
+          setTimeout(() => {
+            saveLabel.textContent = 'Save Draft';
+          }, 1200);
+        }, 300);
+      });
+    }
+
+    // Header Flag Button Toggle
+    const headerFlagBtn = document.getElementById('header-flag-btn');
+    let isClipFlagged = false;
+    if (headerFlagBtn) {
+      headerFlagBtn.addEventListener('click', () => {
+        isClipFlagged = !isClipFlagged;
+        if (isClipFlagged) {
+          headerFlagBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-tertiary">bookmark</span><span class="hidden sm:inline">Clip Flagged</span>';
+          headerFlagBtn.classList.add('bg-amber-50', 'border-amber-300');
+        } else {
+          headerFlagBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-tertiary">bookmark_border</span><span class="hidden sm:inline">Flag Clip for Review</span>';
+          headerFlagBtn.classList.remove('bg-amber-50', 'border-amber-300');
+        }
+      });
+    }
+
+    // Hotkey listener (Space for audio play/pause, Ctrl+S for saving)
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        triggerAutosave();
+        if (saveDraftBtn) saveDraftBtn.click();
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === '1') {
+        e.preventDefault();
+        insertToken('। ');
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        insertToken('[crosstalk] ');
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'i') {
+        e.preventDefault();
+        insertToken('[inaudible] ');
+      }
+      if (e.altKey && e.key === '1') {
+        e.preventDefault();
+        insertToken('\n[Speaker 1:] ');
+      }
+      if (e.altKey && e.key === '2') {
+        e.preventDefault();
+        insertToken('\n[Speaker 2:] ');
+      }
+    });
+
+    const txBox = document.getElementById('transcript-box');
+    if (txBox) {
+      txBox.addEventListener('input', () => {
+        updateWordCounts();
+        triggerAutosave();
+      });
+    }
+  </script>
+</body></html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_blank" name="shell-type">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f9f9fb",
+            "surface-dim": "#d9dadc",
+            "surface-bright": "#f9f9fb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f3f5",
+            "surface-container": "#eeeef0",
+            "surface-container-high": "#e8e8ea",
+            "surface-container-highest": "#e2e2e4",
+            "on-surface": "#1a1c1d",
+            "on-surface-variant": "#6e6e73",
+            "primary": "#0066cc",
+            "primary-hover": "#0052a3",
+            "primary-active": "#0077ed",
+            "primary-subtle": "#ebf4ff",
+            "border-subtle": "#e5e5ea",
+            "border-muted": "#d1d1d6",
+            "text-muted": "#86868b",
+            "brand-dark": "#1d1d1f"
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"]
+          },
+          boxShadow: {
+            "card": "0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03)",
+            "elevated": "0 20px 40px -15px rgba(0, 0, 0, 0.08)",
+            "button": "0 1px 2px rgba(0, 102, 204, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f5f5f7] text-[#1d1d1f] min-h-screen flex flex-col justify-center items-center antialiased relative selection:bg-[#0066cc]/15 selection:text-[#0066cc]">
+<!-- Subtle Ambient Glow -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[500px] bg-gradient-to-tr from-blue-100/40 to-indigo-50/20 blur-3xl opacity-70"></div>
+</div>
+<main class="w-full relative z-10 py-10 px-4 sm:px-6 flex justify-center items-center">
+<div class="w-full max-w-[480px]"><div class="flex items-center justify-center gap-3 mb-6"><div class="w-10 h-10 rounded-xl bg-[#5925dc] flex items-center justify-center shadow-sm text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 1 1v16a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm-4 4a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1zm8 0a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1zm-12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1zm16 0a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z"></path></svg></div><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-[#1d1d1f]">Svara</span></div></div>
+<!-- Logo & Brand Header -->
+<!-- Main Login Card -->
+<div class="bg-white rounded-2xl border border-[#e5e5ea] shadow-card p-6 sm:p-8 backdrop-blur-sm"><!-- Branding Header inside Card -->
+<div class="text-left mb-6"><h1 class="text-2xl font-bold text-[#1d1d1f] tracking-tight mb-1.5">Welcome back</h1><p class="text-sm font-normal text-[#6e6e73]">Log in to continue your contribution journey.</p></div>
+<!-- Authentication Form -->
+<form class="space-y-4" id="login-form" novalidate="">
+<!-- Email Field -->
+<div class="space-y-1.5">
+<label class="block text-sm font-medium text-[#1d1d1f] text-left mb-1.5" for="email">Email address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-[#86868b] pointer-events-none">mail</span>
+<input autocomplete="email" class="w-full h-11 bg-[#f9f9fb] text-[#1d1d1f] text-sm pl-10 pr-3.5 rounded-xl border border-[#e5e5ea] placeholder:text-[#86868b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0066cc]/20 focus:border-[#0066cc] transition-all" id="email" name="email" placeholder="you@example.com" required="" type="email">
+</div>
+<p class="hidden text-xs text-[#ba1a1a] text-left pt-0.5" id="email-error"></p>
+</div>
+<!-- Password Field -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="text-sm font-medium text-[#1d1d1f]" for="password">Password</label>
+<a class="text-sm font-normal text-[#2563eb] hover:underline transition-colors" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-[#86868b] pointer-events-none">lock</span>
+<input autocomplete="current-password" class="w-full h-11 bg-[#f9f9fb] text-[#1d1d1f] text-sm pl-10 pr-10 rounded-xl border border-[#e5e5ea] placeholder:text-[#86868b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0066cc]/20 focus:border-[#0066cc] transition-all" id="password" name="password" placeholder="Enter your password" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 text-[#86868b] hover:text-[#1d1d1f] rounded-lg transition-colors flex items-center justify-center" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[18px] leading-none block" id="eye-icon">visibility</span>
+</button>
+</div>
+<p class="hidden text-xs text-[#ba1a1a] text-left pt-0.5" id="password-error"></p>
+</div>
+<!-- Controls: Remember Me -->
+<div class="flex items-center justify-between pt-0.5"><label class="relative flex items-center gap-2 cursor-pointer select-none"><input class="w-4 h-4 rounded text-[#2563eb] border-[#d1d1d6] focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#2563eb]" id="remember" type="checkbox"><span class="text-sm text-[#4b5563] font-normal">Remember me</span></label></div>
+<!-- Primary Submit Button -->
+<div class="pt-2">
+<button class="w-full h-12 bg-[#2563eb] hover:bg-[#1d4ed8] text-white rounded-xl font-medium text-base transition-all duration-150 flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]" id="submit-btn" type="submit"><span id="submit-text" class="">Log In</span><span class="text-base leading-none">→</span></button>
+</div>
+</form>
+<!-- Registration Entry Point -->
+<div class="mt-6 space-y-6"><div class="relative flex items-center justify-center"><div class="w-full border-t border-[#e5e5ea]"></div><span class="absolute bg-white px-3 text-xs text-[#86868b] font-medium tracking-wide uppercase">OR</span></div><div class="grid grid-cols-2 gap-3 mb-3"><button type="button" class="w-full h-11 bg-white hover:bg-gray-50 text-[#1d1d1f] border border-[#e5e5ea] rounded-xl font-medium text-sm transition-all duration-150 flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]" id="google-login-btn"><svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.64v3h3.86c2.26-2.09 3.68-5.17 3.68-9.08z"></path><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.34 24 12 24z"></path><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.61H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.39l3.98-3.1z"></path><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.7 1.29 6.61l3.98 3.09c.95-2.85 3.6-4.95 6.73-4.95z"></path></svg><span class="">Google</span></button><button type="button" class="w-full h-11 bg-white hover:bg-gray-50 text-[#1d1d1f] border border-[#e5e5ea] rounded-xl font-medium text-sm transition-all duration-150 flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]" id="apple-login-btn"><svg class="w-4 h-4 fill-current text-[#1d1d1f]" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.75 1.01.08 2.05-.5 2.68-1.25z"></path></svg><span class="">Apple</span></button></div><button class="w-full h-12 bg-white hover:bg-gray-50 text-[#1d1d1f] border border-[#e5e5ea] rounded-xl font-medium text-sm transition-all duration-150 flex items-center justify-center gap-2.5 shadow-sm active:scale-[0.99]" id="email-link-btn" type="button"><span class="material-symbols-outlined text-[18px] text-[#1d1d1f]">mail</span><span class="">Continue with email link</span></button><div class="pt-2 text-center"><p class="text-sm text-[#6e6e73] mb-1">New to Svara?</p><a class="font-semibold text-[#2563eb] hover:underline transition-colors inline-flex items-center gap-1 text-sm" href="#">Become a Contributor <span class="text-sm leading-none">→</span></a></div></div></div>
+<!-- Sub-footer Links -->
+<footer class="mt-8 text-center flex flex-col items-center gap-2 text-xs text-[#86868b]"><p class="text-sm text-[#6e6e73] font-medium mb-1">Your language can make AI better.</p><div class="flex flex-wrap items-center justify-center gap-2"><a class="hover:text-[#1d1d1f] transition-colors" href="#">Privacy Policy</a><span class="">•</span><a class="hover:text-[#1d1d1f] transition-colors" href="#">Terms of Service</a><span class="">•</span><a class="hover:text-[#1d1d1f] transition-colors" href="#">Help &amp; Support</a></div><p class="text-xs text-[#86868b] mt-1">© 2025 Svara Systems, Inc. All rights reserved. • Protocol v2.4</p></footer>
+</div>
+</main>
+<script>
+    // Demo Preset Credentials Quick Fill
+    document.querySelectorAll('.preset-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const email = pill.getAttribute('data-email');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        
+        emailInput.value = email;
+        passwordInput.value = 'DemoSecret123!';
+        
+        // Subtle active glow feedback
+        emailInput.classList.add('ring-2', 'ring-[#0066cc]/40', 'bg-white');
+        setTimeout(() => {
+          emailInput.classList.remove('ring-2', 'ring-[#0066cc]/40');
+        }, 400);
+      });
+    });
+
+    // Toggle Password Visibility
+    const toggleBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye-icon');
+
+    toggleBtn.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.textContent = 'visibility_off';
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.textContent = 'visibility';
+      }
+    });
+
+    // Submit Micro-interaction
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      if (email) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Authenticating...</span><span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>';
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Sign In</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+        }, 1200);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+</body></html>

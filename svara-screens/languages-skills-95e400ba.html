@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#ffb692","outline":"#727784","on-secondary-fixed-variant":"#474649","secondary-container":"#e2dfe1","on-surface-variant":"#414753","on-primary-fixed":"#001b3e","background":"#f9f9fb","on-tertiary":"#ffffff","secondary":"#5f5e60","primary-subtle":"#EBF4FF","surface":"#f9f9fb","surface-container-low":"#f3f3f5","tertiary-container":"#af4900","primary-fixed-dim":"#aac7ff","surface-variant":"#e2e2e4","on-secondary-fixed":"#1b1b1d","border-subtle":"#E5E5EA","primary-hover":"#0052A3","secondary-fixed":"#e4e2e4","on-error-container":"#93000a","outline-variant":"#c1c6d5","on-tertiary-fixed-variant":"#793000","surface-bright":"#f9f9fb","secondary-fixed-dim":"#c8c6c8","on-secondary-container":"#636264","surface-tint":"#005cba","inverse-surface":"#2f3132","primary":"#004e9f","on-primary":"#ffffff","primary-container":"#0066cc","primary-fixed":"#d7e3ff","surface-container-lowest":"#ffffff","text-muted":"#86868B","on-primary-container":"#dfe8ff","surface-container-highest":"#e2e2e4","on-tertiary-container":"#ffe3d6","primary-active":"#0077ED","on-error":"#ffffff","surface-dim":"#d9dadc","tertiary-fixed":"#ffdbcb","on-surface":"#1a1c1d","surface-container-high":"#e8e8ea","surface-container":"#eeeef0","on-secondary":"#ffffff","error":"#ba1a1a","surface-base":"#FFFFFF","tertiary":"#883700","on-tertiary-fixed":"#341100","border-muted":"#D1D1D6","on-primary-fixed-variant":"#00458e","on-background":"#1a1c1d","inverse-on-surface":"#f0f0f2","error-container":"#ffdad6","inverse-primary":"#aac7ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem",margin:"3rem","space-lg":"1.5rem","space-md":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem"},fontFamily:{"label-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"display-hero-mobile":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"]},fontSize:{"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-border-subtle shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><div class="w-full h-full px-gutter flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 3v18M8 6v12M4 10v4M16 7v10M20 10v4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">SVARA</span><span class="px-space-xs py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">Workspace</span></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg"><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="dashboard" href="#">Dashboard</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="opportunities" href="#">Opportunities</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="my-tasks" href="#">My Tasks</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="assessments-training" href="#">Assessments &amp; Training</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="earnings" href="#">Earnings</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-lg" data-path="performance" href="#">Performance</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-1.5 text-xs text-text-muted bg-surface-container-low px-2.5 py-1 rounded-full"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> All changes saved</div><button aria-label="Notifications" class="relative w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><button aria-label="Help &amp; Support" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="flex items-center gap-space-sm pl-space-sm py-1 px-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer"><img alt="Priya Nair avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VfHI9T2l2ts68WJAtZGaRoS0jzucvJztff7rfLkypzO1uuMvgWvyYVo9lHpQVnjyesM83Ipc-B28siAVaclCsPWADW0cICr6nQ_n5W-YAnnTWDnmNZ_qokfp9FEdnRgZDkgRWbk6bvSi18w_yWHl3v-1xaXs4mlK87fmFRljk1Wc8-ZckcEc2jnRqs_Y_nGZ-UQdPIRDxxjNrYAX0OA3GTYzq916VpY7yEdjOAai_IMvDChJmDtpLaRg"/><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface leading-tight font-semibold">Priya Nair</span><span class="font-label-sm text-label-sm text-text-muted">Active Contributor</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest z-40 border-r border-border-subtle shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex flex-col justify-between p-space-lg"><div class="flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-text-muted tracking-wider uppercase font-semibold">Workspace Partition</span><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Profile Console</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary rounded-xl font-medium"><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="profile-overview" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="personal-information" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Personal Information</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 transition-all bg-primary-container text-on-primary rounded-xl font-medium shadow-xs" data-path="languages-and-skills" href="#"><span class="material-symbols-outlined text-[20px]">translate</span><span>Languages &amp; Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="verification-and-documents" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Verification &amp; Documents</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="account-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Account Settings</span></a></nav></div><div class="p-space-md rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Profile Readiness</span><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold">Tier 2</span></div><div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="w-4/5 h-full bg-primary-container rounded-full"></div></div><span class="font-label-sm text-label-sm text-text-muted">80% completed • Eligible for tasks</span></div></aside><div class="pl-72"><main class="w-full pt-16 bg-background min-h-screen px-gutter py-space-lg flex flex-col gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-text-muted pt-space-md"><span class="text-on-surface-variant hover:text-primary cursor-pointer">Profile</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-primary font-medium">Languages &amp; Skills</span></div><div class="w-full max-w-6xl pb-margin flex flex-col gap-space-lg">
+<!-- 1. Page Header (Clean, Empowering, Free of Jargon) -->
+<section class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-2xl border border-border-subtle shadow-xs">
+<div class="flex flex-col gap-1 max-w-2xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Languages &amp; Skills</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+      Manage your languages, dialects, proficiency and the tasks you're interested in performing.
+    </p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="px-4 py-2.5 rounded-xl bg-primary-container hover:bg-primary-hover active:bg-primary-active text-on-primary font-label-md text-label-md font-medium flex items-center gap-2 shadow-xs transition-colors cursor-pointer" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Language</span>
+</button>
+</div>
+</section>
+<!-- 2. Compact Profile Summary at Top (4 concise KPI cards) -->
+<section class="grid grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-xs flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">language</span>
+</div>
+<div class="flex flex-col">
+<span class="text-2xl font-semibold text-on-surface leading-tight">3</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Languages Added</span>
+<span class="font-label-sm text-label-sm text-text-muted">1 Primary, 2 Additional</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-xs flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="text-2xl font-semibold text-on-surface leading-tight">3</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Task Certifications</span>
+<span class="font-label-sm text-label-sm text-text-muted">2 Certified Gold, 1 Passed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-xs flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+<div class="flex flex-col">
+<span class="text-2xl font-semibold text-on-surface leading-tight">1</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Assessment In Review</span>
+<span class="font-label-sm text-label-sm text-text-muted">Bhojpuri Diarization</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-border-subtle shadow-xs flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-violet-50 text-violet-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">map</span>
+</div>
+<div class="flex flex-col">
+<span class="text-2xl font-semibold text-on-surface leading-tight">4</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Regional Dialects</span>
+<span class="font-label-sm text-label-sm text-text-muted">Registered across profile</span>
+</div>
+</div>
+</section>
+<!-- Section Heading -->
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">My Languages</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-xs font-medium text-on-surface-variant">3 Total</span>
+</div>
+<span class="text-xs text-text-muted">Click any language card to collapse or expand details</span>
+</div>
+<!-- 3. "My Languages" Section with Expandable Cards -->
+<div class="flex flex-col gap- space-lg space-y-4">
+<!-- CARD 1: HINDI (Expanded by default) -->
+<article class="bg-surface-container-lowest rounded-2xl border border-border-subtle shadow-xs overflow-hidden transition-all" id="card-hindi">
+<!-- Language Header -->
+<div class="p-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b border-border-subtle/80 cursor-pointer select-none bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors" onclick="toggleCard('card-hindi-content', 'card-hindi-chevron')">
+<div class="flex items-start sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-semibold flex-shrink-0 shadow-xs">
+          हि
+        </div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Hindi</span>
+<span class="text-xs text-text-muted font-normal">(hi-IN • Devanagari)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">star</span> Primary Language
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary text-xs font-medium">
+              Native Speaker
+            </span>
+</div>
+<p class="text-xs text-on-surface-variant flex items-center gap-2">
+<span>Speaking: <strong>Native</strong></span>
+<span>•</span>
+<span>2 Dialects</span>
+<span>•</span>
+<span class="text-emerald-700 font-medium">2 Certified Tasks</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end lg:self-center" onclick="event.stopPropagation()">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Language</span>
+</button>
+<button class="w-8 h-8 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors cursor-pointer" title="More options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-transform" id="card-hindi-chevron" onclick="toggleCard('card-hindi-content', 'card-hindi-chevron')">
+<span class="material-symbols-outlined text-[20px]">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Expanded Body Content -->
+<div class="p-space-lg flex flex-col gap-space-lg" id="card-hindi-content">
+<!-- Subsection A: 4-Dimension Self-Reported Proficiency -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Self-Reported Proficiency</span>
+<span class="text-xs text-text-muted bg-surface-container-high px-2 py-0.5 rounded-full">Subjective assessment</span>
+</div>
+<span class="text-xs text-text-muted">Used for qualification routing</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-1">
+<span class="text-xs text-text-muted font-medium">Speaking</span>
+<span class="text-base font-semibold text-on-surface">Native</span>
+<span class="text-xs text-on-surface-variant">Unaccented standard Hindi</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-1">
+<span class="text-xs text-text-muted font-medium">Listening</span>
+<span class="text-base font-semibold text-on-surface">Native</span>
+<span class="text-xs text-on-surface-variant">Understands fast regional speech</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-1">
+<span class="text-xs text-text-muted font-medium">Reading</span>
+<span class="text-base font-semibold text-on-surface">Fluent</span>
+<span class="text-xs text-on-surface-variant">Standard Devanagari orthography</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-1">
+<span class="text-xs text-text-muted font-medium">Writing</span>
+<span class="text-base font-semibold text-on-surface">Fluent</span>
+<span class="text-xs text-on-surface-variant">Formal and conversational prose</span>
+</div>
+</div>
+</div>
+<!-- Subsection B: Dialects & Regional Variants -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Dialects &amp; Regional Variants</span>
+<button class="text-primary hover:text-primary-hover font-label-sm text-label-sm font-semibold flex items-center gap-1 cursor-pointer" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Suggest / Add Dialect</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md font-semibold text-on-surface">Khariboli / Delhi-NCR</span>
+<span class="px-2 py-0.5 bg-primary-subtle text-primary rounded-full text-xs font-medium">Primary Dialect</span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Spoken &amp; understood natively • Slang &amp; colloquial phrasing familiar</span>
+</div>
+</div>
+<span class="text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-medium">Daily</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md font-semibold text-on-surface">Awadhi</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-medium">Regional Exposure</span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Understood comfortably • 10+ years regional cultural familiarity</span>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-md font-medium">Secondary</span>
+</div>
+</div>
+</div>
+<!-- Subsection C: Task Interests -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Task Interests for Hindi</span>
+<span class="text-xs text-text-muted">Select task types you want to be matched with</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary-subtle text-primary border border-primary/20 text-xs font-medium flex items-center gap-1.5 cursor-pointer hover:bg-primary-subtle/80 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_box</span>
+<span>Speech Transcription</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-subtle text-primary border border-primary/20 text-xs font-medium flex items-center gap-1.5 cursor-pointer hover:bg-primary-subtle/80 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_box</span>
+<span>Text NER &amp; Annotation</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-subtle text-primary border border-primary/20 text-xs font-medium flex items-center gap-1.5 cursor-pointer hover:bg-primary-subtle/80 transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_box</span>
+<span>AI Response Evaluation</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant border border-border-subtle text-xs font-medium flex items-center gap-1.5 cursor-pointer hover:bg-surface-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">check_box_outline_blank</span>
+<span>Audio Diarization (Not selected)</span>
+</button>
+</div>
+</div>
+<!-- Subsection D: Task-Specific Qualifications -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Task Qualifications</span>
+<span class="text-xs text-text-muted bg-surface-container-high px-2 py-0.5 rounded-full">Proctored Benchmarks</span>
+</div>
+<span class="text-xs text-text-muted">Directly unlocks paid opportunities</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+<!-- Card 1: Certified Gold -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col justify-between gap-3 hover:border-border-muted transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span> Certified Gold
+                </span>
+<span class="text-xs text-text-muted">Valid: 3 Years</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Speech Transcription</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Verbatim timestamping, disfluency marking, and multi-speaker overlapping boundary detection.
+              </p>
+<div class="mt-1 pt-2 border-t border-border-subtle flex items-center justify-between text-xs">
+<div class="flex flex-col">
+<span class="text-text-muted">Score Achieved</span>
+<span class="text-lg font-bold text-emerald-700">99.6%</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="text-text-muted">Passed: Oct 2024</span>
+<span class="text-on-surface font-medium">Attempt 1 of 3</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-primary font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="openDrawer('Speech Transcription Benchmark', '99.6%', 'October 14, 2024', '1 of 3', 'Valid through Oct 2027 (3 Years)', 'Exemplary performance across conversational code-switched Hindi-English audio datasets. Zero temporal drift detected in timestamp synchronization.', 'Eligible for Lead QA Reviewer assignments.')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2: Assessment Passed -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col justify-between gap-3 hover:border-border-muted transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary border border-primary/20 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Assessment Passed
+                </span>
+<span class="text-xs text-amber-700 font-medium">Retake for Gold</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Text NER &amp; Tagging</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Named-entity tagging, dependency parsing, and POS classification across standard prose.
+              </p>
+<div class="mt-1 pt-2 border-t border-border-subtle flex items-center justify-between text-xs">
+<div class="flex flex-col">
+<span class="text-text-muted">Score Achieved</span>
+<span class="text-lg font-bold text-primary">94.2%</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="text-text-muted">Passed: Nov 2024</span>
+<span class="text-on-surface font-medium">Min Req: 90.0%</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="openDrawer('Text NER &amp; Tagging Benchmark', '94.2%', 'November 03, 2024', '2 of 3', 'Valid through Nov 2026', 'Strong grasp of complex noun phrase structures. Slight ambiguity noted around loan-word named entities from Perso-Arabic origins.', 'Eligible to retake at any time to unlock Tier 1 Gold allocation rates.')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<!-- Card 3: Assessment Available -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-dashed border-border-muted flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> Assessment Available
+                </span>
+<span class="text-xs text-text-muted">Est. 25 mins</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">AI Response Evaluation</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Comparative ranking of LLM responses for nuance, helpfulness, and safety guidelines.
+              </p>
+<div class="mt-1 pt-2 border-t border-border-subtle flex items-center justify-between text-xs">
+<div class="flex flex-col">
+<span class="text-text-muted">Status</span>
+<span class="text-sm font-semibold text-on-surface">Ready to start</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="text-text-muted">Attempts</span>
+<span class="text-on-surface font-medium">0 of 3 used</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-primary-container hover:bg-primary-hover active:bg-primary-active text-on-primary font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs">
+<span>Take Assessment</span>
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: BHOJPURI (Expandable / Semi-collapsed state) -->
+<article class="bg-surface-container-lowest rounded-2xl border border-border-subtle shadow-xs overflow-hidden transition-all" id="card-bhojpuri">
+<!-- Language Header -->
+<div class="p-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b border-border-subtle/80 cursor-pointer select-none bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors" onclick="toggleCard('card-bhojpuri-content', 'card-bhojpuri-chevron')">
+<div class="flex items-start sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-semibold flex-shrink-0 shadow-xs">
+          भोज
+        </div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Bhojpuri</span>
+<span class="text-xs text-text-muted font-normal">(bho-IN • Eastern Indo-Aryan)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface text-xs font-medium">
+              Additional Language
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary text-xs font-medium">
+              Heritage Speaker
+            </span>
+</div>
+<p class="text-xs text-on-surface-variant flex items-center gap-2">
+<span>Speaking: <strong>Fluent</strong></span>
+<span>•</span>
+<span>1 Dialect</span>
+<span>•</span>
+<span class="text-amber-700 font-medium">1 In Review</span>
+<span>•</span>
+<span class="text-rose-700 font-medium">1 Needs Improvement</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end lg:self-center" onclick="event.stopPropagation()">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Language</span>
+</button>
+<button class="w-8 h-8 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors cursor-pointer" title="More options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-transform" id="card-bhojpuri-chevron" onclick="toggleCard('card-bhojpuri-content', 'card-bhojpuri-chevron')">
+<span class="material-symbols-outlined text-[20px]">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Body Content -->
+<div class="p-space-lg flex flex-col gap-space-lg" id="card-bhojpuri-content">
+<!-- Subsections Grid: Dialect & Task Interests side by side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Dialect -->
+<div class="flex flex-col gap-2">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Registered Dialect</span>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex items-start gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-body-md font-semibold text-on-surface">Western Bhojpuri (Rohtas / Bhojpur Belt)</span>
+<span class="text-xs text-on-surface-variant mt-0.5">Fluent conversational cadence and regional terminology</span>
+</div>
+</div>
+</div>
+<!-- Task Interests -->
+<div class="flex flex-col gap-2">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Task Interests</span>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="px-3 py-1.5 rounded-lg bg-primary-subtle text-primary border border-primary/20 text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check</span> Speech Transcription
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-primary-subtle text-primary border border-primary/20 text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">check</span> Audio Diarization
+            </span>
+</div>
+</div>
+</div>
+<!-- Qualifications -->
+<div class="flex flex-col gap-2.5">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Task Qualifications</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<!-- Item 1: Pending QA Review -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> Pending QA Review
+                </span>
+<span class="text-xs text-text-muted">Submitted 2 days ago</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Audio Annotation &amp; Diarization</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Acoustic boundary markers and multi-speaker turn identification in field audio recordings.
+              </p>
+<div class="mt-1 p-2 rounded-lg bg-surface-container-lowest border border-border-subtle flex items-center justify-between text-xs">
+<span class="text-on-surface-variant">Linguistic QA verification step</span>
+<span class="text-primary font-medium">Estimated 24-36h</span>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="openDrawer('Audio Annotation &amp; Diarization Benchmark', 'In Review', 'Submitted 2 days ago', '1 of 3', 'Pending Senior Reviewer approval', 'Test recording audio files are currently undergoing human spot-check for acoustic boundary precision.', 'You will receive an automated notification as soon as verification completes.')">
+<span>View Status</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<!-- Item 2: Needs Improvement -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-rose-200 flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Needs Improvement
+                </span>
+<span class="text-xs text-rose-700 font-medium">Retake in 4 days</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Field Speech Transcription</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Colloquial speech transcription under environmental acoustic noise.
+              </p>
+<div class="mt-1 p-2.5 rounded-lg bg-rose-50/70 border border-rose-100 flex flex-col gap-1 text-xs">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-rose-800">Score: 78.5% (Min Req: 85.0%)</span>
+</div>
+<span class="text-on-surface-variant italic">Reviewer Note: “Check unvoiced stop consonant clipping”</span>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-rose-200 text-rose-800 font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="openDrawer('Field Speech Transcription Assessment', '78.5%', 'October 29, 2024', '1 of 3', 'Requires minimum 85.0% threshold', 'Detailed breakdown: Acoustic alignment was solid at 89.0%, but normalization for unvoiced stops fell short. Review Western Bhojpuri guidelines on voiceless velar codas.', 'Cooling off period active. Retake allowed on November 10, 2024 (in 4 days). Review the dialect style guide before retaking.')">
+<span>View Feedback &amp; Guidelines</span>
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: ENGLISH (Collapsed card demonstrating progressive disclosure) -->
+<article class="bg-surface-container-lowest rounded-2xl border border-border-subtle shadow-xs overflow-hidden transition-all" id="card-english">
+<!-- Language Header -->
+<div class="p-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md cursor-pointer select-none bg-surface-container-lowest hover:bg-surface-container-low/40 transition-colors" onclick="toggleCard('card-english-content', 'card-english-chevron')">
+<div class="flex items-start sm:items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-semibold flex-shrink-0 shadow-xs">
+          EN
+        </div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">English</span>
+<span class="text-xs text-text-muted font-normal">(en-IN / en-US)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface text-xs font-medium">
+              Additional Language
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary text-xs font-medium">
+              Professional / Bilingual
+            </span>
+</div>
+<p class="text-xs text-on-surface-variant flex items-center gap-2">
+<span>Speaking: <strong>Fluent</strong></span>
+<span>•</span>
+<span>Standard Indian &amp; Global English</span>
+<span>•</span>
+<span class="text-emerald-700 font-medium">1 Certified Task</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end lg:self-center" onclick="event.stopPropagation()">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors cursor-pointer" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Language</span>
+</button>
+<button class="w-8 h-8 rounded-lg border border-border-subtle hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors cursor-pointer" title="More options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-transform" id="card-english-chevron" onclick="toggleCard('card-english-content', 'card-english-chevron')">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Collapsed Content Container (hidden by default) -->
+<div class="p-space-lg border-t border-border-subtle/80 flex flex-col gap-space-lg hidden" id="card-english-content">
+<div class="flex flex-col gap-2.5">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Task Qualifications</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span> Certified Gold
+                </span>
+<span class="text-xs text-text-muted">Valid thru Dec 2027</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">AI Safety &amp; Multimodal Evaluation</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">
+                Adversarial red-teaming, prompt safety review, and harmfulness classification.
+              </p>
+<div class="mt-1 pt-2 border-t border-border-subtle flex items-center justify-between text-xs">
+<div class="flex flex-col">
+<span class="text-text-muted">Score Achieved</span>
+<span class="text-lg font-bold text-emerald-700">99.2%</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="text-text-muted">Attempts: 1/3</span>
+<span class="text-on-surface font-medium">Top Percentile</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container border border-border-subtle text-primary font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer" onclick="openDrawer('AI Safety &amp; Multimodal Evaluation', '99.2%', 'December 01, 2024', '1 of 3', 'Valid through Dec 2027 (3 Years)', 'Flawless identification of hate speech taxonomies and cyber security threat indicators. Exemplary precision score.', 'Qualified for high-compensation Adversarial RLHF streams.')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. Add Another Language Trigger Card at Bottom of List -->
+<div class="border-2 border-dashed border-border-subtle hover:border-primary/50 bg-surface-container-lowest/50 hover:bg-surface-container-low/50 rounded-2xl p-6 flex items-center justify-center gap-2 cursor-pointer transition-all text-on-surface-variant hover:text-primary group" onclick="document.getElementById('modal-add-language').classList.remove('hidden')">
+<div class="w-8 h-8 rounded-full bg-primary-subtle text-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<span class="font-body-md font-semibold text-sm">Add Another Language or Dialect</span>
+</div>
+</div>
+<!-- MODAL: Add Language or Dialect -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden p-gutter" id="modal-add-language">
+<div class="bg-surface-container-lowest rounded-2xl border border-border-subtle shadow-xl w-full max-w-xl max-h-[90vh] overflow-y-auto flex flex-col animate-in fade-in zoom-in-95 duration-150">
+<div class="p-space-lg flex items-center justify-between border-b border-border-subtle">
+<div class="flex flex-col gap-0.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Add Language or Dialect</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Register a new language or dialect to unlock matching tasks.</p>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center cursor-pointer transition-colors" onclick="document.getElementById('modal-add-language').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Select Language -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-on-surface">Select Language</label>
+<div class="relative">
+<select class="w-full px-3 py-2 bg-surface-container-low border border-border-subtle rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Choose a language...</option>
+<option value="pan">Punjabi (Gurmukhi / Shahmukhi)</option>
+<option value="tam">Tamil</option>
+<option value="tel">Telugu</option>
+<option value="ben">Bengali</option>
+<option value="mar">Marathi</option>
+<option value="urd">Urdu</option>
+<option value="guj">Gujarati</option>
+<option value="kan">Kannada</option>
+<option value="mal">Malayalam</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-[18px] text-text-muted pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-on-surface">Fluency Type</label>
+<select class="w-full px-3 py-2 bg-surface-container-low border border-border-subtle rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option>Native / Mother Tongue</option>
+<option>Heritage Speaker</option>
+<option>Fluent / Professional</option>
+<option>Conversational</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-on-surface">Years of Exposure</label>
+<input class="w-full px-3 py-2 bg-surface-container-low border border-border-subtle rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. 10" type="number"/>
+</div>
+</div>
+<!-- Self-Reported Proficiency -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-on-surface">Self-Reported Proficiency</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-text-muted">Speaking</span>
+<select class="w-full px-2 py-1.5 bg-surface-container-low border border-border-subtle rounded-lg text-xs text-on-surface">
+<option>Native</option>
+<option>Fluent</option>
+<option>Intermediate</option>
+<option>Basic</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-text-muted">Listening</span>
+<select class="w-full px-2 py-1.5 bg-surface-container-low border border-border-subtle rounded-lg text-xs text-on-surface">
+<option>Native</option>
+<option>Fluent</option>
+<option>Intermediate</option>
+<option>Basic</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-text-muted">Reading</span>
+<select class="w-full px-2 py-1.5 bg-surface-container-low border border-border-subtle rounded-lg text-xs text-on-surface">
+<option>Fluent</option>
+<option>Native</option>
+<option>Intermediate</option>
+<option>Basic</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-text-muted">Writing</span>
+<select class="w-full px-2 py-1.5 bg-surface-container-low border border-border-subtle rounded-lg text-xs text-on-surface">
+<option>Fluent</option>
+<option>Native</option>
+<option>Intermediate</option>
+<option>Basic</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Regional Dialects -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold text-on-surface">Dialect / Regional Variety (Optional)</label>
+<input class="w-full px-3 py-2 bg-surface-container-low border border-border-subtle rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Doabi, Majhi, Malwi..." type="text"/>
+<span class="text-xs text-text-muted">Helps match you to dialect-specific transcription and evaluation tasks.</span>
+</div>
+<!-- Notice -->
+<div class="p-3 bg-primary-subtle rounded-xl flex items-start gap-2 border border-primary/20">
+<span class="material-symbols-outlined text-[18px] text-primary mt-0.5">info</span>
+<span class="text-xs text-on-surface-variant leading-relaxed">
+          Adding a language unlocks its benchmark assessments. Once passed, you'll be assigned eligible project workflows.
+        </span>
+</div>
+</div>
+<div class="p-space-lg border-t border-border-subtle flex items-center justify-end gap-2 bg-surface-container-low/50">
+<button class="px-4 py-2 rounded-xl border border-border-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors cursor-pointer" onclick="document.getElementById('modal-add-language').classList.add('hidden')">
+        Cancel
+      </button>
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary hover:bg-primary-hover font-label-md text-label-md font-medium transition-colors cursor-pointer shadow-xs" onclick="document.getElementById('modal-add-language').classList.add('hidden')">
+        Save Language
+      </button>
+</div>
+</div>
+</div>
+<!-- QUALIFICATION DETAIL DRAWER -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="qualification-drawer" role="dialog">
+<div class="absolute inset-0 bg-inverse-surface/30 backdrop-blur-xs transition-opacity" onclick="closeDrawer()"></div>
+<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+<div class="pointer-events-auto w-screen max-w-md bg-surface-container-lowest shadow-2xl flex flex-col justify-between border-l border-border-subtle animate-in slide-in-from-right duration-200">
+<!-- Drawer Header -->
+<div class="p-space-lg border-b border-border-subtle flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm w-fit font-semibold uppercase">Qualification Details</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface" id="drawer-title">Benchmark Detail</h2>
+<span class="font-label-sm text-label-sm text-text-muted">Proctored Assessment Record</span>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center cursor-pointer transition-colors" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="p-space-lg flex-1 overflow-y-auto flex flex-col gap-space-lg">
+<!-- Score Summary Box -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between shadow-xs">
+<div class="flex flex-col">
+<span class="text-xs text-text-muted">Certified Score</span>
+<span class="text-3xl font-bold text-primary" id="drawer-score">--</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-xs text-text-muted">Attempts Logged</span>
+<span class="text-base font-semibold text-on-surface" id="drawer-attempts">--</span>
+</div>
+</div>
+<!-- Evaluation Metadata -->
+<div class="flex flex-col gap-1.5">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Evaluation Summary</span>
+<div class="grid grid-cols-2 gap-2 p-3 bg-surface-container-low border border-border-subtle rounded-xl text-xs">
+<div class="flex flex-col">
+<span class="text-text-muted">Date Completed</span>
+<span class="text-on-surface font-semibold mt-0.5" id="drawer-date">--</span>
+</div>
+<div class="flex flex-col">
+<span class="text-text-muted">Validity</span>
+<span class="text-on-surface font-semibold mt-0.5" id="drawer-validity">--</span>
+</div>
+</div>
+</div>
+<!-- Reviewer Feedback -->
+<div class="flex flex-col gap-1.5">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Reviewer Feedback</span>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle text-on-surface text-xs leading-relaxed">
+<p id="drawer-feedback">--</p>
+</div>
+</div>
+<!-- Retake & Next Steps -->
+<div class="flex flex-col gap-1.5">
+<span class="text-xs uppercase font-semibold tracking-wider text-text-muted">Next Steps &amp; Allocation</span>
+<div class="p-3.5 rounded-xl bg-primary-subtle border border-primary/20 text-on-surface text-xs leading-relaxed">
+<p id="drawer-rules">--</p>
+</div>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-space-lg border-t border-border-subtle flex items-center justify-between gap-space-sm bg-surface-container-low/50">
+<button class="px-4 py-2 rounded-xl border border-border-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium flex items-center gap-1.5 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Download Summary</span>
+</button>
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary hover:bg-primary-hover font-label-md text-label-md font-medium cursor-pointer shadow-xs transition-colors" onclick="closeDrawer()">
+          Close
+        </button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+<script>
+  function toggleCard(contentId, chevronId) {
+    const content = document.getElementById(contentId);
+    const chevron = document.getElementById(chevronId);
+    if (!content) return;
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      if (chevron) chevron.innerHTML = '<span class="material-symbols-outlined text-[20px]">expand_less</span>';
+    } else {
+      content.classList.add('hidden');
+      if (chevron) chevron.innerHTML = '<span class="material-symbols-outlined text-[20px]">expand_more</span>';
+    }
+  }
+
+  function openDrawer(title, score, date, attempts, validity, feedback, rules) {
+    document.getElementById('drawer-title').innerText = title;
+    document.getElementById('drawer-score').innerText = score;
+    document.getElementById('drawer-date').innerText = date;
+    document.getElementById('drawer-attempts').innerText = attempts;
+    document.getElementById('drawer-validity').innerText = validity;
+    document.getElementById('drawer-feedback').innerText = feedback;
+    document.getElementById('drawer-rules').innerText = rules;
+    
+    document.getElementById('qualification-drawer').classList.remove('hidden');
+  }
+
+  function closeDrawer() {
+    document.getElementById('qualification-drawer').classList.add('hidden');
+  }
+</script>
+</body></html>

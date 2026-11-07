@@ -1,0 +1,1083 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Svara — Train Frontier AI. Get Rewarded.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #FBFBFC;
+        color: #1D1D1F;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: -0.011em;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    @keyframes soundwave {
+      0%, 100% { height: 6px; }
+      50% { height: 28px; }
+    }
+    .wave-bar {
+      transition: height 0.2s ease;
+    }
+    .wave-playing .wave-bar:nth-child(2n) {
+      animation: soundwave 1s ease-in-out infinite alternate;
+    }
+    .wave-playing .wave-bar:nth-child(2n+1) {
+      animation: soundwave 0.8s ease-in-out infinite alternate 0.2s;
+    }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0066CC",
+            "primary-hover": "#0052A3",
+            "primary-subtle": "#F2F7FF",
+            "on-primary": "#FFFFFF",
+            "surface": "#FBFBFC",
+            "surface-base": "#FFFFFF",
+            "surface-container": "#F5F5F7",
+            "surface-container-high": "#ECECED",
+            "on-surface": "#1D1D1F",
+            "on-surface-variant": "#6E6E73",
+            "border-subtle": "#E5E5EA",
+            "border-muted": "#D1D1D6",
+            "text-muted": "#86868B"
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          boxShadow: {
+            'apple-sm': '0 2px 8px rgba(0, 0, 0, 0.04)',
+            'apple-card': '0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02)',
+            'apple-float': '0 20px 40px -15px rgba(0, 0, 0, 0.07)',
+            'pill-glow': '0 8px 24px -4px rgba(0, 102, 204, 0.28)'
+          }
+        },
+      },
+    }
+</script>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-[#EBF4FF] selection:text-primary">
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#FBFBFC]/90 backdrop-blur-xl border-b border-border-subtle/80 transition-all duration-300"><div class="max-w-6xl mx-auto h-16 px-6 sm:px-8 flex items-center justify-between"><div class="flex items-center gap-6"><a class="flex items-center gap-2.5 transition-opacity hover:opacity-85" data-path="landing" href="#"><div class="w-8 h-8 rounded-xl bg-[#090A1A] flex items-center justify-center p-1.5 shadow-sm overflow-hidden flex-shrink-0"><svg class="w-full h-full" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="svaraGrad" x1="0%" x2="100%" y1="50%" y2="50%"><stop offset="0%" stop-color="#00F0FF"></stop><stop offset="50%" stop-color="#7000FF"></stop><stop offset="100%" stop-color="#FF007A"></stop></linearGradient></defs><path d="M10,50 Q30,15 50,30 T90,50" fill="none" stroke="url(#svaraGrad)" stroke-linecap="round" stroke-width="4"></path><path d="M10,50 Q30,85 50,70 T90,50" fill="none" stroke="url(#svaraGrad)" stroke-linecap="round" stroke-width="4"></path><path d="M22,50 Q35,28 50,38 T78,50" fill="none" opacity="0.75" stroke="url(#svaraGrad)" stroke-linecap="round" stroke-width="3"></path><path d="M22,50 Q35,72 50,62 T78,50" fill="none" opacity="0.75" stroke="url(#svaraGrad)" stroke-linecap="round" stroke-width="3"></path><path d="M43,40 C43,36 47,34 51,34 C55,34 58,36 58,39 C58,45 42,46 42,54 C42,61 47,64 52,64 C57,64 60,60 60,56" fill="none" stroke="#00F0FF" stroke-linecap="round" stroke-width="3.8"></path></svg></div><div class="flex items-center gap-2"><span class="font-bold text-[17px] tracking-tight text-[#1D1D1F]">Svara AI</span><span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-primary-subtle text-primary border border-primary/20">Contributor Portal</span></div></a><nav class="hidden md:flex items-center gap-7 text-[13px] font-medium text-on-surface-variant"><a class="hover:text-primary transition-colors" href="#how-it-works">How It Works</a><a class="hover:text-primary transition-colors" href="#task-types">Task Types</a><a class="hover:text-primary transition-colors" href="#sample-task">Sample Task</a><a class="hover:text-primary transition-colors" href="#trust-faqs">Trust &amp; FAQs</a></nav></div><div class="flex items-center gap-3"><a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface px-3 py-1.5 transition-colors" data-path="login" href="#login">Sign In</a><a class="inline-flex items-center px-4 py-2 text-[13px] font-medium text-white bg-primary rounded-full hover:bg-primary-hover shadow-sm transition-all hover:scale-[1.01] active:scale-[0.99]" data-path="contributor-apply" href="#apply">Become a Contributor</a></div></div></header>
+<main class="w-full pt-16">
+<!-- 2. Hero Section -->
+<section class="relative w-full max-w-5xl mx-auto px-6 sm:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24 text-center flex flex-col items-center overflow-hidden">
+<!-- Minimalist Status Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border-subtle shadow-apple-sm text-[12px] font-medium text-on-surface-variant mb-6 relative z-10">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">Now welcoming new contributors worldwide</span>
+</div>
+<!-- Exact Requested Headline -->
+<h1 class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-[#1D1D1F] leading-[1.12] max-w-4xl relative z-10">
+      Your language. Your voice.<br class="hidden sm:inline">
+<span class="text-primary block mt-1.5 sm:mt-2">Your opportunity.</span>
+</h1>
+<!-- Exact Requested Supporting Copy -->
+<p class="mt-6 text-base sm:text-lg md:text-xl text-on-surface-variant max-w-2xl font-normal leading-relaxed tracking-tight relative z-10">
+      Help AI understand the way people really speak. Transcribe audio, identify dialects, and evaluate language quality while earning for your contributions.
+    </p>
+<!-- Hero Call-to-Actions -->
+<div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto relative z-10">
+<a class="w-full sm:w-auto px-7 py-3.5 bg-primary text-white text-[15px] font-medium rounded-full shadow-pill-glow hover:bg-primary-hover transition-all duration-200 inline-flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]" data-path="contributor-apply" href="#apply">
+        Become a Contributor
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-6 py-3.5 bg-white text-on-surface border border-border-subtle text-[15px] font-medium rounded-full shadow-apple-sm hover:bg-surface-container transition-all inline-flex items-center justify-center gap-2" href="#sample-task">
+<span class="material-symbols-outlined text-base text-primary">play_circle</span>
+        Try Interactive Sample Task
+      </a>
+</div>
+<!-- Clean Trust Indicators Pills -->
+<div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-[13px] text-on-surface-variant font-medium">
+<span class="inline-flex items-center gap-1.5 bg-white/80 border border-border-subtle px-3 py-1 rounded-full shadow-apple-sm">
+<span class="material-symbols-outlined text-emerald-600 text-sm font-semibold">check_circle</span> Free to join
+      </span>
+<span class="inline-flex items-center gap-1.5 bg-white/80 border border-border-subtle px-3 py-1 rounded-full shadow-apple-sm">
+<span class="material-symbols-outlined text-emerald-600 text-sm font-semibold">check_circle</span> Flexible schedule
+      </span>
+<span class="inline-flex items-center gap-1.5 bg-white/80 border border-border-subtle px-3 py-1 rounded-full shadow-apple-sm">
+<span class="material-symbols-outlined text-emerald-600 text-sm font-semibold">check_circle</span> Weekly payouts (for approved work)
+      </span>
+</div>
+<!-- Real Contributor Task Preview Card -->
+<div class="mt-12 w-full max-w-3xl mx-auto bg-white rounded-2xl border border-border-subtle shadow-apple-card p-5 sm:p-6 text-left transition-all duration-300 relative z-10">
+<!-- Task Header Metadata -->
+<div class="flex flex-wrap items-center justify-between pb-3.5 mb-4 border-b border-border-subtle gap-2 text-xs">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="font-semibold text-on-surface tracking-tight">Active Contributor Task #SK-4089</span>
+<span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-medium text-[11px]">
+            Hindi (Standard) • Conversational Speech
+          </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-text-muted text-[11px]">Time Estimate: 45s</span>
+<span class="bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-md text-[11px] border border-emerald-200/60 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+            Rate: $0.35 / clip
+          </span>
+</div>
+</div>
+<!-- Micro-interface: Audio player + waveform -->
+<div class="bg-surface-container rounded-xl p-3.5 border border-border-subtle/80 mb-4">
+<div class="flex items-center gap-3">
+<button aria-label="Play audio snippet" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 shadow-sm hover:bg-primary-hover active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between text-[11px] text-text-muted mb-1.5 font-mono">
+<span class="">00:02.40</span>
+<span class="text-on-surface-variant font-medium">Segment: 00:00.00 – 00:05.80</span>
+<span class="">00:05.80</span>
+</div>
+<!-- Waveform bars -->
+<div class="h-8 flex items-center gap-[3px] overflow-hidden px-1">
+<span class="w-1 bg-primary/30 h-3 rounded-full"></span>
+<span class="w-1 bg-primary/40 h-5 rounded-full"></span>
+<span class="w-1 bg-primary/60 h-4 rounded-full"></span>
+<span class="w-1 bg-primary h-7 rounded-full"></span>
+<span class="w-1 bg-primary h-6 rounded-full"></span>
+<span class="w-1 bg-primary h-8 rounded-full"></span>
+<span class="w-1 bg-primary/70 h-5 rounded-full"></span>
+<span class="w-1 bg-primary/50 h-3 rounded-full"></span>
+<span class="w-1 bg-primary/80 h-7 rounded-full"></span>
+<span class="w-1 bg-primary h-8 rounded-full"></span>
+<span class="w-1 bg-primary/70 h-5 rounded-full"></span>
+<span class="w-1 bg-border-muted h-3 rounded-full"></span>
+<span class="w-1 bg-border-muted h-6 rounded-full"></span>
+<span class="w-1 bg-border-muted h-4 rounded-full"></span>
+<span class="w-1 bg-border-muted h-7 rounded-full"></span>
+<span class="w-1 bg-border-muted h-5 rounded-full"></span>
+<span class="w-1 bg-border-muted h-3 rounded-full"></span>
+<span class="w-1 bg-border-muted h-2 rounded-full"></span>
+<span class="w-1 bg-border-muted h-6 rounded-full"></span>
+<span class="w-1 bg-border-muted h-4 rounded-full"></span>
+<span class="w-1 bg-border-muted h-2 rounded-full"></span>
+</div>
+</div>
+<div class="hidden sm:flex flex-col items-end gap-1 flex-shrink-0 text-[11px] text-text-muted">
+<span class="font-medium text-on-surface">1.0x Speed</span>
+<span class="text-[10px] bg-white px-2 py-0.5 rounded border border-border-subtle">Clean Audio</span>
+</div>
+</div>
+</div>
+<!-- Live transcription input preview with entity tags -->
+<div class="space-y-2.5">
+<label class="text-[11px] font-semibold text-text-muted uppercase tracking-wider block">Verified Transcription &amp; Named Entities</label>
+<div class="p-3 bg-white rounded-xl border border-primary/40 ring-2 ring-primary/10 text-xs sm:text-sm font-medium text-on-surface flex flex-wrap items-center gap-1.5">
+<span class="">हम कल सुबह</span>
+<span class="inline-flex items-center gap-1 bg-primary-subtle text-primary font-semibold px-2 py-0.5 rounded text-xs border border-primary/20">
+            दिल्ली
+            <span class="text-[9px] uppercase px-1 py-0.2 bg-white rounded text-primary font-bold">LOC</span>
+</span>
+<span class="">के लिए नई ट्रेन पकड़ेंगे।</span>
+<span class="ml-auto text-[11px] font-medium text-emerald-600 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check</span> 99.4% Match
+          </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-muted pt-1">
+<span class="">Target Script: Devanagari (Hindi)</span>
+<span class="text-primary font-medium hover:underline cursor-pointer">Keyboard shortcuts enabled (Tab / Esc)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Social Proof & Platform Metrics (Authentic & Transparent) -->
+<section class="w-full bg-white border-y border-border-subtle py-14">
+<div class="max-w-5xl mx-auto px-6 sm:px-8">
+<div class="text-center mb-8">
+<span class="text-[11px] font-semibold tracking-wider text-text-muted uppercase">PLATFORM MILESTONES &amp; OPERATIONAL STANDARDS</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center md:text-left">
+<!-- Metric 1 -->
+<div class="flex flex-col items-center md:items-start">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D1D1F]">28+</span>
+<span class="text-xs sm:text-sm font-semibold text-on-surface mt-1">Supported Languages</span>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Major regional languages, accents, and spoken local dialects.</p>
+</div>
+<!-- Metric 2 -->
+<div class="flex flex-col items-center md:items-start border-t md:border-t-0 md:border-l border-border-subtle pt-4 md:pt-0 md:pl-6">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D1D1F]">100%</span>
+<span class="text-xs sm:text-sm font-semibold text-on-surface mt-1">Remote &amp; Self-Paced</span>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">No mandatory shift hours. Log in and contribute on your schedule.</p>
+</div>
+<!-- Metric 3 -->
+<div class="flex flex-col items-center md:items-start border-t md:border-t-0 md:border-l border-border-subtle pt-4 md:pt-0 md:pl-6">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D1D1F]">Weekly</span>
+<span class="text-xs sm:text-sm font-semibold text-on-surface mt-1">Payout Schedule</span>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Direct automated transfers for all verified, approved submissions.</p>
+</div>
+<!-- Metric 4 -->
+<div class="flex flex-col items-center md:items-start border-t md:border-t-0 md:border-l border-border-subtle pt-4 md:pt-0 md:pl-6">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D1D1F]">Human-Led</span>
+<span class="text-xs sm:text-sm font-semibold text-on-surface mt-1">Quality Reviews</span>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">Clear guidelines, constructive feedback, and fair review criteria.</p>
+</div>
+</div>
+<!-- Explicit note ensuring no fabricated earnings -->
+<div class="mt-8 pt-6 border-t border-border-subtle text-center">
+<p class="text-[11px] text-text-muted leading-relaxed max-w-2xl mx-auto">
+          * Note: Earnings vary based on project requirements, language availability, submission volume, and task approval rates. Svara does not guarantee fixed monthly salaries or guaranteed minimum hours.
+        </p>
+</div>
+</div>
+</section>
+<!-- 4. Explore Contribution Opportunities (4 Distinct Task Cards) -->
+<section class="w-full max-w-5xl mx-auto px-6 sm:px-8 py-20" id="task-types">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">EXPLORE CONTRIBUTION OPPORTUNITIES</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Simple tasks. Meaningful impact.</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-3 leading-relaxed">
+        Choose the tasks that match your native language fluency. No engineering or AI background needed.
+      </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Card 1: Listening & Transcription -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between hover:shadow-apple-float transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">headphones</span>
+</div>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              Available Now
+            </span>
+</div>
+<span class="text-[11px] font-medium text-text-muted uppercase tracking-wider block mb-1">Audio Processing</span>
+<h3 class="text-base font-semibold text-on-surface">Listening &amp; Transcription</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Listen to audio clips and accurately transcribe spoken words in your native language so models learn natural speech.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between">
+<span class="text-[11px] text-text-muted">Short 3-10s clips</span>
+<a class="text-[11px] font-semibold text-primary inline-flex items-center gap-0.5 hover:underline" href="#sample-task">
+            See example task <span class="material-symbols-outlined text-[12px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Dialects & Local Expressions -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between hover:shadow-apple-float transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">translate</span>
+</div>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              Available Now
+            </span>
+</div>
+<span class="text-[11px] font-medium text-text-muted uppercase tracking-wider block mb-1">Dialect Verification</span>
+<h3 class="text-base font-semibold text-on-surface">Dialects &amp; Local Expressions</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Identify regional phrases, accents, slang, and local expressions to ensure AI understands genuine local nuance.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between">
+<span class="text-[11px] text-text-muted">Regional focus</span>
+<a class="text-[11px] font-semibold text-primary inline-flex items-center gap-0.5 hover:underline" href="#sample-task">
+            View guidelines <span class="material-symbols-outlined text-[12px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Text Annotation -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between hover:shadow-apple-float transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">label</span>
+</div>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              Available Now
+            </span>
+</div>
+<span class="text-[11px] font-medium text-text-muted uppercase tracking-wider block mb-1">Data Labeling</span>
+<h3 class="text-base font-semibold text-on-surface">Text Annotation</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Highlight names, places, entities, and important language elements so models accurately understand context.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between">
+<span class="text-[11px] text-text-muted">Entity tagging</span>
+<a class="text-[11px] font-semibold text-primary inline-flex items-center gap-0.5 hover:underline" href="#sample-task">
+            View sample <span class="material-symbols-outlined text-[12px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Card 4: AI Response Evaluation -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between hover:shadow-apple-float transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-700">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+</div>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-purple-100/70 text-purple-800 border border-purple-200">
+              Pilot / Upcoming
+            </span>
+</div>
+<span class="text-[11px] font-medium text-text-muted uppercase tracking-wider block mb-1">Model Evaluation</span>
+<h3 class="text-base font-semibold text-on-surface">AI Response Evaluation</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+            Review AI-generated responses and identify inaccuracies, awkward phrasing, or unnatural conversational language.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-subtle/80 flex items-center justify-between">
+<span class="text-[11px] text-purple-700 font-medium">Coming to all tiers</span>
+<span class="text-[11px] text-text-muted">Beta cohort</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Interactive Sample Task (NEW Interactive Demonstration) -->
+<section class="w-full bg-[#F5F5F7] border-y border-border-subtle py-20" id="sample-task">
+<div class="max-w-4xl mx-auto px-6 sm:px-8">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">TRY IT BEFORE REGISTERING</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">See what contributing looks like.</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">
+          Interactive demonstration: experience a real speech transcription task before registering. No experience required.
+        </p>
+</div>
+<!-- Main Interactive Demonstration Box -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-apple-card overflow-hidden">
+<!-- Instruction Banner -->
+<div class="bg-[#1D1D1F] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start sm:items-center gap-2.5">
+<span class="material-symbols-outlined text-amber-400 text-lg sm:text-xl flex-shrink-0">info</span>
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-amber-400 block sm:inline mr-2">Task Instructions:</span>
+<span class="text-xs sm:text-[13px] text-white/90">Transcribe the sentence exactly as spoken. Do not translate into English.</span>
+</div>
+</div>
+<span class="text-[11px] font-mono bg-white/10 px-2.5 py-1 rounded text-white/80 self-start sm:self-auto">Clip #DEMO-082</span>
+</div>
+<div class="p-6 sm:p-8 space-y-6">
+<!-- Audio Playback Bar -->
+<div class="bg-surface-container rounded-2xl p-4 sm:p-5 border border-border-subtle/80" id="waveform-container">
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<!-- Play / Pause button -->
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-md hover:bg-primary-hover active:scale-95 transition-all flex-shrink-0" id="demoPlayBtn" onclick="toggleDemoPlayback()" type="button">
+<span class="material-symbols-outlined text-2xl" id="playIcon">play_arrow</span>
+</button>
+<div class="sm:hidden flex-1 flex justify-between text-xs font-mono text-text-muted">
+<span id="mobileCurrentTime" class="">00:04</span>
+<span class="">/ 00:08</span>
+</div>
+</div>
+<!-- Scrubbing Waveform Graphic with Time Counter -->
+<div class="flex-1 w-full min-w-0">
+<div class="flex items-center justify-between text-xs font-mono text-text-muted mb-2">
+<span class="hidden sm:inline font-semibold text-primary" id="currentTime">00:04</span>
+<span class="text-[11px] text-on-surface-variant font-sans">Audio Segment 1 of 1 • 16kHz WAV</span>
+<span class="hidden sm:inline font-semibold">00:08</span>
+</div>
+<!-- Interactive Waveform Scrubbing Track -->
+<div class="h-10 bg-white rounded-lg border border-border-subtle px-3 flex items-center gap-1 overflow-hidden relative cursor-pointer" onclick="scrubDemoWave(event)">
+<!-- Scrubber head line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary z-10"></div>
+<!-- Wave bars -->
+<span class="wave-bar w-1 bg-primary h-3 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-5 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-7 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-4 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-8 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-6 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-7 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-3 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-8 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-5 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-7 rounded-full"></span>
+<span class="wave-bar w-1 bg-primary h-4 rounded-full"></span>
+<!-- Unplayed portion -->
+<span class="wave-bar w-1 bg-border-muted h-6 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-3 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-5 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-7 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-4 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-6 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-8 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-3 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-2 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-5 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-4 rounded-full"></span>
+<span class="wave-bar w-1 bg-border-muted h-2 rounded-full"></span>
+</div>
+</div>
+<!-- Controls: Speed & Volume -->
+<div class="flex items-center gap-2 flex-shrink-0 self-end sm:self-center text-xs">
+<button class="px-2.5 py-1.5 rounded-lg bg-white border border-border-subtle font-medium text-on-surface hover:bg-surface-container transition-colors" id="speedToggle" onclick="toggleSpeed()" type="button">
+                  1x
+                </button>
+<button class="w-8 h-8 rounded-lg bg-white border border-border-subtle flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" onclick="toggleMute()" title="Volume" type="button">
+<span class="material-symbols-outlined text-base" id="volumeIcon">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Transcript Input Box -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="text-xs font-semibold text-on-surface uppercase tracking-wider" for="demoTranscriptInput">
+                Type what you hear (Standard Hindi / Devanagari)
+              </label>
+<button class="text-[11px] text-text-muted hover:text-red-600 transition-colors font-medium" onclick="clearDemoInput()" type="button">
+                Clear text
+              </button>
+</div>
+<textarea class="w-full text-sm sm:text-base p-3.5 rounded-xl border border-border-subtle focus:border-primary focus:ring-2 focus:ring-primary/20 text-[#1D1D1F] placeholder:text-text-muted transition-all resize-none font-medium" id="demoTranscriptInput" placeholder="Type your transcription here... (e.g. हम कल सुबह स्टेशन पर मिलेंगे)" rows="3">हम कल सुबह स्टेशन पर मिलेंगे और फिर साथ में चलेंगे।</textarea>
+<!-- Shortcut Keys Guide -->
+<div class="flex flex-wrap items-center justify-between text-[11px] text-text-muted pt-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono bg-surface-container px-1.5 py-0.5 rounded border border-border-subtle text-[10px]">Tab</span> to replay clip
+                <span class="text-border-muted">•</span>
+<span class="inline-flex items-center gap-1 font-mono bg-surface-container px-1.5 py-0.5 rounded border border-border-subtle text-[10px]">Esc</span> to pause
+              </div>
+<span class="font-mono text-text-muted" id="charCount">48 characters</span>
+</div>
+</div>
+<!-- Audio Flags Selector -->
+<div>
+<label class="text-xs font-semibold text-on-surface uppercase tracking-wider block mb-2">
+              Audio Quality Flags
+            </label>
+<div class="flex flex-wrap gap-2.5">
+<button class="audio-flag-btn px-3.5 py-2 rounded-xl text-xs font-medium border border-primary bg-primary-subtle text-primary transition-all" onclick="selectFlag(this)" type="button">
+                ✓ Clear Audio
+              </button>
+<button class="audio-flag-btn px-3.5 py-2 rounded-xl text-xs font-medium border border-border-subtle bg-white text-on-surface-variant hover:border-border-muted transition-all" onclick="selectFlag(this)" type="button">
+                Background Noise
+              </button>
+<button class="audio-flag-btn px-3.5 py-2 rounded-xl text-xs font-medium border border-border-subtle bg-white text-on-surface-variant hover:border-border-muted transition-all" onclick="selectFlag(this)" type="button">
+                Unintelligible / Cut Off
+              </button>
+</div>
+</div>
+<!-- Demonstration Submit Bar with Explicit Disclaimer -->
+<div class="pt-4 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-[11px] text-text-muted text-center sm:text-left leading-relaxed">
+<span class="font-semibold text-on-surface">Interactive Demonstration:</span>
+              Submissions in this preview do not affect real accounts, qualification assessments, or payouts.
+            </div>
+<button class="w-full sm:w-auto px-6 py-2.5 bg-primary text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-primary-hover active:scale-95 transition-all shadow-sm flex items-center justify-center gap-1.5" id="demoSubmitBtn" onclick="simulateDemoSubmit()" type="button">
+<span class="">Submit Sample Clip</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm rounded-xl p-3.5 items-center gap-2" id="demoSuccessBanner">
+<span class="material-symbols-outlined text-emerald-600 text-lg">check_circle</span>
+<span class=""><strong>Great job!</strong> Your sample transcription matched the verified reference text. Join Svara to take real paid assessments.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. How to Get Started (Connected 4-Step Process) -->
+<section class="w-full max-w-5xl mx-auto px-6 sm:px-8 py-24" id="how-it-works">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">ONBOARDING PATH</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Get started in four simple steps.</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-3 leading-relaxed">
+        Start contributing quickly without long interviews, complicated resumes, or bureaucratic delays.
+      </p>
+</div>
+<!-- Step-by-Step Connected Layout -->
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between relative group hover:border-primary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-sm">
+              01
+            </span>
+<span class="material-symbols-outlined text-primary text-xl">person_add</span>
+</div>
+<h3 class="text-base font-semibold text-[#1D1D1F] mb-2">Create Your Profile</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Sign up and tell us about your native languages, dialects, regions, and translation experience.
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center text-[11px] text-text-muted mt-5">
+<span class="material-symbols-outlined text-sm mr-1.5 text-primary">timer</span>
+          Takes 2 minutes
+        </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between relative group hover:border-primary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-sm">
+              02
+            </span>
+<span class="material-symbols-outlined text-primary text-xl">quiz</span>
+</div>
+<h3 class="text-base font-semibold text-[#1D1D1F] mb-2">Complete a Short Assessment</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Demonstrate your language skills through a practical 15-minute assessment with automated feedback.
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center text-[11px] text-text-muted mt-5">
+<span class="material-symbols-outlined text-sm mr-1.5 text-primary">verified</span>
+          15-minute quiz
+        </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between relative group hover:border-primary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-sm">
+              03
+            </span>
+<span class="material-symbols-outlined text-primary text-xl">dashboard_customize</span>
+</div>
+<h3 class="text-base font-semibold text-[#1D1D1F] mb-2">Get Matched with Tasks</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Access suitable projects, complete brief guideline training, and begin transcribing live clips in your queue.
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center text-[11px] text-text-muted mt-5">
+<span class="material-symbols-outlined text-sm mr-1.5 text-primary">play_arrow</span>
+          Instant queue access
+        </div>
+</div>
+<!-- Step 4 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between relative group hover:border-primary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-sm">
+              04
+            </span>
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<h3 class="text-base font-semibold text-[#1D1D1F] mb-2">Earn for Approved Work</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Submit quality work and receive payouts according to the verified weekly payment schedule direct to your bank.
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center text-[11px] text-text-muted mt-5">
+<span class="material-symbols-outlined text-sm mr-1.5 text-emerald-600">account_balance</span>
+          Weekly payouts
+        </div>
+</div>
+</div>
+</section>
+<!-- 7. Why Contribute to Svara? (Value Proposition) -->
+<section class="w-full bg-white border-y border-border-subtle py-20">
+<div class="max-w-5xl mx-auto px-6 sm:px-8">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">BENEFITS &amp; VALUES</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Why contribute to Svara?</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">
+          A dependable platform created to honor human linguistic expertise and protect contributor rights.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Pillar 1 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">schedule</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Flexible Schedule</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Contribute whenever you want, for as long as you want. There are zero weekly minimum hours or enforced time slots.
+          </p>
+</div>
+<!-- Pillar 2 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">public</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Real Language Impact</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Ensure state-of-the-art AI understands everyday accents, colloquial terms, and underrepresented languages.
+          </p>
+</div>
+<!-- Pillar 3 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Transparent Quality Reviews</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Every submission is judged against clear rubrics. Reviewer feedback is visible in your dashboard with full appeal rights.
+          </p>
+</div>
+<!-- Pillar 4 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Reliable Weekly Payouts</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Transparent rate calculations per completed task with scheduled weekly direct transfers to your bank account.
+          </p>
+</div>
+<!-- Pillar 5 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">laptop_chromebook</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Remote Opportunities</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Work comfortably from home or while traveling. All tasks are completed directly in your modern web browser.
+          </p>
+</div>
+<!-- Pillar 6 -->
+<div class="p-6 rounded-2xl bg-surface border border-border-subtle flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Skill Progression</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Consistent high-quality work unlocks higher-tier specialist tasks, dialect verification, and reviewer roles.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Contributor Testimonials & Community Voices -->
+<section class="w-full max-w-5xl mx-auto px-6 sm:px-8 py-24">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">CONTRIBUTOR SPOTLIGHT</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Hear from active contributors.</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">
+        Real experiences from native speakers helping calibrate next-generation AI speech models.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-xs sm:text-sm text-on-surface leading-relaxed">
+            “The task guidelines are very clear. Being able to log in for 45 minutes in the morning and review colloquial Hindi speech fits seamlessly around my day.”
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center gap-3 mt-5">
+<img alt="Priya Nair" class="w-10 h-10 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzOzXPYOFezMI5Dal99xOh67VsFOEUVd38pzydibOYN8GVerB3HLFXG1ankxx8Hr1LiB8kflDcclhEuKSencbZ8FXF16wavec7ReVNYLVLTTX-TTtCN6rpxTBeSVvFa2XJUtjH2vWamPXHu-vNNphw74V_9KBGKfGY0KHs7fwkKStv3I9AkH2TlT-m5s3sm-pk8ScuhqDmCnU41G8uJhnUQUbsnaklpvqB2fsDBg">
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-1">
+              Priya Nair
+              <span class="material-symbols-outlined text-[14px] text-emerald-600">verified</span>
+</div>
+<div class="text-[11px] text-on-surface-variant">Hindi Native Contributor • 98.6% Quality</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-xs sm:text-sm text-on-surface leading-relaxed">
+            “Tamil dialects vary heavily between regions. Svara specifically values local idioms rather than forcing unnatural formal text. Payments arrive every Thursday without fail.”
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center gap-3 mt-5">
+<div class="w-10 h-10 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-xs">
+            KR
+          </div>
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-1">
+              Karthik Raman
+              <span class="material-symbols-outlined text-[14px] text-emerald-600">verified</span>
+</div>
+<div class="text-[11px] text-on-surface-variant">Tamil Linguistic Specialist • 1,200+ Tasks</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-amber-500 mb-3">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-xs sm:text-sm text-on-surface leading-relaxed">
+            “The audio verification interface is fast and snappy. Whenever a clip has ambiguous noise, the dispute &amp; flagging system makes it simple to tag without losing credit.”
+          </p>
+</div>
+<div class="pt-5 border-t border-border-subtle/80 flex items-center gap-3 mt-5">
+<div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-xs">
+            SL
+          </div>
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-1">
+              Sara Lin
+              <span class="material-symbols-outlined text-[14px] text-emerald-600">verified</span>
+</div>
+<div class="text-[11px] text-on-surface-variant">Mandarin &amp; English Evaluator • Joined 6 mos</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Trust and Transparency (4 Pillars) -->
+<section class="w-full bg-[#F5F5F7] border-y border-border-subtle py-20" id="trust-faqs">
+<div class="max-w-5xl mx-auto px-6 sm:px-8">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">INTEGRITY &amp; GOVERNANCE</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Your contributions. Your earnings. Your trust.</h2>
+<p class="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">
+          Clear accountability at every stage of the contributor workflow.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-xl">payments</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">1. Secure Payments</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              Clear accounting per approved task, itemized ledger in your dashboard, and direct transfers to your bank.
+            </p>
+</div>
+<span class="mt-4 text-[11px] font-medium text-emerald-600 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">lock</span> Bank-grade security
+          </span>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-xl">rule</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">2. Transparent Reviews</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              Multi-tier review system with detailed reviewer feedback and published scoring rubrics for full fairness.
+            </p>
+</div>
+<span class="mt-4 text-[11px] font-medium text-primary inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">visibility</span> Published rubrics
+          </span>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-xl">shield</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">3. Data Privacy</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              Contributor data and audio samples are securely processed and protected under strict international privacy protocols.
+            </p>
+</div>
+<span class="mt-4 text-[11px] font-medium text-purple-700 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified_user</span> GDPR &amp; DPDP compliant
+          </span>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-white rounded-2xl p-6 border border-border-subtle shadow-apple-card flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">4. Contributor Support &amp; Appeals</h3>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+              Dedicated dispute process allowing contributors to request manual re-checks on flagged or disputed submissions.
+            </p>
+</div>
+<span class="mt-4 text-[11px] font-medium text-amber-700 inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">gavel</span> Fair appeal process
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. Frequently Asked Questions (Expandable Accordion with 10 Questions) -->
+<section class="w-full max-w-4xl mx-auto px-6 sm:px-8 py-20">
+<div class="text-center mb-12">
+<span class="text-[12px] font-semibold tracking-wider text-primary uppercase">EVERYTHING YOU NEED TO KNOW</span>
+<h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-[#1D1D1F] mt-2">Frequently asked questions.</h2>
+<p class="text-sm text-on-surface-variant mt-2">Clear answers regarding application, payments, tasks, and data security.</p>
+</div>
+<!-- Accordion List with 10 Questions -->
+<div class="flex flex-col gap-3">
+<!-- FAQ 1 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden" open="">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">1. Do I need a degree or technical background to apply?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          No engineering or linguistic degree is required. If you speak and write fluently in your language, have strong listening comprehension, and pay close attention to detail, you have everything needed to succeed as a contributor.
+        </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">2. Which languages and dialects can I contribute in?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          We support over 28 languages, with heavy demand for Indic languages (Hindi, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, and Punjabi) as well as Spanish, Portuguese, Bahasa, and various regional dialects. You can register multiple languages during profile setup.
+        </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">3. How does the assessment process work?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          After creating an account, you will take a self-paced 15-minute language assessment consisting of 5-8 short audio clips. You will transcribe the spoken sentences and answer a few grammar or spelling questions. Results are evaluated automatically so you can start right away.
+        </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">4. How much can I earn?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          Compensation is determined on a transparent per-task rate based on language rarity, audio duration, task complexity, and your verified quality tier. Typical task compensation ranges from $0.15 to $1.20 per approved audio segment. We believe in transparency: there are no false guarantees of full-time income, but active contributors earn dependable supplementary income.
+        </div>
+</details>
+<!-- FAQ 5 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">5. How are payments calculated?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          Your dashboard includes an itemized ledger. Every time a task is completed and approved through quality control, its pre-set dollar value is credited immediately to your pending balance.
+        </div>
+</details>
+<!-- FAQ 6 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">6. When will I receive my payment?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          Approved earnings are settled weekly every Thursday via direct bank wire, UPI (in supported countries), or PayPal, subject to a minimum withdrawal threshold of $15.
+        </div>
+</details>
+<!-- FAQ 7 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">7. What happens if my submission is rejected?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          If a task fails quality review, you will receive specific rubric feedback explaining what was inaccurate or missing. If you believe the rejection was erroneous (e.g. valid dialect variations), you can submit a one-click appeal for secondary senior review.
+        </div>
+</details>
+<!-- FAQ 8 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">8. Can I work whenever I want?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          Yes! You have full control over your work schedule. There are no mandatory shifts or minimum weekly hours. You can complete tasks for 15 minutes or several hours depending on task availability in your language queue.
+        </div>
+</details>
+<!-- FAQ 9 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">9. How is my personal information and audio data used?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          We treat contributor privacy with utmost care. Personal details are securely encrypted and used exclusively for authentication and payouts. Audio samples are strictly used to evaluate and train machine learning models and are never resold to third-party advertising brokers.
+        </div>
+</details>
+<!-- FAQ 10 -->
+<details class="group bg-white rounded-2xl border border-border-subtle shadow-apple-sm overflow-hidden">
+<summary class="p-5 font-semibold text-sm sm:text-base text-on-surface cursor-pointer flex items-center justify-between list-none select-none">
+<span class="">10. Can I contact support if I face an issue?</span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 pt-1 text-xs sm:text-sm text-on-surface-variant leading-relaxed border-t border-border-subtle/50">
+          Yes. All contributors have access to in-platform ticketing and a live Community Help Center. Urgent payout or qualification questions receive responses within 24-48 business hours.
+        </div>
+</details>
+</div>
+</section>
+<!-- 11. Final CTA -->
+<section class="w-full max-w-5xl mx-auto px-6 sm:px-8 pb-24" id="apply">
+<div class="bg-[#1D1D1F] text-white rounded-3xl p-10 sm:p-16 text-center flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+<span class="text-xs font-semibold tracking-wider text-[#79C0FF] uppercase mb-4">JOIN OUR COMMUNITY</span>
+<h2 class="text-3xl sm:text-5xl font-semibold tracking-tight leading-tight max-w-3xl">
+        Ready to earn with your language skills?
+      </h2>
+<p class="mt-4 text-sm sm:text-base text-white/75 max-w-xl leading-relaxed">
+        Take your first step towards contributing to better AI. Create your profile and demonstrate your language expertise.
+      </p>
+<div class="mt-8 flex flex-col sm:flex-row items-center gap-3">
+<a class="px-8 py-4 bg-primary hover:bg-primary-hover text-white text-[15px] font-medium rounded-full shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-2" data-path="contributor-apply-final" href="#apply">
+          Become a Contributor
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-white/60">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-xs text-emerald-400">check</span> Free to join</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-xs text-emerald-400">check</span> No prior experience needed</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-xs text-emerald-400">check</span> Immediate quiz results</span>
+</div>
+</div>
+</section>
+</main>
+<!-- 12. Comprehensive Footer -->
+<footer class="w-full bg-white border-t border-border-subtle py-14"><div class="max-w-5xl mx-auto px-6 sm:px-8"><div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"><div class="md:col-span-1"><div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-[#090A1A] flex items-center justify-center p-1 shadow-sm"><svg class="w-full h-full" fill="none" viewBox="0 0 100 100"><path d="M10,50 Q30,15 50,30 T90,50" fill="none" stroke="#00F0FF" stroke-width="4"></path><path d="M43,40 C43,36 47,34 51,34 C55,34 58,36 58,39 C58,45 42,46 42,54 C42,61 47,64 52,64 C57,64 60,60 60,56" fill="none" stroke="#7000FF" stroke-width="4"></path></svg></div><span class="font-bold text-base tracking-tight text-on-surface">Svara AI</span></div><p class="text-xs text-on-surface-variant leading-relaxed mb-4">Empowering human native speakers worldwide to evaluate, annotate, and teach frontier conversational AI models.</p><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-border-subtle text-[11px] font-medium text-on-surface-variant"><span class="material-symbols-outlined text-xs text-emerald-600">verified_user</span><span class="">256-bit Encrypted Protocol</span></div></div><div><h4 class="text-xs font-semibold text-on-surface uppercase tracking-wider mb-3">Platform</h4><ul class="space-y-2 text-xs text-on-surface-variant"><li class=""><a class="hover:text-on-surface transition-colors" href="#how-it-works">How It Works</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#task-types">Task Types</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#sample-task">Supported Languages</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#trust-faqs">Contributor Guidelines</a></li></ul></div><div><h4 class="text-xs font-semibold text-on-surface uppercase tracking-wider mb-3">Trust &amp; Legal</h4><ul class="space-y-2 text-xs text-on-surface-variant"><li class=""><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">Payment Policy</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">Data Security Standards</a></li></ul></div><div><h4 class="text-xs font-semibold text-on-surface uppercase tracking-wider mb-3">Help &amp; Support</h4><ul class="space-y-2 text-xs text-on-surface-variant"><li class=""><a class="hover:text-on-surface transition-colors" href="#trust-faqs">Help &amp; FAQs</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">Contributor Appeals</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">About Svara</a></li><li class=""><a class="hover:text-on-surface transition-colors" href="#">Community Forum</a></li></ul></div></div><div class="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted"><div class="">© 2025 Svara Systems, Inc. All rights reserved. • <a class="hover:underline" href="#">Privacy Policy</a> • <a class="hover:underline" href="#">Terms of Service</a> • <a class="hover:underline" href="#">Help &amp; Support</a></div><div class="flex items-center gap-3"><span class="inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Svara Contributor Network</span><span class="">•</span><span class="">Built for human-in-the-loop AI</span></div></div></div></footer>
+<!-- Interactive Demonstration Scripts -->
+<script>
+  let isPlaying = false;
+  let playInterval = null;
+  let playbackSeconds = 4;
+  let audioSpeed = 1;
+  let isMuted = false;
+
+  function toggleDemoPlayback() {
+    isPlaying = !isPlaying;
+    const playBtnIcon = document.getElementById('playIcon');
+    const container = document.getElementById('waveform-container');
+    
+    if (isPlaying) {
+      playBtnIcon.textContent = 'pause';
+      container.classList.add('wave-playing');
+      playInterval = setInterval(() => {
+        playbackSeconds = (playbackSeconds + 1);
+        if (playbackSeconds > 8) playbackSeconds = 0;
+        updateTimeDisplays();
+      }, 1000 / audioSpeed);
+    } else {
+      playBtnIcon.textContent = 'play_arrow';
+      container.classList.remove('wave-playing');
+      clearInterval(playInterval);
+    }
+  }
+
+  function updateTimeDisplays() {
+    const formatted = '00:0' + playbackSeconds;
+    const cur = document.getElementById('currentTime');
+    const mobCur = document.getElementById('mobileCurrentTime');
+    if (cur) cur.textContent = formatted;
+    if (mobCur) mobCur.textContent = formatted;
+  }
+
+  function toggleSpeed() {
+    const btn = document.getElementById('speedToggle');
+    if (audioSpeed === 1) {
+      audioSpeed = 0.75;
+      btn.textContent = '0.75x';
+    } else if (audioSpeed === 0.75) {
+      audioSpeed = 1.25;
+      btn.textContent = '1.25x';
+    } else {
+      audioSpeed = 1;
+      btn.textContent = '1x';
+    }
+    if (isPlaying) {
+      clearInterval(playInterval);
+      playInterval = setInterval(() => {
+        playbackSeconds = (playbackSeconds + 1);
+        if (playbackSeconds > 8) playbackSeconds = 0;
+        updateTimeDisplays();
+      }, 1000 / audioSpeed);
+    }
+  }
+
+  function toggleMute() {
+    isMuted = !isMuted;
+    const icon = document.getElementById('volumeIcon');
+    icon.textContent = isMuted ? 'volume_off' : 'volume_up';
+  }
+
+  function clearDemoInput() {
+    const textarea = document.getElementById('demoTranscriptInput');
+    textarea.value = '';
+    updateCharCount();
+  }
+
+  function updateCharCount() {
+    const textarea = document.getElementById('demoTranscriptInput');
+    const charEl = document.getElementById('charCount');
+    if (charEl) {
+      charEl.textContent = textarea.value.length + ' characters';
+    }
+  }
+
+  const textarea = document.getElementById('demoTranscriptInput');
+  if (textarea) {
+    textarea.addEventListener('input', updateCharCount);
+  }
+
+  function selectFlag(button) {
+    const buttons = document.querySelectorAll('.audio-flag-btn');
+    buttons.forEach(b => {
+      b.classList.remove('border-primary', 'bg-primary-subtle', 'text-primary');
+      b.classList.add('border-border-subtle', 'bg-white', 'text-on-surface-variant');
+      if (b.textContent.includes('✓')) {
+        b.textContent = b.textContent.replace('✓ ', '');
+      }
+    });
+    button.classList.remove('border-border-subtle', 'bg-white', 'text-on-surface-variant');
+    button.classList.add('border-primary', 'bg-primary-subtle', 'text-primary');
+    button.textContent = '✓ ' + button.textContent.trim();
+  }
+
+  function scrubDemoWave(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    playbackSeconds = Math.max(0, Math.min(8, Math.round(pos * 8)));
+    updateTimeDisplays();
+  }
+
+  function simulateDemoSubmit() {
+    const submitBtn = document.getElementById('demoSubmitBtn');
+    const successBanner = document.getElementById('demoSuccessBanner');
+    submitBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">refresh</span> Submitting...';
+    setTimeout(() => {
+      submitBtn.innerHTML = '<span>Submitted!</span><span class="material-symbols-outlined text-sm">check</span>';
+      submitBtn.classList.remove('bg-primary');
+      submitBtn.classList.add('bg-emerald-600');
+      if (successBanner) {
+        successBanner.classList.remove('hidden');
+        successBanner.classList.add('flex');
+      }
+    }, 600);
+  }
+
+  // Keyboard shortcut listener for demonstration
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (isPlaying) toggleDemoPlayback();
+    }
+  });
+</script>
+
+
+</body></html>

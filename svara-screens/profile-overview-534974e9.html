@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#ffb692","outline":"#727784","on-secondary-fixed-variant":"#474649","secondary-container":"#e2dfe1","on-surface-variant":"#414753","on-primary-fixed":"#001b3e","background":"#f9f9fb","on-tertiary":"#ffffff","secondary":"#5f5e60","primary-subtle":"#EBF4FF","surface":"#f9f9fb","surface-container-low":"#f3f3f5","tertiary-container":"#af4900","primary-fixed-dim":"#aac7ff","surface-variant":"#e2e2e4","on-secondary-fixed":"#1b1b1d","border-subtle":"#E5E5EA","primary-hover":"#0052A3","secondary-fixed":"#e4e2e4","on-error-container":"#93000a","outline-variant":"#c1c6d5","on-tertiary-fixed-variant":"#793000","surface-bright":"#f9f9fb","secondary-fixed-dim":"#c8c6c8","on-secondary-container":"#636264","surface-tint":"#005cba","inverse-surface":"#2f3132","primary":"#004e9f","on-primary":"#ffffff","primary-container":"#0066cc","primary-fixed":"#d7e3ff","surface-container-lowest":"#ffffff","text-muted":"#86868B","on-primary-container":"#dfe8ff","surface-container-highest":"#e2e2e4","on-tertiary-container":"#ffe3d6","primary-active":"#0077ED","on-error":"#ffffff","surface-dim":"#d9dadc","tertiary-fixed":"#ffdbcb","on-surface":"#1a1c1d","surface-container-high":"#e8e8ea","surface-container":"#eeeef0","on-secondary":"#ffffff","error":"#ba1a1a","surface-base":"#FFFFFF","tertiary":"#883700","on-tertiary-fixed":"#341100","border-muted":"#D1D1D6","on-primary-fixed-variant":"#00458e","on-background":"#1a1c1d","inverse-on-surface":"#f0f0f2","error-container":"#ffdad6","inverse-primary":"#aac7ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem",margin:"3rem","space-lg":"1.5rem","space-md":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem"},fontFamily:{"label-sm":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"display-hero-mobile":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"display-hero":["Inter"]},fontSize:{"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-full px-gutter flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm" href="#"><span class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">graphic_eq</span></span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">SVARA</span><span class="px-space-xs py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">Workspace</span></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg"><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="dashboard" href="#">Dashboard</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="opportunities" href="#">Opportunities</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="my-tasks" href="#">My Tasks</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="assessments-training" href="#">Assessments &amp; Training</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="earnings" href="#">Earnings</a><a class="px-space-sm py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="performance" href="#">Performance</a></nav></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="relative w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></button><button aria-label="Help &amp; Support" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="flex items-center gap-space-sm pl-1 py-1 pr-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer"><img alt="Priya Nair avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBU-W1W0e2OSdDNm-EMZtiLqkpbuY_LPPgVMQz9ZYXUqL8v0pIJOztv_OvVmm_2AhPaubeDE9YWAb126dLCqc34_uGh2WTFS8wgYk_2yVK0jPcvQiurNdEDLnOThZaOgYouoUbhCoYXYxJo-XgDr1yBbuz02mQ_C1lpuLeNe7e9DpsjaLJSBKpon8oQMEXNbOmnwdvbXJgJ6hUp6Ay8-z76xcH-DqQd086FxvpTGA"/><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface leading-tight font-semibold">Priya Nair</span><span class="font-label-sm text-label-sm text-text-muted">Contributor #SV-88204</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest z-40 border-r border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between p-space-lg"><div class="flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm text-text-muted tracking-wider uppercase">Workspace Partition</span><span class="font-headline-sm text-headline-sm text-on-surface">Profile Console</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-xl font-medium"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-primary-container text-on-primary rounded-xl font-medium" data-path="profile-overview" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="personal-information" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Personal Information</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="languages-and-skills" href="#"><span class="material-symbols-outlined text-[20px]">translate</span><span>Languages &amp; Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="verification-and-documents" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Verification &amp; Documents</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="account-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Account Settings</span></a></nav></div><div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Profile Readiness</span><span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">85% Complete</span></div><div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="w-[85%] h-full bg-primary-container rounded-full"></div></div><span class="font-label-sm text-label-sm text-text-muted">1 required document pending verification</span></div></aside><div class="pl-72"><main class="w-full pt-16 bg-background min-h-screen px-gutter py-space-lg flex flex-col gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-text-muted pt-space-md"><span class="text-on-surface-variant">Profile Console</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-primary font-medium">Profile Overview</span></div><div class="w-full"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full max-w-7xl mx-auto pb-space-xl">
+<!-- Conditional Action-Required Notification Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md border border-tertiary-fixed shadow-sm transition-all duration-300 hover:shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">Action Required</span>
+<span class="font-label-sm text-label-sm text-text-muted">Required for Task Unlocks</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+Re-upload your National Identity Document to unlock Tier-1 speech corpus audio annotation tasks.
+</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-tertiary-container text-on-tertiary hover:bg-tertiary font-label-md text-label-md font-medium transition-all duration-200 shrink-0 shadow-sm" href="/profile/verification">
+<span>Resolve Verification</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Identity Summary Card (Contributor-facing Header) -->
+<div class="relative rounded-xl bg-surface-container-lowest p-space-lg border border-border-subtle shadow-sm">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-20 h-20 rounded-2xl object-cover shadow-sm ring-2 ring-surface-container" data-alt="Portrait of Priya Nair, audio annotator and contributor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBU-W1W0e2OSdDNm-EMZtiLqkpbuY_LPPgVMQz9ZYXUqL8v0pIJOztv_OvVmm_2AhPaubeDE9YWAb126dLCqc34_uGh2WTFS8wgYk_2yVK0jPcvQiurNdEDLnOThZaOgYouoUbhCoYXYxJo-XgDr1yBbuz02mQ_C1lpuLeNe7e9DpsjaLJSBKpon8oQMEXNbOmnwdvbXJgJ6hUp6Ay8-z76xcH-DqQd086FxvpTGA"/>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm" title="Identity Verified">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold">Priya Nair</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Active Contributor
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary border border-primary-fixed font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+Email Verified
+</span>
+</div>
+<!-- Contributor ID with interactive copy button -->
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-2">
+<div class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-md border border-border-subtle group">
+<span class="text-text-muted font-label-sm">Contributor ID:</span>
+<span class="font-mono font-medium text-on-surface text-label-md" id="contributor-id-val">SV-88204</span>
+<button aria-label="Copy Contributor ID" class="text-text-muted hover:text-primary transition-colors ml-0.5 flex items-center" onclick="navigator.clipboard?.writeText('SV-88204'); const tip=document.getElementById('copy-tip'); tip.classList.remove('hidden'); setTimeout(()=&gt;tip.classList.add('hidden'), 2000);" title="Copy ID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+<span class="hidden text-emerald-600 font-label-sm ml-1" id="copy-tip">Copied!</span>
+</div>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-text-muted">location_on</span>
+New Delhi, India (IST UTC+5:30)
+</span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-text-muted">calendar_today</span>
+Contributor since Oct 2023
+</span>
+</div>
+<!-- Primary & Added Languages Line -->
+<div class="flex items-center gap-2 mt-2 text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">translate</span>
+<span class="text-on-surface-variant">
+<strong class="text-on-surface font-medium">Languages:</strong> Hindi (Primary) · Bhojpuri · English
+</span>
+</div>
+</div>
+</div>
+<!-- Header Action Buttons -->
+<div class="flex flex-col items-start lg:items-end gap-1.5 w-full lg:w-auto self-end lg:self-center">
+<button class="inline-flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface border border-border-subtle font-label-md text-label-md font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Preview Public Profile</span>
+</button>
+<span class="text-[11px] text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+Controlled by privacy settings; hides contact info &amp; IDs
+</span>
+</div>
+</div>
+</div>
+<!-- 4 Simplified Pillars / Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Pillar 1: Profile Readiness -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-semibold">Pillar 01</span>
+<span class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">account_circle</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">85%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">1 pending item</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Profile Readiness</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="w-[85%] h-full bg-primary-container rounded-full"></div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+National ID re-upload required
+</span>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">info</span>
+Optional fields do not block projects
+</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary hover:text-primary-hover font-semibold mt-space-md pt-space-xs" href="/profile/verification">
+<span>Complete Verification</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pillar 2: Active Languages -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-semibold">Pillar 02</span>
+<span class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">3 Active</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Audio Ready</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Active Languages</span>
+</div>
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+Hindi
+</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Native</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+Bhojpuri
+</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Fluent</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+English
+</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">C2 Level</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary hover:text-primary-hover font-semibold mt-space-md pt-space-xs" href="/profile/languages-and-skills">
+<span>Manage Languages</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pillar 3: Task Qualifications -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-semibold">Pillar 03</span>
+<span class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">2 / 3</span>
+<span class="font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-medium">2 Certified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Task Qualifications</span>
+</div>
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between gap-1 p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface truncate">Speech Transcription</span>
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0" title="Certified">check_circle</span>
+</div>
+<div class="flex items-center justify-between gap-1 p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface truncate">NER &amp; Tagging</span>
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0" title="Certified">check_circle</span>
+</div>
+<div class="flex items-center justify-between gap-1 p-1.5 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface truncate text-text-muted">AI Response Eval</span>
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0" title="Available">pending</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary hover:text-primary-hover font-semibold mt-space-md pt-space-xs" href="/assessments-training">
+<span>Take Assessments</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Pillar 4: Quality Score -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-semibold">Pillar 04</span>
+<span class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">98.4%</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-label-sm text-label-sm font-semibold">Gold Tier</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Quality Precision (30d)</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Evaluated Batches</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">42 / 42</span>
+</div>
+<!-- Inline Mini Sparkline Chart -->
+<svg class="w-24 h-9 text-primary shrink-0" fill="none" viewbox="0 0 100 36">
+<path d="M0 28 L15 22 L30 25 L45 16 L60 18 L75 10 L90 12 L100 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M0 28 L15 22 L30 25 L45 16 L60 18 L75 10 L90 12 L100 6 L100 36 L0 36 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Top 3% percentile in audio task accuracy</span>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary hover:text-primary-hover font-semibold mt-space-md pt-space-xs" href="/performance">
+<span>View Performance Stats</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Profile Sections Navigation Hub (Sub-modules) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Profile Management Hub</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Update contact details, configure languages, submit verification, and adjust security settings.</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">4 Sections</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Card 1: Personal Information -->
+<a class="group rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between" href="/profile/personal-information">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface group-hover:bg-primary-subtle group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Complete
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-semibold">Personal Information</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Full legal name, verified email, phone number, location, and weekly work availability.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between font-label-md text-label-md text-primary font-medium border-t border-surface-container">
+<span>Edit Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2: Languages and Skills -->
+<a class="group rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between" href="/profile/languages-and-skills">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface group-hover:bg-primary-subtle group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">translate</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium">
+3 Languages · 2 Tasks
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-semibold">Languages &amp; Skills</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Hindi (Native), Bhojpuri (Fluent), English (C2), plus task skills &amp; domain certifications.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between font-label-md text-label-md text-primary font-medium border-t border-surface-container">
+<span>Manage Languages</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3: Verification & Documents (Action Required) -->
+<a class="group rounded-xl bg-surface-container-lowest p-space-md border-2 border-tertiary-fixed shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative" href="/profile/verification">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+1 Action Required
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-semibold">Verification &amp; Documents</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">National ID re-upload requested. Contributor Master Agreement &amp; NDA active.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between font-label-md text-label-md text-tertiary font-semibold border-t border-tertiary-fixed/50">
+<span>Review Documents</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4: Account Settings -->
+<a class="group rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle shadow-sm hover:shadow-md transition-all flex flex-col justify-between" href="/profile/settings">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface group-hover:bg-primary-subtle group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Secured
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors font-semibold">Account Settings</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Two-factor authentication (2FA), password security, active sessions, and notifications.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between font-label-md text-label-md text-primary font-medium border-t border-surface-container">
+<span>Manage Settings</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Bottom Row: Qualifications Summary & Friendly Verification Checklist -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Verified Qualifications Summary -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Verified Qualifications</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Accreditations and training assessments completed on SVARA.</p>
+</div>
+<a class="text-primary hover:text-primary-hover font-label-md text-label-md font-semibold inline-flex items-center gap-1" href="/profile/languages-and-skills">
+<span>View All in Languages &amp; Skills</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low border border-border-subtle">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0 border border-amber-200">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Hindi Speech Transcription</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-semibold">Certified Gold</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Acoustic Boundary &amp; Phoneme Alignment • Score: 99.6%</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-600 text-[20px]" title="Active Certification">check_circle</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low border border-border-subtle">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0 border border-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Text NER &amp; Morphological Tagging</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">Assessment Passed</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Indic Syntax &amp; Entity Classification • Score: 94.2%</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-600 text-[20px]" title="Active Certification">check_circle</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low border border-dashed border-border-muted">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-semibold text-on-surface">AI Response Evaluation</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-label-sm text-label-sm font-medium">Ready to Take</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Instruction-following &amp; safety rating • Est. 25 mins</span>
+</div>
+</div>
+<a class="px-space-sm py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-sm text-label-sm font-medium transition-colors inline-flex items-center gap-1" href="/assessments-training">
+<span>Start Assessment</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Account Verification & Privacy Summary (Friendly Checklist) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest p-space-md border border-border-subtle shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Account Status &amp; Privacy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your core verification checklist.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">shield</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Check 1: Email Address -->
+<div class="flex items-center justify-between p- space-sm py-2.5 px-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Email Address</span>
+<span class="font-label-sm text-label-sm text-text-muted">p.nair@email.com</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Verified
+</span>
+</div>
+<!-- Check 2: Phone Number (2FA) -->
+<div class="flex items-center justify-between p- space-sm py-2.5 px-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">phone_android</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Phone Number (2FA)</span>
+<span class="font-label-sm text-label-sm text-text-muted">+91 98••• ••210</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Verified
+</span>
+</div>
+<!-- Check 3: Identity Verification (Needs Attention) -->
+<div class="flex items-center justify-between p- space-sm py-2.5 px-3 rounded-lg bg-tertiary-fixed/30 border border-tertiary-fixed">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">badge</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Identity Verification (KYC)</span>
+<span class="font-label-sm text-label-sm text-tertiary">Scan re-upload requested</span>
+</div>
+</div>
+<a class="font-label-sm text-label-sm text-tertiary hover:underline font-semibold flex items-center gap-0.5" href="/profile/verification">
+<span>Fix Now</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Check 4: Contributor Master Agreement -->
+<div class="flex items-center justify-between p- space-sm py-2.5 px-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">description</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Contributor Agreement</span>
+<span class="font-label-sm text-label-sm text-text-muted">Master Terms &amp; NDA</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+Signed
+</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-border-subtle flex items-start gap-2 mt-1">
+<span class="material-symbols-outlined text-text-muted text-[18px] shrink-0 mt-0.5">lock</span>
+<p class="font-label-sm text-label-sm text-text-muted leading-relaxed">
+Your personal information is encrypted and only shared with project managers for authorized task assignment.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+</body></html>

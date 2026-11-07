@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Svara - Verify your email address</title>
+<!-- Load Tailwind CSS v3 with forms & container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            svara: {
+              blue: '#2563eb',
+              lightBlue: '#1d4ed8',
+              accentGreen: '#10b981',
+              badgeGreen: '#dcfce7',
+              badgeGreenText: '#15803d',
+              surface: '#f9f9fb',
+              borderLight: '#e2e8f0',
+              inputBg: '#f8fafc',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Font & Subtle Styles -->
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="input-controls">
+    /* Remove default outline when focus is styled */
+    .otp-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #2563eb;
+    }
+  </style>
+<link data-snapdom="injected-import" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-[#f8f9fc] min-h-screen text-slate-800 flex flex-col justify-between p-4 sm:p-6 md:p-10 antialiased selection:bg-blue-100 selection:text-blue-700">
+<!-- BEGIN: MainContentWrapper -->
+<main class="w-full max-w-[880px] mx-auto my-auto flex flex-col gap-5" data-purpose="verification-wrapper">
+<!-- BEGIN: MainCard -->
+<div class="bg-white rounded-3xl border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] px-6 py-7 sm:px-10 sm:py-9 transition-all" data-purpose="verification-card">
+<!-- BEGIN: CardHeader -->
+<header class="flex items-center justify-between pb-6" data-purpose="brand-header"><div class="flex items-center gap-3">
+  <div aria-label="Svara Logo" class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm shadow-blue-500/20">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M4 10a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zm4-3a1 1 0 0 1 1 1v8a1 1 0 0 1-2 0V8a1 1 0 0 1 1-1zm4-4a1 1 0 0 1 1 1v14a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1zm4 3a1 1 0 0 1 1 1v10a1 1 0 0 1-2 0V7a1 1 0 0 1 1-1zm4 3a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1z"></path>
+    </svg>
+  </div>
+  <div class="flex items-baseline gap-1.5">
+    <span class="text-xl font-bold tracking-tight text-slate-900">Svara</span>
+    <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">AI</span>
+  </div>
+</div>
+<div class="flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-full">
+  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+  <span class="">Contributor Portal</span>
+</div></header>
+<!-- END: CardHeader -->
+<!-- BEGIN: StepperSection -->
+<section aria-label="Verification Steps" class="mt-2" data-purpose="multi-step-progress"><div class="flex items-center justify-between mb-2.5">
+  <span class="text-xs font-bold text-blue-600 tracking-wider uppercase">Email Verification</span>
+  <span class="text-xs font-semibold text-slate-500 tracking-wider uppercase">STEP 1 OF 4</span>
+</div>
+<div class="grid grid-cols-4 gap-2.5 w-full">
+  <div class="h-1.5 rounded-full bg-blue-600" title="Step 1: Email Verification (Active)"></div>
+  <div class="h-1.5 rounded-full bg-slate-200" title="Step 2: Personal Details"></div>
+  <div class="h-1.5 rounded-full bg-slate-200" title="Step 3: Language Profile"></div>
+  <div class="h-1.5 rounded-full bg-slate-200" title="Step 4: Complete Assessment"></div>
+</div>
+<div class="grid grid-cols-4 gap-2.5 w-full mt-2 text-[11px] font-medium leading-tight">
+  <div class="text-blue-600 font-semibold">1. Email Verification</div>
+  <div class="text-slate-400">2. Personal Details</div>
+  <div class="text-slate-400">3. Language Profile</div>
+  <div class="text-slate-400">4. Complete Assessment</div>
+</div></section>
+<!-- END: StepperSection -->
+<!-- BEGIN: Headings -->
+<div class="mt-7">
+<h1 class="text-2xl sm:text-[28px] font-bold text-slate-950 tracking-tight leading-snug">Verify your email address</h1>
+<p class="text-slate-500 text-sm sm:text-[15px] mt-1.5 font-normal leading-relaxed">
+          We've sent a 6-digit verification code to your email. Enter it below to secure your Svara account.
+        </p>
+</div>
+<!-- END: Headings -->
+<!-- BEGIN: VerificationDetailsBox -->
+<div class="mt-6 bg-[#f8fafc] border border-slate-100 rounded-2xl p-4 sm:p-5 flex items-center justify-between" data-purpose="email-detail-container">
+<div>
+<span class="block text-[11px] font-semibold text-slate-400 tracking-wider uppercase mb-1">VERIFICATION EMAIL</span>
+<span class="text-slate-900 font-semibold text-[15px] sm:text-base">aravind.sharma@domain.in</span>
+</div>
+<!-- Sent pill badge -->
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700">
+          Sent
+        </span>
+</div>
+<!-- END: VerificationDetailsBox -->
+<!-- BEGIN: CodeInputSection -->
+<div class="mt-6" data-purpose="otp-input-group">
+<label class="block text-sm sm:text-[15px] font-semibold text-slate-900 mb-3">Enter your 6-digit code</label>
+<!-- 6 OTP Boxes -->
+<div class="grid grid-cols-6 gap-2 sm:gap-3.5">
+<!-- Box 1 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-blue-500 bg-white shadow-sm font-semibold text-xl sm:text-2xl text-slate-900">
+            4
+          </div>
+<!-- Box 2 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-blue-500 bg-white shadow-sm font-semibold text-xl sm:text-2xl text-slate-900">
+            9
+          </div>
+<!-- Box 3 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-slate-200 bg-white font-medium text-xl sm:text-2xl text-slate-800">
+            —
+          </div>
+<!-- Box 4 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-slate-200 bg-white font-medium text-xl sm:text-2xl text-slate-800">
+            —
+          </div>
+<!-- Box 5 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-slate-200 bg-white font-medium text-xl sm:text-2xl text-slate-800">
+            —
+          </div>
+<!-- Box 6 -->
+<div class="h-14 sm:h-16 flex items-center justify-center rounded-xl border border-slate-200 bg-white font-medium text-xl sm:text-2xl text-slate-800">
+            —
+          </div>
+</div>
+<!-- Meta Timer and Resend link -->
+<div class="mt-3.5 flex items-center justify-between text-[13px] sm:text-sm">
+<span class="text-slate-400 font-normal">Code expires in 02:46</span>
+<button class="font-medium text-blue-600 hover:text-blue-700 transition-colors" type="button">Resend code</button>
+</div>
+</div>
+<!-- END: CodeInputSection -->
+<!-- BEGIN: ActionButtonArea -->
+<div class="mt-6">
+<button class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium text-[15px] sm:text-base py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-sm transition duration-150" type="button">
+<span class="">Verify Email &amp; Continue</span>
+<svg class="w-4 h-4 ml-0.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Help support prompt -->
+<p class="text-center text-xs sm:text-[13px] text-slate-400 mt-4">
+          Didn't receive the email? Check spam or contact support.
+        </p>
+</div>
+<!-- END: ActionButtonArea -->
+</div>
+<!-- END: MainCard -->
+<!-- BEGIN: TrustSecurityBadgeCard -->
+<div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-[0_2px_12px_rgba(0,0,0,0.02)] flex items-start gap-3.5" data-purpose="security-guarantee-card">
+<!-- Shield / Checkmark icon -->
+<div class="mt-0.5 text-emerald-600 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h2 class="text-sm font-semibold text-slate-900 leading-snug">Your account is protected</h2>
+<p class="text-[13px] text-slate-500 mt-0.5 leading-relaxed">
+          Email verification helps us confirm that you own the email address associated with your Svara account.
+        </p>
+</div>
+</div>
+<!-- END: TrustSecurityBadgeCard -->
+<!-- BEGIN: PageFooterLinks -->
+<footer class="pt-4 pb-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3 border-t border-slate-200/60 mt-2" data-purpose="site-footer">
+  <div class="">© 2025 Svara Systems, Inc. All rights reserved.</div>
+  <nav class="inline-flex items-center gap-2 font-normal">
+    <a class="hover:text-slate-600 transition-colors" href="#">Privacy Policy</a>
+    <span class="">•</span>
+    <a class="hover:text-slate-600 transition-colors" href="#">Terms of Service</a>
+    <span class="">•</span>
+    <a class="hover:text-slate-600 transition-colors" href="#">Help &amp; Support</a>
+  </nav>
+  <div class="inline-flex items-center gap-1.5 text-[11px] text-slate-400">
+    <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"></path>
+    </svg>
+    <span class="">End-to-End Encrypted</span>
+  </div>
+</footer>
+<!-- END: PageFooterLinks -->
+</main>
+<!-- END: MainContentWrapper -->
+
+
+
+
+
+
+</body></html>

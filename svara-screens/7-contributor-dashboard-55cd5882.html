@@ -1,0 +1,795 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Svara Contributor Workspace &amp; Dashboard</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } } ::-webkit-scrollbar { display: none; }
+  .tooltip-box {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  .has-tooltip:hover .tooltip-box, .has-tooltip:focus-within .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#f9f9fb",
+        "surface": "#ffffff",
+        "surface-muted": "#f4f4f6",
+        "surface-subtle": "#fafafb",
+        "on-surface": "#1d1d1f",
+        "on-surface-variant": "#414753",
+        "text-muted": "#86868B",
+        "border-subtle": "#E5E5EA",
+        "border-muted": "#D1D1D6",
+        "primary": "#004e9f",
+        "primary-hover": "#0052A3",
+        "primary-active": "#0077ED",
+        "primary-subtle": "#EBF4FF",
+        "primary-container": "#0066cc",
+        "success": "#107c41",
+        "success-subtle": "#e8f5ed",
+        "warning": "#b25900",
+        "warning-subtle": "#fff4e5",
+        "error": "#ba1a1a",
+        "error-subtle": "#ffdad6"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "md": "0.375rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "full": "9999px"
+      },
+      fontFamily: {
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"]
+      }
+    }
+  }
+};</script></head><body class="bg-background font-sans text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-subtle selection:text-primary" onclick="const m = document.getElementById('profileDropdownMenu'); if (m &amp;&amp; !m.classList.contains('hidden')) { m.classList.add('hidden'); }">
+<!-- TOP INTERACTIVE STATE SIMULATOR BAR -->
+
+<!-- 1. NAVIGATION -->
+<header class="sticky top-0 left-0 right-0 w-full z-40 bg-surface/95 backdrop-blur-md border-b border-border-subtle shadow-xs"><div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2.5 group focus:outline-none" href="#"><div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center shadow-xs group-hover:bg-primary-hover transition-colors"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">graphic_eq</span></div><div class="flex items-center gap-2"><span class="text-[19px] font-bold tracking-tight text-on-surface uppercase">Svara</span><span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-primary-subtle text-primary border border-primary/20">Workspace</span></div></a><nav class="hidden lg:flex items-center gap-1 h-16 text-[13.5px]"><a class="h-full flex items-center px-3 font-semibold text-primary border-b-2 border-primary" href="#dashboard">Dashboard</a><a class="h-full flex items-center px-3 font-medium text-text-muted hover:text-on-surface transition-colors" href="#opportunities">Opportunities</a><a class="h-full flex items-center px-3 font-medium text-text-muted hover:text-on-surface transition-colors gap-1.5" href="#my-tasks"><span class="">My Tasks</span><span class="px-1.5 py-0.2 rounded-full text-[11px] font-semibold bg-primary-subtle text-primary border border-primary/20">2</span></a><a class="h-full flex items-center px-3 font-medium text-text-muted hover:text-on-surface transition-colors" href="#assessments-training">Assessments &amp; Training</a><a class="h-full flex items-center px-3 font-medium text-text-muted hover:text-on-surface transition-colors" href="#earnings">Earnings</a><a class="h-full flex items-center px-3 font-medium text-text-muted hover:text-on-surface transition-colors" href="#performance">Performance</a></nav></div><div class="flex items-center gap-3"><button aria-label="Notifications" class="relative p-2 text-text-muted hover:text-on-surface hover:bg-surface-muted rounded-full transition-colors focus:outline-none"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-bold text-white shadow-xs">3</span></button><a aria-label="Help &amp; Support" class="p-2 text-text-muted hover:text-on-surface hover:bg-surface-muted rounded-full transition-colors hidden sm:flex items-center" href="#support" title="Help &amp; Support"><span class="material-symbols-outlined text-[22px]">help_outline</span></a><div class="h-5 w-px bg-border-subtle hidden sm:block"></div><div class="relative"><button class="flex items-center gap-2.5 pl-1 pr-2.5 py-1 rounded-full hover:bg-surface-muted border border-border-subtle bg-surface transition-colors focus:outline-none shadow-xs" id="profileDropdownBtn" onclick="event.stopPropagation(); const m = document.getElementById('profileDropdownMenu'); m.classList.toggle('hidden');"><div class="relative"><img alt="Priya Nair" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface border border-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE7vDd-DnaR95mjvNu8o5U6d5jqSQ-IKOARIWVX8cGfYWA8HPEsOU4xnlkXVXkkk5uewdDHETSkU0fbl3iufjwXc0jRwukpkpEziod-RQFe1viqtECKZNOZQWRecXcswAR2Cj3jM22-yJyphXqROYNn5R1Q7r5ZqbKVdw2mdQbcpieJCKyVwOgHIaby-nh_VH9oKHw23zyNF05lahS2Oh3yrwfZnPH6rURcPZMyHM"><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-success rounded-full ring-2 ring-white" title="Active Contributor"></span></div><div class="text-left hidden md:block"><div class="text-[13px] font-semibold leading-tight text-on-surface flex items-center gap-1"><span class="">Priya Nair</span><span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span></div><div class="text-[11px] text-text-muted">Contributor #DL-88204</div></div><span class="material-symbols-outlined text-[18px] text-text-muted ml-0.5">expand_more</span></button><div class="hidden absolute right-0 mt-2 w-64 bg-surface rounded-xl border border-border-subtle shadow-lg py-2 z-40 text-[13px]" id="profileDropdownMenu" onclick="event.stopPropagation();"><div class="px-4 py-2 border-b border-border-subtle mb-1"><div class="text-xs text-text-muted font-medium">Signed in as</div><div class="font-semibold text-on-surface truncate">priya.nair@svara.ai</div><div class="mt-1 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10.5px] font-semibold bg-success-subtle text-success border border-success/20"><span class="material-symbols-outlined text-[12px]" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span> Tier-1 Verified</div></div><div class="py-1"><a class="flex items-center gap-2.5 px-4 py-2 text-on-surface hover:bg-surface-muted transition-colors font-medium" href="#profile-overview"><span class="material-symbols-outlined text-text-muted text-[18px]">badge</span><span class="">Profile Overview</span></a><a class="flex items-center gap-2.5 px-4 py-2 text-on-surface hover:bg-surface-muted transition-colors font-medium" href="#personal-info"><span class="material-symbols-outlined text-text-muted text-[18px]">person</span><span class="">Personal Information</span></a><a class="flex items-center gap-2.5 px-4 py-2 text-on-surface hover:bg-surface-muted transition-colors font-medium" href="#languages-skills"><span class="material-symbols-outlined text-text-muted text-[18px]">translate</span><span class="">Languages &amp; Skills</span></a><a class="flex items-center gap-2.5 px-4 py-2 text-on-surface hover:bg-surface-muted transition-colors font-medium" href="#verification-docs"><span class="material-symbols-outlined text-text-muted text-[18px]">verified_user</span><span class="">Verification &amp; Documents</span></a><a class="flex items-center gap-2.5 px-4 py-2 text-on-surface hover:bg-surface-muted transition-colors font-medium" href="#settings"><span class="material-symbols-outlined text-text-muted text-[18px]">settings</span><span class="">Account Settings</span></a></div><div class="border-t border-border-subtle mt-1 pt-1"><a class="flex items-center gap-2.5 px-4 py-2 text-error hover:bg-error-subtle/50 transition-colors font-semibold" href="#sign-out"><span class="material-symbols-outlined text-error text-[18px]">logout</span><span class="">Sign Out</span></a></div></div></div></div></div></header>
+<!-- MAIN CONTENT CONTAINER -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full flex-1 space-y-6" id="dashboard">
+<!-- STATE: LOADING SKELETON (Hidden by default) -->
+<div class="hidden space-y-6 animate-pulse" id="state-loading-view">
+<div class="h-28 bg-surface-muted rounded-xl"></div>
+<div class="h-32 bg-surface-muted rounded-xl"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="h-24 bg-surface-muted rounded-xl"></div>
+<div class="h-24 bg-surface-muted rounded-xl"></div>
+<div class="h-24 bg-surface-muted rounded-xl"></div>
+<div class="h-24 bg-surface-muted rounded-xl"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 h-96 bg-surface-muted rounded-xl"></div>
+<div class="lg:col-span-4 h-96 bg-surface-muted rounded-xl"></div>
+</div>
+</div>
+<!-- STATE: ERROR VIEW (Hidden by default) -->
+<div class="hidden p-8 bg-error-subtle/50 border border-error/20 rounded-xl text-center space-y-3" id="state-error-view">
+<span class="material-symbols-outlined text-error text-4xl">error_outline</span>
+<h2 class="text-lg font-bold text-on-surface">Unable to load workspace data</h2>
+<p class="text-sm text-on-surface-variant max-w-md mx-auto">We couldn't retrieve your assigned tasks and invitations. Please check your internet connection or try again.</p>
+<button class="px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-semibold rounded-md shadow-xs" onclick="setDashboardState('active')">Reload Dashboard</button>
+</div>
+<!-- STATE: EMPTY VIEW (Hidden by default) -->
+<div class="hidden space-y-6" id="state-empty-view">
+<div class="bg-surface rounded-xl border border-border-subtle p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary-subtle text-primary flex items-center justify-center font-bold text-lg">PN</div>
+<div>
+<h1 class="text-xl font-bold text-on-surface">Welcome to Svara, Priya!</h1>
+<p class="text-xs text-text-muted mt-0.5">Let's finish setting up your contributor profile and take your first skill assessment.</p>
+</div>
+</div>
+<a class="px-4 py-2 bg-primary hover:bg-primary-hover text-white text-xs font-semibold rounded-md shadow-xs flex items-center gap-1.5" href="#assessments-training">
+<span class="">Browse Skill Assessments</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface rounded-xl border border-border-subtle p-12 text-center space-y-3 shadow-xs">
+<div class="w-12 h-12 rounded-full bg-surface-muted text-text-muted mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">inbox</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">No active tasks in your queue yet</h3>
+<p class="text-xs text-text-muted max-w-md mx-auto">Complete identity verification and qualify in your primary language to unlock client project invitations.</p>
+<button class="text-xs text-primary font-semibold hover:underline" onclick="setDashboardState('active')">Switch back to demo active queue</button>
+</div>
+</div>
+<!-- STATE: ACTIVE VIEW (Default) -->
+<div class="space-y-6" id="state-active-view">
+<!-- 2. WELCOME & PROFILE SUMMARY -->
+<section aria-label="Contributor Summary" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex flex-col sm:flex-row sm:items-start gap-4">
+<div class="relative shrink-0">
+<img alt="Priya Nair" class="w-16 h-16 rounded-full object-cover ring-4 ring-primary-subtle border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE7vDd-DnaR95mjvNu8o5U6d5jqSQ-IKOARIWVX8cGfYWA8HPEsOU4xnlkXVXkkk5uewdDHETSkU0fbl3iufjwXc0jRwukpkpEziod-RQFe1viqtECKZNOZQWRecXcswAR2Cj3jM22-yJyphXqROYNn5R1Q7r5ZqbKVdw2mdQbcpieJCKyVwOgHIaby-nh_VH9oKHw23zyNF05lahS2Oh3yrwfZnPH6rURcPZMyHM">
+<span class="absolute bottom-0.5 right-0.5 w-4 h-4 bg-success border-2 border-white rounded-full" title="Active"></span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2.5 flex-wrap">
+<h1 class="text-xl md:text-2xl font-bold tracking-tight text-on-surface">Welcome back, Priya!</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-success-subtle text-success text-[12px] font-semibold border border-success/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+              Profile Verified
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-subtle text-primary text-[12px] font-semibold border border-primary/20">
+<span class="material-symbols-outlined text-[14px]">school</span>
+              2 Certified Skills
+            </span>
+</div>
+<div class="flex items-center gap-2 flex-wrap text-[12.5px] text-text-muted">
+<span class="font-medium text-on-surface">Verified Languages:</span>
+<span class="px-2 py-0.5 rounded bg-surface-muted text-on-surface font-medium border border-border-subtle">Hindi · Bhojpuri · English</span>
+<span class="text-border-muted">•</span>
+<span class="font-mono text-[11.5px]">ID: #DL-88204</span>
+</div>
+</div>
+</div>
+<!-- Availability Status Toggle with Tooltip -->
+<div class="bg-surface-subtle border border-border-subtle rounded-lg p-3.5 sm:max-w-xs shrink-0 flex flex-col justify-between gap-2.5 relative">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-1.5 has-tooltip relative">
+<span class="text-[11.5px] font-semibold text-text-muted">Availability for new tasks</span>
+<!-- Info Tooltip Icon -->
+<button aria-label="Availability Info" class="text-text-muted hover:text-on-surface focus:outline-none flex items-center" type="button">
+<span class="material-symbols-outlined text-[15px]">info</span>
+</button>
+<!-- Explicit Tooltip box -->
+<div class="tooltip-box absolute bottom-full left-0 mb-2 w-64 p-2.5 bg-on-surface text-white text-[11px] leading-relaxed rounded-md shadow-lg z-30 pointer-events-none">
+              When available, you may receive invitations for projects matching your verified skills. Toggling does not affect existing claimed tasks.
+              <div class="w-2 h-2 bg-on-surface rotate-45 absolute -bottom-1 left-4"></div>
+</div>
+</div>
+<!-- Switch button -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none" id="availToggleBtn" onclick="toggleAvailability(this)" role="switch" type="button">
+<span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5" id="availThumb"></span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5" id="availStatusIndicator">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
+</span>
+<span class="text-[12px] font-semibold text-success" id="availLabel">Available</span>
+</div>
+<span class="text-[11px] text-text-muted">Ready for dispatch</span>
+</div>
+</div>
+</section>
+<!-- 3. PROJECT INVITATIONS (Action-Required Section) -->
+<section aria-label="Priority Project Invitation" class="relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary-subtle/80 via-white to-white p-5 md:p-6 shadow-xs" id="invite-card">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+<div class="space-y-2.5 flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-primary text-white">
+<span class="material-symbols-outlined text-[13px]">mail</span> Action Required
+            </span>
+<span class="text-[12px] font-semibold text-warning bg-warning-subtle px-2.5 py-0.5 rounded border border-warning/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> Expires in 17h 42m (Nov 07, 18:00 IST)
+            </span>
+</div>
+<div>
+<h2 class="text-lg md:text-xl font-bold text-on-surface tracking-tight">Indic Conversational Audio QA</h2>
+<div class="flex items-center gap-2 flex-wrap text-[12.5px] text-on-surface-variant font-medium mt-1">
+<span class="">Hindi (hi-IN) &amp; Bhojpuri (bho-IN)</span>
+<span class="text-border-muted">•</span>
+<span class="">Task Category: Speech Transcription &amp; Diarization</span>
+</div>
+<p class="text-[12.5px] text-text-muted mt-1 leading-relaxed">
+              Required Skills: <strong class="text-on-surface font-semibold">Acoustic Phonation L1, Diarization</strong>
+</p>
+</div>
+<div class="flex items-center gap-4 text-[12.5px] text-text-muted flex-wrap pt-0.5">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 15–20 hrs/week
+            </span>
+<span class="">•</span>
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">payments</span> Est. ₹850/hr ($32.00/hr)
+            </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">date_range</span> Duration: 4 Weeks (Starts: Nov 12, 2026)
+            </span>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-2 shrink-0 lg:w-48 pt-2 lg:pt-0">
+<button class="w-full px-4 py-2 rounded-md bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-[13px] font-semibold transition-colors shadow-xs flex items-center justify-center gap-1.5" onclick="alert('Invitation Accepted! Project PRJ-IND-01 added to your workspace.')">
+<span class="">Accept Invitation</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<div class="flex gap-2 w-full">
+<button class="flex-1 px-3 py-1.5 rounded-md bg-white hover:bg-surface-muted border border-border-subtle text-on-surface text-[12px] font-medium transition-colors shadow-xs">
+              Review
+            </button>
+<button class="flex-1 px-3 py-1.5 rounded-md bg-white hover:bg-surface-muted border border-border-subtle text-error hover:border-error/40 text-[12px] font-medium transition-colors shadow-xs" onclick="document.getElementById('invite-card').style.display='none';">
+              Decline
+            </button>
+</div>
+<button class="text-center text-[11.5px] text-text-muted hover:text-on-surface transition-colors py-1 hover:underline" onclick="document.getElementById('invite-card').style.display='none';">
+            Dismiss Notification
+          </button>
+</div>
+</div>
+</section>
+<!-- 4. ACTIONABLE CONTRIBUTOR KPI CARDS -->
+<section aria-label="Key Performance Indicators" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1: Tasks Needing Action -->
+<a class="bg-surface p-4 rounded-xl border border-warning/30 hover:border-warning/60 shadow-xs flex flex-col justify-between transition-all group block" href="#my-tasks" onclick="filterTaskTab('needs-action')">
+<div class="flex items-center justify-between">
+<span class="text-[11.5px] font-semibold uppercase tracking-wider text-text-muted">Tasks Needing Action</span>
+<div class="w-7 h-7 rounded-md bg-warning-subtle text-warning flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="text-2xl font-bold text-on-surface tracking-tight">2</span>
+<span class="text-[11px] font-semibold text-warning bg-warning-subtle px-1.5 py-0.5 rounded">Action Required</span>
+</div>
+<div class="mt-2 text-[12px] text-text-muted border-t border-border-subtle pt-2 flex items-center justify-between">
+<span class="">1 Rework / Changes</span>
+<span class="font-medium text-on-surface">1 Ready to Start</span>
+</div>
+</a>
+<!-- KPI 2: Tasks In Progress -->
+<a class="bg-surface p-4 rounded-xl border border-border-subtle hover:border-primary/40 shadow-xs flex flex-col justify-between transition-all group block" href="#my-tasks" onclick="filterTaskTab('in-progress')">
+<div class="flex items-center justify-between">
+<span class="text-[11.5px] font-semibold uppercase tracking-wider text-text-muted">Tasks In Progress</span>
+<div class="w-7 h-7 rounded-md bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="text-2xl font-bold text-on-surface tracking-tight">2</span>
+<span class="text-[11px] font-semibold text-primary bg-primary-subtle px-1.5 py-0.5 rounded">Active Locks</span>
+</div>
+<div class="mt-2 text-[12px] text-text-muted border-t border-border-subtle pt-2 flex items-center justify-between">
+<span class="flex items-center gap-1 text-error font-medium">
+<span class="material-symbols-outlined text-[13px]">alarm</span> 1h 45m deadline
+          </span>
+<span class="text-[11px]">2 active claims</span>
+</div>
+</a>
+<!-- KPI 3: Awaiting Review -->
+<a class="bg-surface p-4 rounded-xl border border-border-subtle hover:border-primary/40 shadow-xs flex flex-col justify-between transition-all group block" href="#my-tasks" onclick="filterTaskTab('under-review')">
+<div class="flex items-center justify-between">
+<span class="text-[11.5px] font-semibold uppercase tracking-wider text-text-muted">Awaiting Review</span>
+<div class="w-7 h-7 rounded-md bg-surface-muted text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="text-2xl font-bold text-on-surface tracking-tight">4</span>
+<span class="text-[11px] font-semibold text-on-surface-variant bg-surface-muted px-1.5 py-0.5 rounded">In Human QA</span>
+</div>
+<div class="mt-2 text-[12px] text-text-muted border-t border-border-subtle pt-2 flex items-center justify-between">
+<span class="">₹10,750 estimated</span>
+<span class="text-[11px]">Avg 18h turnaround</span>
+</div>
+</a>
+<!-- KPI 4: Overall Quality Score -->
+<div class="bg-surface p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col justify-between relative has-tooltip">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="text-[11.5px] font-semibold uppercase tracking-wider text-text-muted">Overall Quality Score</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted cursor-help">info</span>
+</div>
+<div class="w-7 h-7 rounded-md bg-success-subtle text-success flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="text-2xl font-bold text-on-surface tracking-tight">98.4%</span>
+<span class="text-[11px] font-semibold text-success bg-success-subtle px-1.5 py-0.5 rounded border border-success/20">Gold Tier</span>
+</div>
+<div class="mt-2 text-[12px] text-text-muted border-t border-border-subtle pt-2 flex items-center justify-between">
+<span class="">42 evaluated sample audits</span>
+<span class="material-symbols-outlined text-success text-[15px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+</div>
+<!-- Calculation Tooltip -->
+<div class="tooltip-box absolute bottom-full left-4 right-4 mb-2 p-2.5 bg-on-surface text-white text-[11px] leading-relaxed rounded-md shadow-lg z-30 pointer-events-none">
+          Calculated from 42 audited batch samples across the last 30 days (minimum threshold of 20 met). Gold Tier qualifies for top-rate tasks.
+          <div class="w-2 h-2 bg-on-surface rotate-45 absolute -bottom-1 left-8"></div>
+</div>
+</div>
+</section>
+<!-- TWO COLUMN WORKSPACE LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN (8 cols) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- 5. MY TASKS — HIGHEST PRIORITY SECTION -->
+<section aria-label="My Tasks" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="my-tasks">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border-subtle pb-4">
+<div>
+<h2 class="text-lg font-bold text-on-surface tracking-tight">My Tasks</h2>
+<p class="text-[12.5px] text-text-muted mt-0.5">Manage tasks requiring your immediate attention or active completion.</p>
+</div>
+<!-- Status filter tabs -->
+<div class="relative inline-flex items-center shrink-0"><select class="appearance-none bg-surface border border-border-subtle rounded-lg px-3 py-1.5 pr-8 text-[12.5px] font-medium text-on-surface shadow-xs hover:border-border-muted focus:outline-none focus:border-primary transition-colors cursor-pointer" onchange="filterTaskTab(this.value)"><option value="all" selected="">All Tasks (8)</option><option value="needs-action">Needs Action (2)</option><option value="in-progress">In Progress (2)</option><option value="under-review">Under Review (4)</option><option value="completed">Completed (38)</option></select><span class="material-symbols-outlined text-[18px] text-text-muted absolute right-2.5 pointer-events-none">expand_more</span></div>
+</div>
+<!-- Task Cards List -->
+<div class="space-y-3 pt-1" id="task-list-container">
+<!-- Task 1: REWORK / Changes Requested -->
+<div class="task-card p-4 rounded-lg border-2 border-warning/40 bg-warning-subtle/15 hover:border-warning/70 transition-all flex flex-col space-y-3" data-status="needs-action" style="display: none;">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-warning-subtle text-warning font-mono text-[11px] font-bold border border-warning/30">TASK-8819</span>
+<span class="px-2 py-0.5 rounded-full bg-warning text-white text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">replay</span> Changes requested
+                    </span>
+<span class="text-[12px] text-text-muted">Language: <strong class="text-on-surface font-medium">Bhojpuri</strong></span>
+<span class="text-border-muted">•</span>
+<span class="text-[12px] text-text-muted">Task: Speech Transcription</span>
+</div>
+<h3 class="text-[14.5px] font-bold text-on-surface pt-0.5">Bhojpuri Audio Transcription — Batch #4881</h3>
+</div>
+<div class="shrink-0">
+<button class="w-full sm:w-auto px-4 py-2 rounded-md bg-warning hover:bg-warning/90 text-white text-[13px] font-semibold transition-colors shadow-xs flex items-center justify-center gap-1.5">
+<span class="">Fix &amp; Resubmit</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Explicit Reviewer Feedback block -->
+<div class="p-3 bg-white rounded-md border border-warning/30 text-[12.5px] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-warning text-[18px] shrink-0 mt-0.5">chat</span>
+<div class="space-y-0.5">
+<span class="font-semibold text-warning text-[11.5px] uppercase tracking-wide">Reviewer Feedback:</span>
+<p class="text-on-surface-variant leading-relaxed">
+                    "Review timestamp <strong class="font-mono text-on-surface">02:14–02:22</strong>: unvoiced stop <code class="bg-surface-muted px-1 py-0.5 rounded text-primary">/k/</code> was clipped. Adjust audio boundary."
+                  </p>
+</div>
+</div>
+</div>
+<!-- Task 2: IN_PROGRESS -->
+<div class="task-card p-4 rounded-lg border border-border-subtle bg-surface hover:border-primary/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-status="in-progress" style="display: none;">
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-primary-subtle text-primary font-mono text-[11px] font-semibold border border-primary/20">TASK-9412</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary text-[11px] font-semibold">In progress</span>
+<span class="text-[12px] text-text-muted">Language: <strong class="text-on-surface font-medium">Hindi</strong></span>
+<span class="text-border-muted">•</span>
+<span class="text-[12px] font-semibold text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">alarm</span> 1h 45m left
+                  </span>
+</div>
+<h3 class="text-[14.5px] font-semibold text-on-surface">Hindi Conversational ASR — 4m audio phoneme audit</h3>
+<div class="flex items-center gap-4 text-[12px] text-text-muted">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">graphic_eq</span> Audio Duration: 4:18</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-primary">payments</span> ₹450 per task</span>
+</div>
+</div>
+<div class="shrink-0">
+<button class="w-full sm:w-auto px-4 py-2 rounded-md bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-[13px] font-semibold transition-colors shadow-xs flex items-center justify-center gap-1.5">
+<span class="">Continue Task</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Task 3: ASSIGNED / Ready to start -->
+<div class="task-card p-4 rounded-lg border border-border-subtle bg-surface hover:border-primary/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-status="needs-action" style="display: none;">
+<div class="space-y-1.5 flex-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-muted text-on-surface-variant font-mono text-[11px] font-semibold border border-border-subtle">TASK-3018</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-muted text-on-surface font-medium text-[11px]">Ready to start</span>
+<span class="text-[12px] text-text-muted">Language: <strong class="text-on-surface font-medium">Hindi-Bhojpuri</strong></span>
+<span class="text-border-muted">•</span>
+<span class="text-[12px] text-text-muted font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5h 20m left
+                  </span>
+</div>
+<h3 class="text-[14.5px] font-semibold text-on-surface">Dialect Entity Extraction — Bhojpuri-Hindi Code Switching</h3>
+<div class="flex items-center gap-4 text-[12px] text-text-muted">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">segment</span> 62 Sentences (Text NER)</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-primary">payments</span> ₹280 per task</span>
+</div>
+</div>
+<div class="shrink-0">
+<button class="w-full sm:w-auto px-4 py-2 rounded-md bg-white hover:bg-surface-muted border border-border-subtle text-on-surface text-[13px] font-semibold transition-colors shadow-xs flex items-center justify-center gap-1.5">
+<span class="">Start Task</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. MY PROJECTS (Replacing technical spectrogram context) -->
+<section aria-label="My Projects" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="projects">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-on-surface tracking-tight">My Projects</h2>
+<p class="text-[12.5px] text-text-muted mt-0.5">Active enterprise programs you are contributing to.</p>
+</div>
+<span class="text-[12px] font-mono font-semibold text-text-muted px-2 py-0.5 bg-surface-muted rounded">1 Active Scope</span>
+</div>
+<div class="p-4 rounded-lg border border-border-subtle bg-surface-subtle space-y-3.5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-[14.5px] font-bold text-on-surface">Indic Multilingual Conversational Corpus</h3>
+<span class="font-mono text-[11px] text-text-muted font-medium bg-white px-1.5 py-0.2 rounded border border-border-subtle">PRJ-IND-01</span>
+</div>
+<p class="text-[12px] text-text-muted mt-0.5">Languages: <strong class="text-on-surface font-medium">Hindi &amp; Bhojpuri</strong></p>
+</div>
+<a class="px-3 py-1.5 rounded-md bg-white hover:bg-surface-muted border border-border-subtle text-primary text-[12.5px] font-semibold transition-colors flex items-center gap-1 shadow-xs shrink-0" href="#project-workspace">
+<span class="">Open Project Workspace</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+<!-- Project Progress bar & stats -->
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-text-muted">Task Progress: <strong class="text-on-surface">12 of 14 completed</strong></span>
+<span class="font-semibold text-primary">85.7% Completed</span>
+</div>
+<div class="w-full bg-border-subtle h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all" style="width: 85.7%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11.5px] text-text-muted pt-0.5">
+<span class="">Tasks Assigned: 14 | Completed: 12</span>
+<span class="flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[13px] text-primary">event</span> Delivery Deadline: Nov 28, 2026
+                </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. RECOMMENDED ASSESSMENTS & TRAINING -->
+<section aria-label="Assessments and Training" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="assessments-training">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Assessments &amp; Training</h2>
+<p class="text-[12.5px] text-text-muted mt-0.5">Separate official qualification assessments from project procedural training.</p>
+</div>
+<a class="text-[12.5px] font-semibold text-primary hover:underline" href="#assessments-training">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+<!-- Assessment Card -->
+<div class="p-4 rounded-lg border border-border-subtle bg-surface flex flex-col justify-between space-y-3 relative hover:border-primary/40 transition-colors">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-primary-subtle text-primary border border-primary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">school</span> Skill Assessment
+                  </span>
+<span class="text-[11.5px] font-bold text-success">+₹250/hr unlock</span>
+</div>
+<h3 class="text-[14px] font-bold text-on-surface">Advanced Bhojpuri Acoustics Qualification</h3>
+<div class="text-[12px] text-text-muted space-y-1">
+<p class="">Language: <strong class="text-on-surface font-medium">Bhojpuri</strong></p>
+<p class="">Skill: Audio QA &amp; Tonal Shifts</p>
+</div>
+<p class="text-[11.5px] text-text-muted leading-relaxed">
+                  Evaluates subtle dialectal variations and boundary tagging in noisy environments.
+                </p>
+</div>
+<div class="pt-2 border-t border-border-subtle flex items-center justify-between text-[12px]">
+<span class="text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 45 mins</span>
+<button class="px-3 py-1.5 rounded-md bg-primary hover:bg-primary-hover text-white text-[12px] font-semibold transition-colors flex items-center gap-1">
+<span class="">Start Assessment</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Training Card -->
+<div class="p-4 rounded-lg border border-border-subtle bg-surface flex flex-col justify-between space-y-3 relative hover:border-primary/40 transition-colors">
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-surface-muted text-on-surface-variant border border-border-subtle flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">menu_book</span> Project Training
+                  </span>
+<span class="text-[11px] font-medium text-text-muted">Status: Not started</span>
+</div>
+<h3 class="text-[14px] font-bold text-on-surface">Multi-Speaker Diarization Guidelines v2.1</h3>
+<div class="text-[12px] text-text-muted space-y-1">
+<p class="">Type: <strong class="text-on-surface font-medium">Project Guideline Training</strong></p>
+<p class="">Required for upcoming speaker-tagging queue</p>
+</div>
+<p class="text-[11.5px] text-text-muted leading-relaxed">
+                  Learn latest cross-talk boundary conventions and speaker timestamp synchronization.
+                </p>
+</div>
+<div class="pt-2 border-t border-border-subtle flex items-center justify-between text-[12px]">
+<span class="text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 20 mins</span>
+<button class="px-3 py-1.5 rounded-md bg-white hover:bg-surface-muted border border-border-subtle text-on-surface text-[12px] font-semibold transition-colors flex items-center gap-1 shadow-xs">
+<span class="">Start Training</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. QUALITY & FEEDBACK (Recent Audits with Actionable Feedback) -->
+<section aria-label="Quality and Feedback" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="performance">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Quality &amp; Feedback</h2>
+<p class="text-[12.5px] text-text-muted mt-0.5">Recent batch sample audits with detailed reviewer insights.</p>
+</div>
+<a class="text-[12.5px] font-semibold text-primary hover:underline flex items-center gap-1" href="#quality-analytics">
+<span class="">View Quality Analytics</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="divide-y divide-border-subtle border border-border-subtle rounded-lg overflow-hidden text-[12.5px]">
+<!-- Audit 1 -->
+<div class="p-3.5 bg-surface hover:bg-surface-subtle transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono font-semibold text-on-surface">Audit #8812</span>
+<span class="text-border-muted">•</span>
+<span class="text-text-muted">Hindi ASR</span>
+<span class="text-border-muted">•</span>
+<span class="text-[11.5px] text-text-muted">Reviewed Nov 05</span>
+</div>
+<p class="text-[12px] text-on-surface-variant italic">"Flawless retroflex annotation"</p>
+</div>
+<span class="inline-flex items-center gap-1 font-semibold text-success bg-success-subtle px-2 py-0.5 rounded text-[12px] self-start sm:self-center">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span> Approved (100%)
+              </span>
+</div>
+<!-- Audit 2 -->
+<div class="p-3.5 bg-surface hover:bg-surface-subtle transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono font-semibold text-on-surface">Audit #8799</span>
+<span class="text-border-muted">•</span>
+<span class="text-text-muted">Bhojpuri Transcribe</span>
+<span class="text-border-muted">•</span>
+<span class="text-[11.5px] text-text-muted">Reviewed Nov 04</span>
+</div>
+<p class="text-[12px] text-on-surface-variant italic">"Feedback addressed"</p>
+</div>
+<span class="inline-flex items-center gap-1 font-semibold text-warning bg-warning-subtle px-2 py-0.5 rounded text-[12px] self-start sm:self-center">
+<span class="material-symbols-outlined text-[14px]">replay</span> Changes requested (88%)
+              </span>
+</div>
+<!-- Audit 3 -->
+<div class="p-3.5 bg-surface hover:bg-surface-subtle transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono font-semibold text-on-surface">Audit #8740</span>
+<span class="text-border-muted">•</span>
+<span class="text-text-muted">Code-switching NER</span>
+<span class="text-border-muted">•</span>
+<span class="text-[11.5px] text-text-muted">Reviewed Nov 02</span>
+</div>
+<p class="text-[12px] text-on-surface-variant italic">"Accurate boundary tagging across all 60 sentences"</p>
+</div>
+<span class="inline-flex items-center gap-1 font-semibold text-success bg-success-subtle px-2 py-0.5 rounded text-[12px] self-start sm:self-center">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span> Approved (100%)
+              </span>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN (4 cols) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- 6. RIGHT COLUMN — EARNINGS DASHBOARD -->
+<section aria-label="Contribution Activity" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="monthly-activity"><div class="flex items-center justify-between"><div><h2 class="text-lg font-bold text-on-surface tracking-tight">&nbsp;Activity</h2><p class="text-[12px] text-text-muted mt-0.5">Task velocity &amp; daily engagement</p></div><span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary-subtle px-2 py-0.5 rounded border border-primary/20"><span class="material-symbols-outlined text-[13px]">event_available</span> Nov 2026 • 84 Tasks Completed</span></div><div class="bg-surface-subtle border border-border-subtle rounded-lg p-3.5 space-y-3"><div class="flex items-center justify-between text-[11px] text-text-muted px-1"><span class="font-semibold text-on-surface">November 2026</span><div class="flex items-center gap-1.5"><span class="text-[10px] text-text-muted">Less</span><div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-[#eef6ff] border border-border-subtle"></span><span class="w-2.5 h-2.5 rounded-xs bg-[#bae6fd]"></span><span class="w-2.5 h-2.5 rounded-xs bg-[#38bdf8]"></span><span class="w-2.5 h-2.5 rounded-xs bg-primary-container"></span><span class="w-2.5 h-2.5 rounded-xs bg-primary"></span></div><span class="text-[10px] text-text-muted">More</span></div></div><div class="flex gap-2 items-start justify-center pt-1"><div class="flex flex-col justify-between text-[9.5px] text-text-muted font-medium pr-1 h-[112px] py-0.5 select-none"><span class="leading-none">M</span><span class="leading-none">T</span><span class="leading-none">W</span><span class="leading-none">T</span><span class="leading-none">F</span><span class="leading-none">S</span><span class="leading-none">S</span></div><div class="grid grid-flow-col grid-rows-7 gap-1.5 flex-1"><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 1: 3 tasks • ₹1,200</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 2: 7 tasks • ₹2,800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 3: 5 tasks • ₹2,000</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#bae6fd] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 4: 2 tasks • ₹800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 5: 4 tasks • ₹1,600</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#eef6ff] border border-border-subtle hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 6: Rest Day (0 tasks)</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#bae6fd] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 7: 1 task • ₹400</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 8: 6 tasks • ₹2,400</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 9: 8 tasks • ₹3,200</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 10: 4 tasks • ₹1,600</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#bae6fd] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 11: 2 tasks • ₹800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 12: 7 tasks • ₹2,800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 13: 5 tasks • ₹2,000</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 14: 6 tasks completed • ₹2,400 earned</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 15: 5 tasks • ₹2,000</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 16: 3 tasks • ₹1,200</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 17: 4 tasks • ₹1,600</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#eef6ff] border border-border-subtle hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 18: Rest Day (0 tasks)</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 19: 8 tasks • ₹3,200</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 20: 5 tasks • ₹2,000</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 21: 4 tasks • ₹1,600</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#bae6fd] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 22: 2 tasks • ₹800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 23: 3 tasks • ₹1,200</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 24: 7 tasks • ₹2,800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-primary-container hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 25: 6 tasks • ₹2,400</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#38bdf8] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 26: 4 tasks • ₹1,600</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#bae6fd] hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 27: 2 tasks • ₹800</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#eef6ff] border border-border-subtle hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 28: 0 tasks</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#eef6ff] border border-border-subtle hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 29: Scheduled</div></div><div class="relative has-tooltip"><div class="w-full h-3 rounded-xs bg-[#eef6ff] border border-border-subtle hover:ring-1 hover:ring-primary cursor-pointer transition-all"></div><div class="tooltip-box absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-on-surface text-white text-[10px] rounded shadow-lg whitespace-nowrap z-30 pointer-events-none">Nov 30: Scheduled</div></div><div class="w-full h-3 rounded-xs bg-transparent opacity-0 pointer-events-none"></div><div class="w-full h-3 rounded-xs bg-transparent opacity-0 pointer-events-none"></div><div class="w-full h-3 rounded-xs bg-transparent opacity-0 pointer-events-none"></div><div class="w-full h-3 rounded-xs bg-transparent opacity-0 pointer-events-none"></div><div class="w-full h-3 rounded-xs bg-transparent opacity-0 pointer-events-none"></div></div></div></div><div class="grid grid-cols-3 gap-2 pt-1 border-t border-border-subtle text-center"><div class="p-1.5 rounded bg-surface-subtle border border-border-subtle"><div class="text-[10px] text-text-muted font-medium uppercase tracking-wide">Current Streak</div><div class="text-[13px] font-bold text-primary flex items-center justify-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]">local_fire_department</span> 14 Days</div></div><div class="p-1.5 rounded bg-surface-subtle border border-border-subtle"><div class="text-[10px] text-text-muted font-medium uppercase tracking-wide">Daily Avg</div><div class="text-[13px] font-bold text-on-surface mt-0.5">3.8 hrs</div></div><div class="p-1.5 rounded bg-surface-subtle border border-border-subtle"><div class="text-[10px] text-text-muted font-medium uppercase tracking-wide">Active Days</div><div class="text-[13px] font-bold text-success mt-0.5">22/30</div></div></div></section><section aria-label="Earnings Dashboard" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4" id="earnings">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Earnings Dashboard</h2>
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+</div>
+<!-- Transparent Earnings Summary -->
+<div class="bg-surface-subtle border border-border-subtle rounded-lg p-4 space-y-3">
+<div>
+<span class="text-[11.5px] font-semibold uppercase tracking-wider text-text-muted block">Current Period Earnings</span>
+<div class="text-2xl font-bold text-on-surface mt-0.5">₹34,850 <span class="text-sm font-normal text-text-muted">($420.50)</span></div>
+</div>
+<!-- Breakdown -->
+<div class="space-y-1.5 pt-2 border-t border-border-subtle text-[12px]">
+<div class="flex items-center justify-between">
+<span class="text-text-muted flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-success"></span> Approved &amp; Unpaid:
+                </span>
+<span class="font-bold text-success">₹24,100</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-warning"></span> Awaiting Review:
+                </span>
+<span class="font-semibold text-warning">₹10,750</span>
+</div>
+</div>
+<!-- Historical & Upcoming Payout -->
+<div class="pt-2 border-t border-border-subtle space-y-1.5 text-[11.5px]">
+<div class="flex items-center justify-between text-text-muted">
+<span class="">Paid Out (Last Cycle):</span>
+<span class="font-medium text-on-surface">₹1,25,400 on Oct 31</span>
+</div>
+<div class="flex items-center justify-between text-text-muted">
+<span class="">Next Scheduled Payout:</span>
+<span class="font-semibold text-primary">Nov 15, 2026</span>
+</div>
+<div class="text-[11px] text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-success">check</span>
+                Direct Bank Transfer ••••4092
+              </div>
+</div>
+</div>
+<!-- Payment Lifecycle explanation -->
+<div class="p-3 bg-surface-muted rounded-lg border border-border-subtle space-y-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-text-muted block">Payment Lifecycle</span>
+<div class="flex items-center justify-between text-[10.5px] font-semibold text-on-surface text-center">
+<span class="bg-white px-1.5 py-0.5 rounded border border-border-subtle">Submitted</span>
+<span class="text-text-muted">→</span>
+<span class="bg-white px-1.5 py-0.5 rounded border border-border-subtle">QA Review</span>
+<span class="text-text-muted">→</span>
+<span class="bg-white px-1.5 py-0.5 rounded border border-border-subtle">Approved</span>
+<span class="text-text-muted">→</span>
+<span class="bg-white px-1.5 py-0.5 rounded border border-border-subtle">Payout</span>
+</div>
+<p class="text-[11px] text-text-muted leading-relaxed">
+              Recorded in ledger upon QA sign-off. Payouts processed automatically bi-weekly.
+            </p>
+</div>
+<a class="w-full py-2 px-3 rounded-md border border-border-subtle bg-white hover:bg-surface-muted text-on-surface text-[12.5px] font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-xs" href="#earnings">
+<span class="">View Complete Earnings Ledger</span>
+<span class="material-symbols-outlined text-[15px] text-primary">arrow_forward</span>
+</a>
+</section>
+<!-- 7. RIGHT COLUMN — ACCOUNT & PAYMENT SETUP -->
+<section aria-label="Account and Payment Setup" class="bg-surface rounded-xl border border-border-subtle p-5 md:p-6 shadow-xs space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Account &amp; Compliance</h2>
+<p class="text-[12px] text-text-muted">Checklist &amp; clearance status</p>
+</div>
+<span class="inline-flex items-center gap-1 text-[11.5px] font-bold text-success bg-success-subtle px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span> 100% Ready
+            </span>
+</div>
+<div class="space-y-2 text-[12.5px]">
+<!-- Item 1: Email Verification -->
+<div class="flex items-center justify-between p-2.5 rounded-md bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[17px]">mark_email_read</span>
+<span class="font-medium text-on-surface">Email Verification</span>
+</div>
+<span class="text-[11px] font-bold text-success">Verified</span>
+</div>
+<!-- Item 2: Contributor Profile -->
+<div class="flex items-center justify-between p-2.5 rounded-md bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[17px]">person</span>
+<span class="font-medium text-on-surface">Contributor Profile</span>
+</div>
+<span class="text-[11px] font-bold text-success">Complete (100%)</span>
+</div>
+<!-- Item 3: Govt Identity KYC -->
+<div class="flex items-center justify-between p-2.5 rounded-md bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[17px]">badge</span>
+<span class="font-medium text-on-surface">Govt Identity (KYC)</span>
+</div>
+<span class="text-[11px] font-bold text-success">Tier-1 Pass</span>
+</div>
+<!-- Item 4: Payout Method -->
+<div class="flex items-center justify-between p-2.5 rounded-md bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[17px]">account_balance</span>
+<span class="font-medium text-on-surface">Payout Method</span>
+</div>
+<span class="text-[11px] font-medium text-on-surface">HDFC Bank ••••4092</span>
+</div>
+<!-- Item 5: Data Confidentiality NDA -->
+<div class="flex items-center justify-between p-2.5 rounded-md bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[17px]">gavel</span>
+<span class="font-medium text-on-surface">Confidentiality &amp; NDA</span>
+</div>
+<span class="text-[11px] font-bold text-success">Signed (v2.4)</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-surface border-t border-border-subtle mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-[12.5px]">
+<div class="">© 2026 Svara Systems Inc. All rights reserved.</div>
+<div class="flex items-center gap-5">
+<a class="hover:text-on-surface transition-colors" href="#">Portal Guidelines</a>
+<a class="hover:text-on-surface transition-colors" href="#">Task Policy &amp; SLA</a>
+<a class="hover:text-on-surface transition-colors" href="#">Community Forum</a>
+<a class="hover:text-on-surface transition-colors" href="#">Help &amp; Support</a>
+</div>
+</div>
+</footer>
+<script>
+  // Availability status toggle logic
+  function toggleAvailability(btn) {
+    const isChecked = btn.getAttribute('aria-checked') === 'true';
+    btn.setAttribute('aria-checked', !isChecked);
+    const thumb = document.getElementById('availThumb');
+    const lbl = document.getElementById('availLabel');
+    const indicator = document.getElementById('availStatusIndicator');
+
+    if (isChecked) {
+      btn.classList.remove('bg-primary');
+      btn.classList.add('bg-border-muted');
+      thumb.classList.remove('translate-x-5');
+      thumb.classList.add('translate-x-0');
+      lbl.innerText = 'Unavailable';
+      lbl.classList.remove('text-success');
+      lbl.classList.add('text-text-muted');
+      indicator.innerHTML = '<span class="relative inline-flex rounded-full h-2 w-2 bg-text-muted"></span><span class="text-[12px] font-semibold text-text-muted" id="availLabel">Unavailable</span>';
+    } else {
+      btn.classList.remove('bg-border-muted');
+      btn.classList.add('bg-primary');
+      thumb.classList.remove('translate-x-0');
+      thumb.classList.add('translate-x-5');
+      indicator.innerHTML = '<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-success"></span></span><span class="text-[12px] font-semibold text-success" id="availLabel">Available</span>';
+    }
+  }
+
+  // Filter Task Tab logic
+  function filterTaskTab(filter) {
+    const tabs = ['all', 'needs-action', 'in-progress', 'under-review', 'completed'];
+    tabs.forEach(t => {
+      const btn = document.getElementById('tab-' + t);
+      if (btn) {
+        if (t === filter) {
+          btn.className = 'task-tab-btn px-2.5 py-1 rounded bg-surface text-on-surface font-semibold shadow-xs flex items-center gap-1';
+        } else {
+          btn.className = 'task-tab-btn px-2.5 py-1 rounded text-text-muted hover:text-on-surface transition-colors flex items-center gap-1';
+        }
+      }
+    });
+
+    const cards = document.querySelectorAll('.task-card');
+    cards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = 'flex';
+      } else {
+        const cardStatus = card.getAttribute('data-status');
+        if (cardStatus === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    });
+  }
+
+  // State Simulator Switcher
+  function setDashboardState(state) {
+    const states = ['active', 'empty', 'loading', 'error'];
+    states.forEach(s => {
+      const view = document.getElementById('state-' + s + '-view');
+      const btn = document.getElementById('btn-state-' + s);
+      if (view) {
+        if (s === state) {
+          view.classList.remove('hidden');
+        } else {
+          view.classList.add('hidden');
+        }
+      }
+      if (btn) {
+        if (s === state) {
+          btn.className = 'state-btn px-2.5 py-1 rounded bg-primary-active text-white font-medium transition-colors';
+        } else {
+          btn.className = 'state-btn px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors';
+        }
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+</body></html>

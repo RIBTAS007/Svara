@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Svara AI | Human-in-the-Loop Operations</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed":"#001b3e","inverse-primary":"#aac7ff","on-tertiary-fixed":"#341100","secondary-container":"#e2dfe1","tertiary-container":"#af4900","surface-tint":"#005cba","secondary-fixed-dim":"#c8c6c8","primary-hover":"#0052A3","primary-container":"#0066cc","on-primary-fixed-variant":"#00458e","secondary-fixed":"#e4e2e4","error":"#ba1a1a","on-surface-variant":"#414753","surface-container":"#eeeef0","tertiary-fixed":"#ffdbcb","on-secondary-fixed":"#1b1b1d","on-primary-container":"#dfe8ff","surface-container-low":"#f3f3f5","outline":"#727784","outline-variant":"#c1c6d5","surface-container-high":"#e8e8ea","on-background":"#1a1c1d","text-muted":"#86868B","on-error":"#ffffff","surface-container-lowest":"#ffffff","background":"#f9f9fb","surface-base":"#FFFFFF","on-secondary-fixed-variant":"#474649","on-secondary-container":"#636264","on-surface":"#1a1c1d","surface-container-highest":"#e2e2e4","inverse-surface":"#2f3132","on-tertiary":"#ffffff","on-primary":"#ffffff","border-subtle":"#E5E5EA","tertiary":"#883700","inverse-on-surface":"#f0f0f2","primary-subtle":"#EBF4FF","primary-active":"#0077ED","on-tertiary-fixed-variant":"#793000","surface-bright":"#f9f9fb","error-container":"#ffdad6","primary":"#004e9f","surface":"#f9f9fb","on-tertiary-container":"#ffe3d6","surface-dim":"#d9dadc","on-secondary":"#ffffff","secondary":"#5f5e60","on-error-container":"#93000a","surface-variant":"#e2e2e4","primary-fixed":"#d7e3ff","primary-fixed-dim":"#aac7ff","tertiary-fixed-dim":"#ffb692","border-muted":"#D1D1D6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1.25rem","gutter-mobile":"1rem","margin":"3rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem"},"fontFamily":{"display-hero-mobile":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"headline-sm":["Inter"],"display-hero":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"label-md":["Inter"]},"fontSize":{"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-base/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Svara<span class="text-primary font-headline-sm text-headline-sm">AI</span></span><span class="ml-space-xs px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Contributor</span></div><nav class="hidden md:flex items-center gap-1.5 p-1 rounded-xl bg-surface-container-low" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg"><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#">Dashboard</a><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tasks" href="#">Tasks</a><a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md transition-colors" data-path="assessments" href="#">Assessments</a><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="earnings" href="#">Earnings</a><a class="px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="performance" href="#">Performance</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1 rounded-full bg-primary-subtle text-primary"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm font-medium tracking-wide uppercase">HITL Active</span></div><button aria-label="Notifications" class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface flex items-center justify-center transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Priya Nair</span><span class="font-label-sm text-label-sm text-text-muted leading-none">SV-88204</span></div></div></div></div></header><main class="w-full pt-16 bg-background"><div class="flex flex-col w-full">
+<!-- Content Container with precision margin alignment -->
+<div class="w-full px-margin py-space-xl flex flex-col gap-space-xl max-w-[1440px] mx-auto"><!-- 1. BREADCRUMB & HEADER -->
+<div class="flex flex-col gap-space-md">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-md text-label-md text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">Assessments</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors">Hindi Speech Transcription Qualification</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-medium">Improvement Plan</span>
+</nav>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-base shadow-sm border border-border-subtle">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">Qualification Diagnostic</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Hindi Speech Track</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Improve Your Skills &amp; Next Steps</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Understand your assessment feedback, strengthen your skills and explore your available options.
+      </p>
+</div>
+<div class="flex items-center gap-3 shrink-0 self-start lg:self-center">
+<a class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5" href="#competency-breakdown">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+        View Competencies
+      </a>
+<a class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-hover active:bg-primary-active transition-colors shadow-sm flex items-center gap-1.5" href="#improvement-plan">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+        Start Improvement Plan
+      </a>
+</div>
+</div>
+</div>
+<!-- 2-COLUMN BALANCED DESKTOP GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN (7 COLS): Diagnostic, Competency Groups, Personalized Plan, Appeal Submission -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- 2. ASSESSMENT RESULT DIAGNOSTIC (COMPACT & CONSTRUCTIVE) -->
+<section class="rounded-xl bg-surface-base p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md pb-space-sm border-b border-border-subtle">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">info</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">You're not qualified yet.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Your assessment identified a few areas where additional practice can help improve your transcription accuracy to reach the <strong class="text-on-surface font-semibold">85.0% qualification benchmark</strong>.
+            </p>
+</div>
+</div>
+</div>
+<!-- Metric Summary Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Attempt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">1 <span class="font-body-sm text-body-sm text-text-muted">of 2</span></span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1">Nov 06 • 18:42 UTC</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Achieved Score</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">78.5%</span>
+<span class="font-label-sm text-label-sm text-error mt-1">-6.5% to pass (85%)</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Retake Status</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary mt-1">Cooldown Active</span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1">Unlocks in 18h 24m</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Appeal Status</span>
+<span class="font-label-md text-label-md font-semibold text-primary mt-1">Eligible</span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1">Within 72h window</span>
+</div>
+</div>
+<!-- Linguistic Lead Diagnostic Note -->
+<div class="p-space-md rounded-xl bg-primary-subtle border border-primary/20 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span>Linguistic Lead Diagnostic Note</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          Your overall acoustic rhythm and standard Khari Boli Devanagari orthography scored exceptionally well (<strong class="font-semibold text-primary">89.4%</strong>). The primary variance stems from rapid Hinglish code-switching loanwords where Latin script characters were unintentionally converted, alongside colloquial Awadhi verbal elisions (<span class="italic">'-raha ba'</span>). With targeted drill practice, your trajectory places you safely above the 85.0% qualification benchmark.
+        </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span> Double-Blind Blind Evaluated
+        </span>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+            Download Attempt 1 Transcript Summary (.PDF)
+          </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            View Detailed Evaluation
+          </button>
+</div>
+</div>
+</section>
+<!-- 3. LINGUISTIC COMPETENCY BREAKDOWN (3 LOGICAL GROUPS) -->
+<section class="rounded-xl bg-surface-base p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-lg" id="competency-breakdown">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Linguistic Competency Breakdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Organized into 3 evaluation groups comparing your performance against qualification standards.</p>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-text-muted">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Meets Standard (≥85%)</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Focus Area</span>
+</div>
+</div>
+<!-- Summary Banner: Strongest vs Priority Areas -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span><strong>Top Strength:</strong> Devanagari Orthography (89.4%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">priority_high</span>
+<span><strong>Priority Focus:</strong> Hinglish Code-Switching (71.5%) &amp; Awadhi Regionalism (72.0%)</span>
+</div>
+</div>
+<!-- GROUP A: TRANSCRIPTION ACCURACY -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider font-semibold text-on-surface">Group A: Transcription Accuracy</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Dimension 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Devanagari Orthography</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Meets Standard</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Transcription Accuracy (Devanagari)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Khari Boli orthography, standard conjuncts, and matras.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-body-sm text-body-sm">
+<span class="text-text-muted">Benchmark: ≥85.0%</span>
+<span class="font-semibold text-primary font-body-md text-body-md">89.4%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 89.4%;"></div>
+</div>
+</div>
+</div>
+<!-- Dimension 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Punctuation &amp; Cadence</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Meets Standard</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Punctuation &amp; Purna Viram (।)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sentence boundary markers, intonation pauses, and full stops.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-body-sm text-body-sm">
+<span class="text-text-muted">Benchmark: ≥85.0%</span>
+<span class="font-semibold text-primary font-body-md text-body-md">88.0%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- GROUP B: LINGUISTIC UNDERSTANDING -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider font-semibold text-on-surface">Group B: Linguistic Understanding (Target Gaps)</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Dimension 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border-2 border-tertiary-fixed flex flex-col justify-between gap-3 relative">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold uppercase">Priority Improvement #1</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Needs Work (-8.0%)</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Dialect &amp; Awadhi Regionalism</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contractions, eastern rural verb inflections, and lexical variants.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="text-tertiary font-medium">Focus:</span> Awadhi colloquial endings (उदा. 'रहा बा')
+              </div>
+<div class="flex justify-between items-baseline font-body-sm text-body-sm mt-1">
+<span class="text-text-muted">Benchmark: ≥80.0%</span>
+<span class="font-semibold text-tertiary font-body-md text-body-md">72.0%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+<!-- Dimension 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border-2 border-tertiary-fixed flex flex-col justify-between gap-3 relative">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold uppercase">Priority Improvement #2</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Needs Work (-13.5%)</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Hinglish Code-Switching</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Selective script switching between Devanagari and Latin alphabet tags.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="text-tertiary font-medium">Focus:</span> Latin script retention for modern technical loanwords
+              </div>
+<div class="flex justify-between items-baseline font-body-sm text-body-sm mt-1">
+<span class="text-text-muted">Benchmark: ≥85.0%</span>
+<span class="font-semibold text-tertiary font-body-md text-body-md">71.5%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 71.5%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- GROUP C: AUDIO UNDERSTANDING -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider font-semibold text-on-surface">Group C: Audio Understanding</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Dimension 5 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">SNR Codec Deciphering</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Meets Standard</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Acoustic Clarity (Low SNR)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Phoneme deciphering in noisy mobile cellular codecs and environment chatter.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-body-sm text-body-sm">
+<span class="text-text-muted">Benchmark: ≥80.0%</span>
+<span class="font-semibold text-primary font-body-md text-body-md">82.0%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+<!-- Dimension 6 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Boundary Alignment</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Needs Work (-9.0%)</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Noise &amp; Acoustic Tagging</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Time-aligned placement of `[crosstalk]`, `[applause]`, and `[inaudible]` markers.</p>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline font-body-sm text-body-sm">
+<span class="text-text-muted">Benchmark: ≥85.0%</span>
+<span class="font-semibold text-tertiary font-body-md text-body-md">76.0%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 76%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. PERSONALIZED IMPROVEMENT PLAN (PRIMARY CENTERPIECE) -->
+<section class="rounded-xl bg-surface-base p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-lg" id="improvement-plan">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">Curated Skill Booster</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Your Personalized Improvement Plan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Curated learning modules and zero-stakes audio practice drills tailored to your assessment diagnostics. Available to all contributors to strengthen skills and unlock higher qualification tiers.
+          </p>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm shrink-0 font-medium">Estimated Time: ~50 mins</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Module 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:border-primary/40 transition-colors">
+<div class="flex flex-col gap-2 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">Priority 1</span>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 20 min</span>
+<span class="font-label-sm text-label-sm text-text-muted">• 5 Exercises</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">• Not Started</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Hinglish Code-Switching &amp; Latin Script Preservation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-medium">Why improve:</strong> Spoken technical loanwords like 'app', 'login', and 'OTP' were transliterated into Devanagari rather than kept in Latin script per Svara Spec v3.2.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-on-primary font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span>Start Practice Drill</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:border-primary/40 transition-colors">
+<div class="flex flex-col gap-2 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">Priority 2</span>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 25 min</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">• In Progress (2 of 5 Verified)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Eastern Hindi &amp; Awadhi Dialectal Forms</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-medium">Why improve:</strong> Verbal suffixes like <span class="italic">'-raha ba'</span> and nasalized vowel shifts were normalized into standard Khariboli rather than transcribed verbatim.
+            </p>
+<div class="w-full max-w-xs h-1.5 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-on-primary font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span>Resume Practice Drill</span>
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:border-primary/40 transition-colors">
+<div class="flex flex-col gap-2 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">Refresher</span>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 15 min</span>
+<span class="font-label-sm text-label-sm text-text-muted">• 10 Practice Clips</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">• Ready</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Acoustic Collision &amp; Overlapping Noise Tagging</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-medium">Why improve:</strong> Accurate boundary placement of <span class="font-mono">[crosstalk]</span> and <span class="font-mono">[background_noise]</span> during rapid multi-speaker turns.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-2">
+<span>Launch Audio Sandbox</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. EVALUATION APPEAL WORKFLOW FORM -->
+<section class="rounded-xl bg-surface-base p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-lg" id="appeal-section">
+<div class="flex flex-col gap-1 pb-space-sm border-b border-border-subtle">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+<h2>Disagree with an evaluation? File an Assessment Appeal</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">
+            Eligible (Window open until Nov 09, 18:42 UTC • 1 of 1 Appeal Remaining)
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          If you believe an acoustic artifact, dialect disagreement, or proctoring anomaly affected your score, request an independent review by Senior Linguistic Adjudicators. Submitting an appeal does not freeze your retake cooldown or deduct attempts.
+        </p>
+</div>
+<!-- Adjudication Guarantee Callout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-3.5 rounded-lg bg-primary-subtle flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0">verified_user</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">24-48h Adjudication SLA:</strong> Double-blind re-evaluation by Senior Adjudicators. If revised aggregate reaches ≥85.0%, qualification is immediately conferred.
+          </div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5 shrink-0">shield</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-on-surface">Zero Penalty Policy:</strong> Appeals do not consume retake attempts nor reduce your Contributor Trust Rating.
+          </div>
+</div>
+</div>
+<!-- Appeal Form -->
+<form class="flex flex-col gap-space-md pt-1" onsubmit="event.preventDefault(); document.getElementById('appeal-success').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Step 1 -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="dispute-reason">
+<span>Step 1: Primary Issue Category</span>
+<span class="text-primary font-normal">Required</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 pr-10 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer border border-border-subtle" id="dispute-reason">
+<option selected="" value="dialect">Dialectal Orthography Disagreement (e.g., valid regional variation)</option>
+<option value="audio_quality">Audio Quality / Reverberation Issue (clipping, channel dropped)</option>
+<option value="speaker_overlap">Speaker Overlap / Diarization Ambiguity</option>
+<option value="rubric">Guideline Ambiguity or Rubric Conflict</option>
+<option value="technical">Technical Platform Issue or Sync Latency</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Step 2: Select Affected Audio Clips</span>
+<span class="text-text-muted font-normal">Select one or more</span>
+</label>
+<div class="flex flex-wrap items-center gap-1.5 p-1 rounded-lg bg-surface-container-low min-h-[44px] border border-border-subtle">
+<label class="cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block">Clip 01</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block">Clip 02</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block">Clip 04</span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block font-semibold">Clip 05 [Selected]</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block">Clip 07</span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<span class="px-2.5 py-1 rounded text-on-surface-variant font-label-md text-label-md peer-checked:bg-primary peer-checked:text-on-primary hover:bg-surface-container-high transition-colors inline-block">Clip 08</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="justification-text">
+<span>Step 3: Linguistic Reasoning &amp; Technical Justification</span>
+<span class="text-text-muted font-normal">Devanagari &amp; Latin Unicode Supported</span>
+</label>
+<textarea class="w-full p-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary resize-y leading-relaxed border border-border-subtle" id="justification-text" placeholder="State your linguistic reasoning or describe the technical error. For instance: 'In Clip 05, the speaker employs an Awadhi dialectal verbal suffix (-raha ba) which was recognized as standard in the 2024 Sahitya Akademi Indic Corpora guidelines...'" rows="3"></textarea>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-text-muted">
+<span>Cite specific dictionary entries, timestamps, or academic corpora.</span>
+<span>248 / 2000 chars</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-2">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md border border-border-subtle transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+              Attach Audio Note / Timestamp Log
+            </button>
+<span class="font-body-sm text-body-sm text-text-muted hidden sm:inline">PNG, WAV, MP3 up to 25 MB</span>
+</div>
+<button class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-on-primary font-headline-sm text-headline-sm transition-colors shadow-sm flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+            Submit Formal Appeal
+          </button>
+</div>
+<!-- Success Toast -->
+<div class="hidden p-space-md rounded-xl bg-primary-subtle text-primary flex items-start gap-3 transition-all border border-primary/20" id="appeal-success">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold">Appeal Successfully Dispatched to Adjudication Queue</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Case Reference <span class="font-semibold text-primary">#APL-2026-HI-0428</span> has been generated. You will receive an adjudication verdict within 24-48 business hours.
+            </p>
+</div>
+</div>
+</form>
+</section>
+</div>
+<!-- RIGHT COLUMN (5 COLS): Retake Cooldown Card, Audio Sandbox Launcher, Active Appeal Tracker, Policy FAQs -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- 5. RETAKE ELIGIBILITY & NEXT ATTEMPT (DEDICATED CARD) -->
+<div class="p-space-lg rounded-xl bg-surface-base shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-subtle">
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold uppercase tracking-wider">Institutional Governance</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Your Next Assessment Attempt</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">1 Attempt Remaining</span>
+</div>
+<!-- Timer Highlight -->
+<div class="p-space-md rounded-xl bg-primary-subtle border border-primary/20 flex flex-col gap-1 items-center text-center">
+<span class="font-label-sm text-label-sm text-primary font-medium uppercase tracking-wider">Retake Cooldown Active</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold" id="cooldown-timer">18h 24m 12s</span>
+<span class="font-body-sm text-body-sm text-text-muted">Unlocks Nov 08, 18:45 UTC • Mandatory 48h skill internalisation</span>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+          Attempt Status: Attempt 1 of 2 Used
+        </div>
+<p class="text-on-surface-variant">
+          Completing the 2 practice drills immediately unlocks candidate readiness. Practice drills do not consume official attempts.
+        </p>
+<p class="text-text-muted text-[12px]">
+          Policy Note: Reassessment draws from a dynamic 8-clip audio bank; historical attempts are permanently archived and never overwritten.
+        </p>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full py-3 px-4 rounded-lg bg-surface-container-high text-outline cursor-not-allowed font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-all" disabled="" title="Currently locked: 18h 24m cooldown remaining.">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+          Launch Qualification Attempt 2 (Locked)
+        </button>
+<a class="w-full py-2.5 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-2 text-center" href="#improvement-plan">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+          Continue Practising Drills
+        </a>
+</div>
+</div>
+<!-- ZERO-STAKES AUDIO LAB SANDBOX -->
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface-base border border-border-subtle flex flex-col">
+<div class="relative h-36 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of an Indian linguist annotator working with professional over-ear studio headphones reviewing audio waveforms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmwYCRsVFbMr6X58CVgEwp7NNr11mSMHQaufwf4YAut2fgR6GFLwgrHZeCGuH-2xgd7jshMMQQ1_1y-eVgLtsZLQ9v5vUGgfoWybtjrYb_KLLoe7zJ8Sb5x5nK4s_bs3ZVzt8xQcriDHtduRDAbXwZ-54PaeH2U2Gd0LqNnsFzG0Aae2c1ZaxyxA4kfsCaO75UfmPfK8oqFSw0bH1S0DZw7Wz8QALK7iQltQgTjeI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/30 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 text-on-primary">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Zero-Stakes Audio Lab</span>
+<p class="font-headline-sm text-headline-sm text-on-primary mt-0.5 leading-tight">Indic Transcription Sandbox</p>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Practice transcribing real Hindi dial-in audio samples using Svara's exact production editor with instant automated feedback that never consumes official attempts.
+        </p>
+<a class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+          Open Free Practice Sandbox
+        </a>
+</div>
+</div>
+<!-- 7. ACTIVE APPEAL TRACKING & AUDIT -->
+<div class="p-space-lg rounded-xl bg-surface-base shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-subtle">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted font-medium">Ticket Ledger</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Active Appeal Tracker</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">1 Active Case</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-mono font-semibold text-primary text-label-md">APL-2026-HI-0419</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            Under Review (Queue #06)
+          </span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-medium text-on-surface">Dialectal Orthography Disagreement in Clip 05</p>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Senior Indic Desk • Est. Nov 08, ~09:15 UTC</p>
+</div>
+<div class="flex items-center gap-2 pt-1 border-t border-border-subtle">
+<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm flex-1 justify-center" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span> View Details
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm flex-1 justify-center" type="button">
+<span class="material-symbols-outlined text-[14px]">history</span> Audit Log
+          </button>
+</div>
+</div>
+</div>
+<!-- 8. REASSESSMENT POLICY & FAQS -->
+<div class="p-space-lg rounded-xl bg-surface-base shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-2 pb-space-sm border-b border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[20px]">help_center</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Reassessment FAQs</h2>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Does filing an appeal freeze my 48-hr retake cooldown?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            No. Your 48-hour cooldown runs continuously in parallel. If you wish to retake Attempt 2 as soon as it unlocks, you may do so without forfeiting your active appeal.
+          </p>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Can I continue practising in the sandbox during cooldown?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Yes, absolutely. The Zero-Stakes Audio Lab and micro-drills provide unlimited practice with zero impact on official attempt limits.
+          </p>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">What happens if my appeal is accepted?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            If recalculation elevates your score to ≥85.0%, qualification is immediately granted and your Tier-2 production tasks unlock without needing Attempt 2.
+          </p>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Can I view exact benchmark answer keys?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            To maintain testing integrity across the contributor network, verbatim keys are not exposed. Detailed phonological rationales are provided instead.
+          </p>
+</div>
+</div>
+</div>
+<!-- Support Help Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[18px]">support_agent</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Need Support Desk Assistance?</p>
+<p class="font-body-sm text-body-sm text-text-muted">24/7 Operations in Hindi, Tamil &amp; English</p>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-base hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm transition-colors" href="#">Contact</a>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+  // Simple Micro-interaction: Dynamic Countdown Ticker
+  (function() {
+    let totalSeconds = (18 * 3600) + (24 * 60) + 12;
+    const timerEl = document.getElementById('cooldown-timer');
+    if (!timerEl) return;
+
+    setInterval(function() {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        timerEl.textContent = `${hours}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+      }
+    }, 1000);
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-lg"><div class="w-full px-margin flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted"><div class="flex items-center gap-space-md"><span>© 2025 Svara AI Inc. Human-in-the-Loop Data Engine.</span><span class="hidden sm:inline">•</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">ISO/IEC 42001 &amp; SOC 2 Type II Certified</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="data-privacy" href="#">Data Privacy</a><a class="hover:text-primary transition-colors" data-path="annotation-guidelines" href="#">Annotation Guidelines</a><a class="hover:text-primary transition-colors" data-path="contributor-terms" href="#">Terms of Service</a><a class="hover:text-primary transition-colors" data-path="system-status" href="#">System Status</a></div></div></footer></body></html>

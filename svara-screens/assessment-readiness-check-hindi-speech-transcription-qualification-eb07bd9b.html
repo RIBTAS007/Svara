@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>DataLoop Contributor Portal</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-base": "#FFFFFF", "on-tertiary": "#ffffff", "surface-tint": "#005cba", "surface-dim": "#d9dadc", "on-secondary-fixed-variant": "#474649", "surface-container-lowest": "#ffffff", "text-muted": "#86868B", "tertiary-container": "#af4900", "outline": "#727784", "primary-fixed-dim": "#aac7ff", "surface-container": "#eeeef0", "primary": "#004e9f", "secondary-fixed": "#e4e2e4", "on-tertiary-fixed": "#341100", "on-tertiary-fixed-variant": "#793000", "primary-fixed": "#d7e3ff", "on-primary": "#ffffff", "error": "#ba1a1a", "border-subtle": "#E5E5EA", "surface-container-high": "#e8e8ea", "background": "#f9f9fb", "surface-bright": "#f9f9fb", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb692", "secondary": "#5f5e60", "tertiary-fixed": "#ffdbcb", "tertiary": "#883700", "surface-container-highest": "#e2e2e4", "outline-variant": "#c1c6d5", "on-primary-fixed": "#001b3e", "inverse-surface": "#2f3132", "on-error-container": "#93000a", "secondary-fixed-dim": "#c8c6c8", "surface": "#f9f9fb", "on-surface-variant": "#414753", "border-muted": "#D1D1D6", "on-primary-fixed-variant": "#00458e", "primary-container": "#0066cc", "on-secondary-fixed": "#1b1b1d", "primary-active": "#0077ED", "on-tertiary-container": "#ffe3d6", "on-secondary-container": "#636264", "on-surface": "#1a1c1d", "primary-subtle": "#EBF4FF", "on-primary-container": "#dfe8ff", "secondary-container": "#e2dfe1", "on-background": "#1a1c1d", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-container-low": "#f3f3f5", "inverse-primary": "#aac7ff", "inverse-on-surface": "#f0f0f2", "primary-hover": "#0052A3", "surface-variant": "#e2e2e4" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1.25rem", "margin": "3rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem" }, fontFamily: { "body-md": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "display-hero": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "display-hero-mobile": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-black via-[#0B0D1B] to-[#161233] p-1.5 shadow-sm shrink-0 border border-white/10"><svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="svara-wave-grad" x1="0%" x2="100%" y1="100%" y2="0%"><stop offset="0%" stop-color="#00E5FF"></stop><stop offset="50%" stop-color="#7000FF"></stop><stop offset="100%" stop-color="#FF007A"></stop></lineargradient></defs><path d="M4 16C4 16 6 9 9 9C12 9 13 23 16 23C19 23 20 9 23 9C26 9 28 16 28 16" stroke="url(#svara-wave-grad)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><circle cx="16" cy="16" fill="#00E5FF" r="1.5"></circle></svg></div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Svara</span><span class="h-4 w-[1px] bg-border-subtle mx-space-xs"></span><button class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors"><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Contributor</span><span class="material-symbols-outlined text-[14px] text-text-muted">unfold_more</span></button></div></div><nav class="hidden lg:flex items-center gap-space-md h-16" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="dashboard" href="#">Dashboard</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="assessments" href="#">Assessments</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="projects" href="#">Projects</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="tasks" href="#">Tasks</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="earnings" href="#">Earnings</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md h-full flex items-center px-1 transition-colors" data-path="performance" href="#">Performance</a></nav></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-primary-subtle"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-md text-label-md text-primary font-medium">Task Active</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-[16px] text-text-muted hidden md:inline">keyboard_arrow_down</span></div></div></div></header><main class="w-full flex-1 pt-16 bg-surface max-w-7xl mx-auto px-gutter py-space-lg"><div class="flex flex-col w-full pb-16">
+<!-- COMPACT BREADCRUMBS & HEADER -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<nav class="flex items-center gap-space-xs text-text-muted font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">assessment</span>
+        Assessments
+      </a>
+<span class="text-outline-variant font-normal">/</span>
+<a class="hover:text-primary transition-colors" href="#">Assessment Center</a>
+<span class="text-outline-variant font-normal">/</span>
+<span class="text-on-surface-variant">Hindi Speech Transcription</span>
+<span class="text-outline-variant font-normal">/</span>
+<span class="text-primary font-semibold">Readiness Check</span>
+</nav>
+<!-- Main Headline Banner & Badges -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+            Hindi Speech Transcription Qualification
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            Duration: 35 Minutes
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">
+            Step 2 of 3: Readiness &amp; Environment
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1.5">
+          Assessment Readiness Check
+        </h1>
+<p class="font-body-md text-body-md text-text-muted mt-1">
+          Let's make sure your device and environment are ready before you begin.
+        </p>
+</div>
+<!-- TIMER STATUS PILL (Inactive / Safe Zone) -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-sm border border-border-subtle shrink-0">
+<div class="w-3 h-3 rounded-full bg-primary/40 flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Assessment Timer</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">lock_clock</span>
+            Not Started (Safe Zone)
+          </span>
+</div>
+</div>
+</div>
+<!-- REASSURING SAFETY BANNER -->
+<div class="flex items-start gap-space-sm bg-primary-subtle/80 text-on-surface p-space-md rounded-xl mt-space-xs shadow-sm border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">shield_check</span>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[15px] font-semibold text-primary">You're not being timed yet.</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-surface-base text-primary">Inactive Timer</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+          Complete these checks first. Your official 35-minute assessment timer will begin <span class="font-semibold underline decoration-primary/40 decoration-2 underline-offset-2">only when you select Start Assessment</span> on the next step.
+        </p>
+</div>
+</div>
+</div>
+<!-- PROGRESS STEPPER -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg border border-border-subtle">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md relative">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm opacity-80">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-label-md text-label-md font-semibold shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-muted">Step 1 — Completed</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Overview &amp; Syllabus</span>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-center gap-space-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-semibold shrink-0 ring-4 ring-primary-subtle">
+          2
+        </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Step 2 — Current</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold truncate">Readiness &amp; Environment</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-text-muted font-label-md text-label-md font-medium shrink-0">
+          3
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-muted">Step 3 — Upcoming</span>
+<span class="font-label-md text-label-md text-text-muted font-medium truncate">Instructions &amp; Audio Player</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN 2-COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: CANDIDATE INFO + 4 READINESS GROUPS + INTEGRITY & PRIVACY (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- CANDIDATE VERIFICATION CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">person_check</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Candidate Verification</h2>
+<span class="font-body-sm text-body-sm text-text-muted">Contributor record validated for Indic Speech assessment track</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-primary-subtle text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-md text-label-md font-semibold">Identity Confirmed</span>
+</div>
+</div>
+<!-- 4 Key Candidate Attributes -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm bg-surface-container-low/60 p-space-md rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Verified Contributor</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface mt-0.5">Priya Nair</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Contributor ID</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface mt-0.5">SV-88204</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Language Domain</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface mt-0.5">Hindi (Devanagari)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Contributor Agreement</span>
+<span class="font-body-md text-body-md font-semibold text-primary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Signed &amp; Active
+            </span>
+</div>
+</div>
+<!-- Concise Privacy Statement -->
+<div class="flex items-start gap-2 text-text-muted font-body-sm text-body-sm bg-surface-container-low/40 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">lock</span>
+<p>
+            Your identity verification is used to protect assessment integrity. Access to verification records is restricted to authorized personnel.
+          </p>
+</div>
+</div>
+<!-- FOUR CLEAR READINESS GROUPS -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">System &amp; Equipment Verification</h2>
+<p class="font-body-sm text-body-sm text-text-muted">Confirm these 4 areas to ensure seamless audio playback and Indic transcription.</p>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all border border-border-subtle" id="retestAllBtn">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Retry Diagnostics</span>
+</button>
+</div>
+<!-- GROUP A: AUDIO READINESS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">headphones</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Group A: Audio Readiness</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold" id="audioStatusBadge">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Passed
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Dual-channel conversational speech playback calibration (44.1 kHz, AAC).</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-subtle px-2.5 py-1 rounded-full self-start sm:self-center">Required</span>
+</div>
+<!-- Audio Player & Visualizer Bar -->
+<div class="bg-surface-container-low/70 rounded-xl p-space-md flex flex-col sm:flex-row items-center gap-space-md mt-1">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-medium hover:bg-primary-hover active:bg-primary-active transition-all shrink-0 shadow-sm" id="playSampleBtn">
+<span class="material-symbols-outlined text-[18px]" id="playIconSample">play_arrow</span>
+<span id="playTextSample">Play Sample</span>
+</button>
+<!-- Waveform Animation -->
+<div class="flex-1 w-full flex items-center gap-1 h-8 px-2 overflow-hidden" id="waveformVisualizer">
+<div class="w-1 bg-primary/40 rounded-full h-3 transition-all duration-300"></div>
+<div class="w-1 bg-primary/60 rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary rounded-full h-7 transition-all duration-300"></div>
+<div class="w-1 bg-primary/80 rounded-full h-6 transition-all duration-300"></div>
+<div class="w-1 bg-primary/50 rounded-full h-3 transition-all duration-300"></div>
+<div class="w-1 bg-primary/70 rounded-full h-6 transition-all duration-300"></div>
+<div class="w-1 bg-primary rounded-full h-8 transition-all duration-300"></div>
+<div class="w-1 bg-primary/90 rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary/50 rounded-full h-4 transition-all duration-300"></div>
+<div class="w-1 bg-primary/30 rounded-full h-2 transition-all duration-300"></div>
+<div class="w-1 bg-primary/70 rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary rounded-full h-7 transition-all duration-300"></div>
+<div class="w-1 bg-primary/80 rounded-full h-6 transition-all duration-300"></div>
+<div class="w-1 bg-primary/50 rounded-full h-4 transition-all duration-300"></div>
+<div class="w-1 bg-primary/30 rounded-full h-2 transition-all duration-300"></div>
+<div class="w-1 bg-primary/60 rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary rounded-full h-7 transition-all duration-300"></div>
+<div class="w-1 bg-primary/80 rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary/40 rounded-full h-3 transition-all duration-300"></div>
+<div class="w-1 bg-primary/70 rounded-full h-6 transition-all duration-300"></div>
+<div class="w-1 bg-primary/40 rounded-full h-2 transition-all duration-300"></div>
+<div class="w-1 bg-primary/80 rounded-full h-7 transition-all duration-300"></div>
+<div class="w-1 bg-primary rounded-full h-5 transition-all duration-300"></div>
+<div class="w-1 bg-primary/50 rounded-full h-3 transition-all duration-300"></div>
+</div>
+<!-- Audio Volume Control -->
+<div class="flex items-center gap-2 text-text-muted shrink-0 w-full sm:w-auto justify-between sm:justify-end">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+<input class="w-24 accent-primary h-1.5 bg-surface-container rounded-lg cursor-pointer" max="100" min="0" type="range" value="80"/>
+</div>
+</div>
+<!-- Contributor Confirmation Toggle & Recommendation -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="hearSampleCheck" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface font-semibold">I can clearly hear the Hindi speech sample</span>
+</label>
+<span class="font-body-sm text-body-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tips_and_updates</span>
+              Stereo headphones recommended for conversational multi-speaker clarity.
+            </span>
+</div>
+</div>
+<!-- GROUP B: LANGUAGE INPUT READINESS (LIVE DEVANAGARI TEST FIELD) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">keyboard</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Group B: Language Input Readiness</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Verified
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Test your Hindi input method, Unicode normalization, and matra combinations.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-subtle px-2.5 py-1 rounded-full self-start sm:self-center">Required</span>
+</div>
+<!-- Interactive Test Input Field -->
+<div class="bg-surface-container-low/70 rounded-xl p-space-md flex flex-col gap-2 mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted uppercase font-medium">Prompt Phrase for Verification</span>
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                Devanagari Unicode UTF-8 &amp; Indic IME Verified
+              </span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full px-3 py-2.5 rounded-lg bg-surface-base border border-border-subtle focus:ring-primary font-body-lg text-body-lg text-on-surface font-medium outline-none transition-all pr-24" id="devanagariInput" type="text" value="मेरा नाम प्रिया है और मैं हिंदी में काम करना चाहती हूँ।"/>
+<span class="absolute right-3 px-2 py-0.5 rounded bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">NFC Valid</span>
+</div>
+<!-- Matra Character Palette Badges -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="text-text-muted font-label-sm text-label-sm">Matra &amp; Ligature Checks:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ि</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ी</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ु</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ू</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">े</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ै</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ो</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ौ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">् (हलंत)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">ं (अनुस्वार)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[12px]">़ (नुक्ता)</span>
+</div>
+</div>
+<!-- Guidance Expandable Tip -->
+<div class="flex items-center justify-between text-text-muted font-body-sm text-body-sm pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">help</span>
+<span>Need setup assistance?</span>
+<a class="text-primary hover:underline font-medium" href="#">How to enable Hindi input on Windows, macOS, or Linux</a>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">InScript / Phonetic Supported</span>
+</div>
+</div>
+<!-- GROUP C: INTERNET CONNECTIVITY -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">wifi</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Group C: Internet Connectivity</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Optimal
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Meets assessment streaming requirements (Minimum: 2.0 Mbps, &lt; 150ms latency).</p>
+</div>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors self-start sm:self-center border border-border-subtle" id="retryNetBtn">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+<span>Retry Network</span>
+</button>
+</div>
+<!-- Real-Time Metrics Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm bg-surface-container-low/70 p-space-sm rounded-xl text-center mt-1">
+<div class="flex flex-col bg-surface-base p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Ping Latency</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">18 ms</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Excellent</span>
+</div>
+<div class="flex flex-col bg-surface-base p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Download Speed</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">48.4 Mbps</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">&gt; 2.0 Mbps req.</span>
+</div>
+<div class="flex flex-col bg-surface-base p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Packet Loss</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">0.0%</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Zero Jitter</span>
+</div>
+<div class="flex flex-col bg-surface-base p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Audio Stream Caching</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary mt-0.5">8/8 Clips</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Pre-buffered</span>
+</div>
+</div>
+</div>
+<!-- GROUP D: BROWSER AND DEVICE COMPATIBILITY -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">devices</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Group D: Browser and Device Compatibility</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                    Compatible
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Chrome 131 on macOS Sequoia • Viewport: 1920 × 1080 (Min: 1280 × 720).</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-subtle px-2.5 py-1 rounded-full self-start sm:self-center">Passed</span>
+</div>
+<!-- Browser Architecture Spec Badges -->
+<div class="flex flex-wrap items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+              WebAudio v2 API Active
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+              Unicode Devanagari Rendering Engine Active
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+              MediaSource Stream Support
+            </span>
+</div>
+<!-- Explicit Contributor Notice (Camera & Mic Not Required) -->
+<div class="flex items-center gap-2 bg-surface-container-low/70 p-space-sm rounded-lg mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">videocam_off</span>
+<span>
+<strong class="text-on-surface font-medium">Webcam and microphone recording are not required</strong> for this assessment. No camera or mic permissions needed.
+            </span>
+</div>
+</div>
+</div>
+<!-- INTEGRITY & ALLOWED RESOURCES -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Integrity Standard &amp; Allowed Resources</h2>
+<span class="font-body-sm text-body-sm text-text-muted">Clear assessment rules to guarantee transparent, human transcription quality.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Permitted Column -->
+<div class="bg-surface-container-low/60 rounded-xl p-space-md flex flex-col gap-space-sm border border-border-subtle">
+<div class="flex items-center gap-1.5 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Permitted During Assessment</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Integrated on-screen Hindi virtual keyboard &amp; shortcuts</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Physical blank notepad &amp; pen for phonetic note-taking</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Standard stereo headphones (wired or Bluetooth)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Audio scrub &amp; replay controls (replays allowed up to 3x per clip)</span>
+</li>
+</ul>
+</div>
+<!-- Not Permitted Column -->
+<div class="bg-surface-container-low/60 rounded-xl p-space-md flex flex-col gap-space-sm border border-border-subtle">
+<div class="flex items-center gap-1.5 text-error font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Not Permitted</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[16px] shrink-0 mt-0.5">close</span>
+<span>Automated ASR tools (Whisper, Otter.ai, Google Cloud STT, etc.)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[16px] shrink-0 mt-0.5">close</span>
+<span>AI assistants (ChatGPT, Claude, Gemini, Copilot)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[16px] shrink-0 mt-0.5">close</span>
+<span>External browser translation extensions &amp; screen scraping</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[16px] shrink-0 mt-0.5">close</span>
+<span>Assistance from other persons or collaborative drafting</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-border-subtle">
+<span class="font-body-sm text-body-sm text-text-muted">All submissions undergo automated acoustic &amp; linguistic alignment review.</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+<span>View Full Assessment Integrity Policy</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- PRIVACY & MONITORING TRANSPARENCY -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Privacy &amp; Monitoring Transparency</h2>
+<span class="font-body-sm text-body-sm text-text-muted">Respectful telemetry disclosure for contributors.</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 bg-surface-container-low/60 p-space-md rounded-xl mt-1 text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
+<span>
+<strong class="text-on-surface font-semibold">Events recorded:</strong> Audio replay counts, keystroke submission timestamps, and draft autosaves (every 12s) to protect your work against power loss.
+            </span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>
+<strong class="text-on-surface font-semibold">No secret screen scraping or camera recording.</strong> Your local files, tabs, and private data are never inspected.
+            </span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">support</span>
+<span>
+<strong class="text-on-surface font-semibold">Fair Review:</strong> Browser focus changes or temporary network drops are never automatically treated as cheating. They are reviewed fairly with human context if an anomaly occurs.
+            </span>
+</div>
+</div>
+</div>
+<!-- ACCOMMODATION & PROCTOR SUPPORT SECTION -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Accommodation &amp; Proctor Support</h2>
+<span class="font-body-sm text-body-sm text-text-muted">Immediate assistance for technical difficulties or accessibility requests.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-subtle px-2.5 py-1 rounded-full">Live Support On-Call</span>
+</div>
+<!-- Support Channels Buttons Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm mt-2">
+<button class="flex items-center justify-center gap-1.5 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors border border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-text-muted">volume_off</span>
+<span>Report Audio Problem</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors border border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-text-muted">keyboard_alt</span>
+<span>Report Hindi Input Issue</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors border border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-primary">more_time</span>
+<span>Request Extra Time (+15m)</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 p-space-sm rounded-lg bg-primary-subtle hover:bg-primary/20 text-primary font-label-md text-label-md font-semibold transition-colors border border-primary/20">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span>Open Live Chat (&lt; 2 min)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: STICKY READINESS SUMMARY & PRIMARY LAUNCH PANEL (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md lg:sticky lg:top-20">
+<!-- READINESS SUMMARY CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md border border-border-subtle flex flex-col gap-space-md">
+<!-- Status Header Badge -->
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider font-semibold">Readiness Summary</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-bold">
+            5 of 5 Passed
+          </span>
+</div>
+<!-- Overall Status Banner -->
+<div class="flex flex-col gap-1 bg-primary-subtle/60 p-space-md rounded-xl border border-primary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">task_alt</span>
+<h3 class="font-headline-md text-[18px] font-semibold text-primary">Ready to Proceed</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            All 5 mandatory checks completed and validated for this session.
+          </p>
+</div>
+<!-- 5-Item Detailed Checklist -->
+<div class="flex flex-col gap-2.5 bg-surface-container-low/70 p-space-md rounded-xl">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>1. Identity Verification</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Passed</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>2. Audio Playback Test</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Verified</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>3. Hindi Script Input</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Verified</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>4. Internet Connectivity</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Optimal</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>5. Browser &amp; Device Specs</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Passed</span>
+</div>
+</div>
+<!-- Assessment Overview Box -->
+<div class="flex flex-col gap-2 bg-surface-base p-space-sm rounded-lg border border-border-subtle">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-text-muted">Total Audio Clips:</span>
+<span class="font-semibold text-on-surface">8 Clips (25-45s each)</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-text-muted">Time Limit:</span>
+<span class="font-semibold text-on-surface">35:00 Minutes</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-text-muted">Passing Score:</span>
+<span class="font-semibold text-primary">&gt; 92.5% Word Accuracy</span>
+</div>
+</div>
+<!-- PRIMARY DOMINANT CTA -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-xl bg-primary text-on-primary font-body-lg text-body-lg font-semibold hover:bg-primary-hover active:bg-primary-active transition-all shadow-md" id="continueInstructionsBtn">
+<span>Continue to Instructions</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-center gap-1.5 py-2.5 px-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-body-md text-body-md transition-colors border border-border-subtle">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Assessment Details</span>
+</button>
+</div>
+<!-- Reassurance Note under Button -->
+<div class="flex items-start gap-2 pt-space-xs text-text-muted font-body-sm text-body-sm bg-surface-container-low/40 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5 text-primary">info</span>
+<p>
+            The 35-minute assessment timer will <span class="text-on-surface font-semibold">NOT start</span> on the next screen. You will have full access to guidelines and practice tasks before initiating the timer.
+          </p>
+</div>
+</div>
+<!-- QUICK PROCTOR STANDBY CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-border-subtle flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Dedicated Hindi Proctor</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-subtle px-2 py-0.5 rounded-full">
+            Online Now
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+          An evaluator is active on this track to verify font rendering, audio scrub sync, or Devanagari ligatures if you experience any issue.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Audio player simulated waveform animation
+  const samplePlayBtn = document.getElementById('playSampleBtn');
+  const sampleIcon = document.getElementById('playIconSample');
+  const sampleText = document.getElementById('playTextSample');
+  const sampleWaveform = document.getElementById('waveformVisualizer');
+  let samplePlaying = false;
+  let sampleInterval = null;
+
+  if (samplePlayBtn) {
+    samplePlayBtn.addEventListener('click', () => {
+      samplePlaying = !samplePlaying;
+      if (samplePlaying) {
+        sampleIcon.textContent = 'pause';
+        sampleText.textContent = 'Pause Sample';
+        samplePlayBtn.classList.replace('bg-primary', 'bg-primary-active');
+        const bars = sampleWaveform.querySelectorAll('div');
+        sampleInterval = setInterval(() => {
+          bars.forEach(bar => {
+            const h = Math.floor(Math.random() * 24) + 6;
+            bar.style.height = `${h}px`;
+          });
+        }, 140);
+        setTimeout(() => {
+          if (samplePlaying) samplePlayBtn.click();
+        }, 5000);
+      } else {
+        sampleIcon.textContent = 'play_arrow';
+        sampleText.textContent = 'Play Sample';
+        samplePlayBtn.classList.replace('bg-primary-active', 'bg-primary');
+        clearInterval(sampleInterval);
+      }
+    });
+  }
+
+  // Checkbox toggle feedback
+  const hearCheck = document.getElementById('hearSampleCheck');
+  const audioBadge = document.getElementById('audioStatusBadge');
+  if (hearCheck && audioBadge) {
+    hearCheck.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        audioBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">check_circle</span> Passed';
+        audioBadge.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold';
+      } else {
+        audioBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">info</span> Test Audio Output';
+        audioBadge.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-text-muted font-label-sm text-label-sm font-semibold';
+      }
+    });
+  }
+
+  // Retry network & diagnostics
+  const retestAllBtn = document.getElementById('retestAllBtn');
+  if (retestAllBtn) {
+    retestAllBtn.addEventListener('click', () => {
+      const orig = retestAllBtn.innerHTML;
+      retestAllBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Verifying...</span>';
+      setTimeout(() => {
+        retestAllBtn.innerHTML = orig;
+      }, 800);
+    });
+  }
+
+  const retryNetBtn = document.getElementById('retryNetBtn');
+  if (retryNetBtn) {
+    retryNetBtn.addEventListener('click', () => {
+      const orig = retryNetBtn.innerHTML;
+      retryNetBtn.innerHTML = '<span class="material-symbols-outlined text-[14px] animate-spin">sync</span><span>Pinging...</span>';
+      setTimeout(() => {
+        retryNetBtn.innerHTML = orig;
+      }, 700);
+    });
+  }
+
+  // Continue CTA feedback
+  const continueBtn = document.getElementById('continueInstructionsBtn');
+  if (continueBtn) {
+    continueBtn.addEventListener('click', () => {
+      continueBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Loading Instructions...</span>';
+      setTimeout(() => {
+        continueBtn.innerHTML = '<span>Instructions Ready!</span><span class="material-symbols-outlined text-[20px]">check</span>';
+      }, 600);
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest mt-auto shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-gutter py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-text-muted font-body-sm text-body-sm"><div class="">© 2025 Svara Systems, Inc. All rights reserved.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Portal Guidelines</a><a class="hover:text-on-surface transition-colors" href="#">Task Policy</a><a class="hover:text-on-surface transition-colors" href="#">Support</a></div></div></footer>
+</body></html>

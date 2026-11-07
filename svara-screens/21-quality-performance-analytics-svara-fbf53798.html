@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#f9f9fb", "primary-container": "#0066cc", "tertiary": "#883700", "error": "#ba1a1a", "on-background": "#1a1c1d", "tertiary-fixed": "#ffdbcb", "inverse-primary": "#aac7ff", "surface-container-high": "#e8e8ea", "primary-active": "#0077ED", "error-container": "#ffdad6", "inverse-on-surface": "#f0f0f2", "primary-fixed": "#d7e3ff", "on-primary-fixed": "#001b3e", "outline": "#727784", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container": "#eeeef0", "inverse-surface": "#2f3132", "text-muted": "#86868B", "surface-container-low": "#f3f3f5", "on-surface": "#1a1c1d", "on-secondary-container": "#636264", "surface-container-highest": "#e2e2e4", "on-error": "#ffffff", "on-tertiary-fixed": "#341100", "on-secondary": "#ffffff", "border-subtle": "#E5E5EA", "primary-hover": "#0052A3", "on-tertiary-container": "#ffe3d6", "surface-variant": "#e2e2e4", "surface-base": "#FFFFFF", "border-muted": "#D1D1D6", "secondary-fixed": "#e4e2e4", "secondary-fixed-dim": "#c8c6c8", "on-tertiary-fixed-variant": "#793000", "outline-variant": "#c1c6d5", "on-surface-variant": "#414753", "secondary": "#5f5e60", "on-primary-fixed-variant": "#00458e", "tertiary-fixed-dim": "#ffb692", "surface-tint": "#005cba", "surface-dim": "#d9dadc", "on-primary-container": "#dfe8ff", "secondary-container": "#e2dfe1", "primary": "#004e9f", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "primary-subtle": "#EBF4FF", "on-secondary-fixed-variant": "#474649", "background": "#f9f9fb", "on-secondary-fixed": "#1b1b1d", "surface-bright": "#f9f9fb", "tertiary-container": "#af4900" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "label-md": ["Inter"], "display-hero": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "display-hero-mobile": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">SVARA</span><span class="font-label-sm text-label-sm text-text-muted leading-none mt-space-xs">Acoustic Systems</span></div></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg text-on-surface"><span class="material-symbols-outlined text-outline text-[16px]">record_voice_over</span><span class="font-label-md text-label-md">Contributor Portal</span><span class="material-symbols-outlined text-outline text-[16px]">unfold_more</span></div><nav class="hidden lg:flex items-center gap-1" data-active-classes="bg-primary-container text-on-primary rounded-lg font-label-md text-label-md shadow-[0_1px_4px_rgba(0,102,204,0.2)]"><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="dashboard" href="#">Dashboard</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="assessments" href="#">Assessments</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="projects" href="#">Projects</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="tasks" href="#">Tasks</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="earnings" href="#">Earnings</a><a aria-current="page" class="px-3 py-2 transition-colors bg-primary-container text-on-primary rounded-lg font-label-md text-label-md shadow-[0_1px_4px_rgba(0,102,204,0.2)]" data-path="performance" href="#">Performance</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="support" href="#">Support</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-primary-active"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Inference Grid: Operational</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden md:block"><span class="font-label-md text-label-md text-on-surface leading-tight block">Ananya K.</span><span class="font-label-sm text-label-sm text-text-muted leading-tight block">Tier-1 Phonologist</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-outline text-[18px] hidden md:block">keyboard_arrow_down</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Interactive Top Action & Context Area -->
+<div class="w-full px-gutter py-space-md">
+<!-- Breadcrumb & Status Navigation -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-text-muted">
+<span class="hover:text-primary transition-colors cursor-pointer">Contributor Portal</span>
+<span class="material-symbols-outlined text-[13px] text-outline-variant">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Performance &amp; Quality Intelligence</span>
+<span class="material-symbols-outlined text-[13px] text-outline-variant">chevron_right</span>
+<span class="text-on-surface font-semibold">Personal Growth Center</span>
+</div>
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm text-text-muted">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-active animate-pulse"></span>
+<span>Calibration Cycle Active: Cycle 26-B (Rolling 30D Window)</span>
+</div>
+</div>
+<!-- Header Title & Filter Actions Cluster -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md pb-space-md">
+<div class="max-w-3xl">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary-container font-label-sm text-label-sm font-semibold tracking-wide uppercase">Engine v4.8 Certified</span>
+<span class="text-text-muted text-label-sm font-label-sm">• Phonology &amp; Orthographic Calibration</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Quality &amp; Skill Performance Center</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+          Track acoustic annotation precision, inspect double-blind gold calibration scores, and complete targeted boundary interventions to unlock Tier-3 Lead Annotator surge rates.
+        </p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Date Filter Dropdown -->
+<div class="relative inline-block text-left">
+<button class="inline-flex items-center gap-space-xs px-3 py-2 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" id="dateRangeBtn" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span>Last 30 Days (Oct 13 - Nov 12, 2026)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+</div>
+<!-- Project Scope Filter -->
+<div class="relative inline-block text-left">
+<button class="inline-flex items-center gap-space-xs px-3 py-2 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<span class="truncate max-w-[210px]">All Indic Conversational &amp; NER QA</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+</div>
+<!-- Secondary Outline Action -->
+<button class="inline-flex items-center gap-space-xs px-3 py-2 bg-surface-container-lowest text-on-surface hover:text-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" onclick="alert('Audit Appeal Module initialized. Task log retrieved.')" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">gavel</span>
+<span>Request Score Audit</span>
+</button>
+<!-- Primary CTA Button -->
+<button class="inline-flex items-center gap-space-xs px-3.5 py-2 bg-primary-container text-on-primary font-label-md text-label-md font-medium rounded-lg shadow-sm hover:bg-primary-hover active:bg-primary-active transition-all" onclick="alert('Exporting cryptographically signed Quality Dossier (PDF)...')" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Quality Dossier (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Tier Status Hero Banner Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg mb-space-md relative overflow-hidden">
+<!-- Ambient light effect -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-primary-subtle opacity-60 pointer-events-none blur-3xl"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary-subtle flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[32px]">verified</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tier-2 Verified Specialist</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-subtle text-primary-container font-label-sm text-label-sm font-semibold">Top 4% Contributor Cohort</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">High-Resource Qualified</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+              Authorised for low-resource dialect phonetics, sub-phoneme boundary segmentation &amp; gold consensus arbitration. Qualified for Tier-1 ($38+/hr) surge tasks.
+            </p>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 font-label-sm text-label-sm text-text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary-active">verified_user</span>
+                Statistically Reliable (N = 188 evaluated submissions)
+              </span>
+<span>•</span>
+<span>Min. Baseline sample threshold N ≥ 30 satisfied</span>
+<span>•</span>
+<span class="text-on-surface font-medium">Next Formal Audit: Dec 01, 2026</span>
+</div>
+</div>
+</div>
+<!-- Progress to Tier-3 Lead Block -->
+<div class="w-full lg:w-96 p-space-sm bg-surface-container-low rounded-lg shrink-0">
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-on-surface font-medium">Progress to Tier-3 Lead Annotator</span>
+<span class="text-primary-container font-bold">94%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden mb-2">
+<div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 94%;"></div>
+</div>
+<div class="flex items-start gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-tertiary-container mt-0.5 shrink-0">crisis_alert</span>
+<span>6 more audited submissions with rolling average ≥95.0% required to unlock Lead Reviewer arbitration status ($44/hr).</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 High-Level Metric Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-md">
+<!-- Metric 1: Composite Quality Score -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-muted">Composite Quality Score</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary-container font-label-sm text-label-sm font-semibold">Distinction (Tier-1)</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display-hero text-[40px] leading-none text-on-surface font-semibold tracking-tight">96.4%</span>
+<span class="flex items-center font-label-md text-label-md font-semibold text-primary-active">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+            +1.8%
+          </span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden my-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 96.4%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1">
+<span>Target SLA Floor: 90.0%</span>
+<span class="font-medium text-on-surface">+6.4% safety margin</span>
+</div>
+<p class="font-label-sm text-[10px] leading-tight text-text-muted mt-2 pt-2 border-t border-surface-container-high/60">
+          Formula: 35% Gold + 25% Human + 20% Orthography + 20% Alignment
+        </p>
+</div>
+<!-- Metric 2: Word Error Rate (WER) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-muted">Word Error Rate (WER)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">Excellent (Lower ↓)</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display-hero text-[40px] leading-none text-on-surface font-semibold tracking-tight">2.8%</span>
+<span class="flex items-center font-label-md text-label-md font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+            -0.4%
+          </span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden my-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 32%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1">
+<span>Target Max Ceiling: &lt; 4.5%</span>
+<span class="font-medium text-primary-active">Sub-3% Class</span>
+</div>
+<p class="font-label-sm text-[10px] leading-tight text-text-muted mt-2 pt-2 border-t border-surface-container-high/60">
+          Char Error Rate: 0.8% • Dialect Concordance: 98.4%
+        </p>
+</div>
+<!-- Metric 3: Covert Gold Consensus -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-muted">Covert Gold Consensus</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary-container font-label-sm text-label-sm font-semibold">Zero Hallucination</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display-hero text-[40px] leading-none text-on-surface font-semibold tracking-tight">98.2%</span>
+<span class="font-label-md text-label-md text-text-muted font-medium">44/45 seeds</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden my-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 98.2%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1">
+<span>Target Spec: &gt; 92.0%</span>
+<span class="font-medium text-on-surface">1 Arbitrated (Upheld)</span>
+</div>
+<p class="font-label-sm text-[10px] leading-tight text-text-muted mt-2 pt-2 border-t border-surface-container-high/60">
+          Interspersed blind benchmark seeds ensuring zero observer bias
+        </p>
+</div>
+<!-- Metric 4: Human Reviewer Approval Rate -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-muted">Reviewer Approval Rate</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">188 Inspected</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display-hero text-[40px] leading-none text-on-surface font-semibold tracking-tight">97.6%</span>
+<span class="font-label-md text-label-md text-primary-active font-medium">184 / 188</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden my-2">
+<div class="bg-primary-container h-full rounded-full" style="width: 97.6%;"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-muted pt-1">
+<span>0 Infractions • 4 Reworks</span>
+<span class="font-medium text-on-surface">Avg 2.4h SLA</span>
+</div>
+<p class="font-label-sm text-[10px] leading-tight text-text-muted mt-2 pt-2 border-t border-surface-container-high/60">
+          Evaluated by Senior Phonologists (Dr. Sen &amp; Dr. Verma)
+        </p>
+</div>
+</div>
+<!-- Main Two-Column Analytics Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- LEFT COLUMN (65% -> 8 cols on desktop) -->
+<div class="lg:col-span-8 space-y-space-md">
+<!-- CARD A: Historical Quality & Rolling Pass Trend -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Rolling Quality &amp; Precision Trajectory</h2>
+<span class="material-symbols-outlined text-outline text-[18px] cursor-pointer" title="Calculated with exponentially weighted rolling average of audited tasks">info</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">8-week longitudinal performance across phonemic and boundary tasks</p>
+</div>
+<!-- Trend View Switcher Tabs -->
+<div class="inline-flex p-1 bg-surface-container rounded-lg font-label-sm text-label-sm">
+<button class="px-3 py-1 bg-surface-container-lowest text-on-surface font-medium rounded-md shadow-sm transition-all" type="button">Rolling Accuracy</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-on-surface transition-all" type="button">Volume (Audited)</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-on-surface transition-all" type="button">Rework Latency</button>
+</div>
+</div>
+<!-- Interactive High-Fidelity SVG Line Graph -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md relative overflow-hidden">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-text-muted mb-2">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-primary rounded-full"></span> Rolling Accuracy</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-0.5 border-b border-dashed border-error"></span> SLA Floor (90.0%)</span>
+</div>
+<span>Peak: 96.8% (Week 43)</span>
+</div>
+<!-- SVG Data Visualization -->
+<div class="w-full h-48 relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 180">
+<defs>
+<lineargradient id="primaryAreaGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0066cc" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#0066cc" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#E5E5EA" stroke-width="1" x1="0" x2="800" y1="20" y2="20"></line>
+<text fill="#86868B" font-family="Inter" font-size="10" x="5" y="16">100%</text>
+<line stroke="#E5E5EA" stroke-width="1" x1="0" x2="800" y1="65" y2="65"></line>
+<text fill="#86868B" font-family="Inter" font-size="10" x="5" y="61">95%</text>
+<!-- 90% SLA Target Line (Dashed) -->
+<line opacity="0.6" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="800" y1="110" y2="110"></line>
+<text fill="#ba1a1a" font-family="Inter" font-size="10" font-weight="600" x="710" y="106">SLA FLOOR: 90%</text>
+<line stroke="#E5E5EA" stroke-width="1" x1="0" x2="800" y1="155" y2="155"></line>
+<text fill="#86868B" font-family="Inter" font-size="10" x="5" y="151">85%</text>
+<!-- Shaded Area -->
+<polygon fill="url(#primaryAreaGrad)" points="50,72 150,68 250,56 350,50 450,58 550,46 650,40 750,44 750,165 50,165"></polygon>
+<!-- Accuracy Trend Path -->
+<!-- Data: W38: 94.2%(72), W39: 94.6%(68), W40: 95.8%(56), W41: 96.2%(50), W42: 95.6%(58), W43: 96.8%(46), W44: 96.5%(40), W45: 96.4%(44) -->
+<path d="M 50 72 Q 100 70, 150 68 T 250 56 T 350 50 T 450 58 T 550 46 T 650 40 T 750 44" fill="none" stroke="#0066cc" stroke-linecap="round" stroke-width="3"></path>
+<!-- Data Points with Hover Labels -->
+<g class="cursor-pointer">
+<circle class="hover:r-6 transition-all" cx="50" cy="72" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="150" cy="68" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="250" cy="56" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="350" cy="50" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="450" cy="58" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="550" cy="46" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-6 transition-all" cx="650" cy="40" fill="#0066cc" r="4"></circle>
+<circle class="hover:r-7 transition-all" cx="750" cy="44" fill="#0066cc" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</g>
+<!-- Value tooltips on active point -->
+<rect fill="#1a1c1d" height="22" rx="4" width="70" x="715" y="14"></rect>
+<text fill="#ffffff" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="750" y="29">W45: 96.4%</text>
+</svg>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center px-4 pt-1 font-label-sm text-label-sm text-text-muted">
+<span>Wk 38</span>
+<span>Wk 39</span>
+<span>Wk 40</span>
+<span>Wk 41</span>
+<span>Wk 42</span>
+<span>Wk 43</span>
+<span>Wk 44</span>
+<span class="font-semibold text-primary">Wk 45 (Current)</span>
+</div>
+</div>
+<!-- Modality Breakdown Pills beneath chart -->
+<div class="pt-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted block mb-space-sm">Sub-Modality Competency Ratings</span>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-xs">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted truncate">Transcription QA</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">98.1%</span>
+<span class="font-label-sm text-[10px] text-primary-active font-semibold">Mastery</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted truncate">Segmentation</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">94.5%</span>
+<span class="font-label-sm text-[10px] text-primary-container font-semibold">Optimal</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted truncate">Devanagari Orth.</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">98.8%</span>
+<span class="font-label-sm text-[10px] text-primary-active font-semibold">Mastery</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted truncate">Named Entity (NER)</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">97.0%</span>
+<span class="font-label-sm text-[10px] text-primary-container font-semibold">Optimal</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted truncate">Boundary (±15ms)</span>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-sm text-[16px] font-bold text-tertiary-container">92.1%</span>
+<span class="font-label-sm text-[10px] text-tertiary font-semibold">Focus Area</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD B: Covert Gold Calibration & Benchmark Audit Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Covert Gold Calibration &amp; Ground Truth Audits</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary-container font-label-sm text-label-sm font-semibold">Blind Calibrated</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Interspersed gold tasks verify acoustic precision against expert phonologist consensus under double-blind conditions. Direct calibration inputs for high-yield specialized task allocations.
+              </p>
+</div>
+</div>
+<!-- Stats Summary Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Injected Gold Tasks</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">45</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Exact Consensus</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">44 / 45</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Acoustic Drift (&gt;15ms)</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-tertiary-container">1 task</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Arbitrations Upheld</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary-active">1 (100%)</span>
+</div>
+</div>
+<!-- Benchmark Task Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-label-sm font-label-sm text-text-muted border-b border-surface-container-high pb-2">
+<th class="py-2.5 font-medium">Task ID</th>
+<th class="py-2.5 font-medium">Dialect / Domain</th>
+<th class="py-2.5 font-medium">Ground Truth</th>
+<th class="py-2.5 font-medium">Timing Delta</th>
+<th class="py-2.5 font-medium">Calibration Status</th>
+<th class="py-2.5 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 font-mono font-medium text-primary">#GLD-88291</td>
+<td class="py-3">
+<span class="text-on-surface font-medium block">Bhojpuri Rural Lexicon</span>
+<span class="text-label-sm text-text-muted">Acoustic Formant Matching</span>
+</td>
+<td class="py-3 font-semibold text-on-surface">99.4%</td>
+<td class="py-3 font-mono text-label-sm text-on-surface">+2ms</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-subtle text-primary-active font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Distinction
+                    </span>
+</td>
+<td class="py-3 text-right">
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-hover font-medium" type="button">Inspect Spec</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 font-mono font-medium text-primary">#GLD-88104</td>
+<td class="py-3">
+<span class="text-on-surface font-medium block">Maithili Conversational</span>
+<span class="text-label-sm text-text-muted">Overlapping Speech Splice</span>
+</td>
+<td class="py-3 font-semibold text-on-surface">97.8%</td>
+<td class="py-3 font-mono text-label-sm text-on-surface">-6ms</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                      Passed
+                    </span>
+</td>
+<td class="py-3 text-right">
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-hover font-medium" type="button">Inspect Spec</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 font-mono font-medium text-primary">#GLD-87940</td>
+<td class="py-3">
+<span class="text-on-surface font-medium block">Hinglish Code-Mixed NER</span>
+<span class="text-label-sm text-text-muted">Entity Boundary Concordance</span>
+</td>
+<td class="py-3 font-semibold text-on-surface">98.9%</td>
+<td class="py-3 font-mono text-label-sm text-on-surface">+4ms</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-subtle text-primary-active font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      Distinction
+                    </span>
+</td>
+<td class="py-3 text-right">
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-hover font-medium" type="button">Inspect Spec</button>
+</td>
+</tr>
+<!-- Row 4 (Flagged item) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 font-mono font-medium text-primary">#GLD-87612</td>
+<td class="py-3">
+<span class="text-on-surface font-medium block">Plosive Boundary Splice</span>
+<span class="text-label-sm text-text-muted">Voiceless Stop /ʈ/ Envelope</span>
+</td>
+<td class="py-3 font-semibold text-tertiary-container">93.1%</td>
+<td class="py-3 font-mono text-label-sm text-tertiary font-bold">+18ms (Δ +3ms)</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+                      Warning (±15ms limit)
+                    </span>
+</td>
+<td class="py-3 text-right">
+<button class="font-label-sm text-label-sm text-primary-container hover:text-primary-hover font-semibold" type="button">Open Learning Lab</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Fairness Guarantee Banner -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">Statistical Fairness Guarantee:</span>
+              A single covert gold failure or localized diagnostic alert never triggers automated tier demotion or algorithmic throttling. A sample minimum of 30 production checkpoints with human arbitration is enforced before eligibility updates.
+            </div>
+</div>
+</div>
+<!-- CARD C: Reviewer Feedback Insights & Recurring Patterns -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Reviewer Quality Synthesis &amp; Pattern Analysis</h2>
+<p class="font-body-sm text-body-sm text-text-muted">Consolidated qualitative audits from Lead Phonologist review panels</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>188 Total Reviews</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-sm">
+<!-- Strength card -->
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-6 h-6 rounded-md bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Observed Linguistic Strength</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                "Exceptional phonetic capture of non-standard Bhojpuri enclitics and loanword phonetic transcription. High fidelity observed in preserving vowel nasalization subtleties in noisy acoustic backgrounds."
+              </p>
+<div class="mt-3 pt-3 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm text-text-muted">
+<span>Audited by Dr. Arpita Sen</span>
+<span class="text-primary font-semibold">99.1% Orthography Concordance</span>
+</div>
+</div>
+<!-- Opportunity card -->
+<div class="p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-6 h-6 rounded-md bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">track_changes</span>
+</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Recurring Improvement Area</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                "Slight tendency (+18ms drift) to delay boundary onset on voiceless plosives (/k/, /t/, /p/) in rapid conversational clips. Tends to encompass pre-release silence instead of strict burst release."
+              </p>
+<div class="mt-3 pt-3 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm text-text-muted">
+<span>Audited by Dr. A. Verma</span>
+<span class="text-tertiary-container font-semibold">Action: Complete Module 3.2</span>
+</div>
+</div>
+</div>
+<!-- Bottom Audit Metrics Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mt-space-md pt-space-sm border-t border-surface-container font-label-sm text-label-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-active"></span>
+<span><strong>95.8%</strong> First-Pass Approval Rate</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span><strong>2.4 Hours</strong> Average Rework Turnaround</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-active"></span>
+<span><strong>100%</strong> Appeal Resolution Satisfaction</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (35% -> 4 cols on desktop) -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- CARD D: Multi-Skill Competency Matrix -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Competency Matrix</h3>
+<span class="font-label-sm text-label-sm text-text-muted">Engine v4.8</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mb-space-md">Real-time skill level evaluations against global contributor benchmarks.</p>
+<div class="space-y-space-md">
+<!-- Skill 1 -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md text-on-surface font-medium">Indic Speech Acoustics</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary-active font-semibold">Mastery</span>
+<span class="font-mono text-label-md text-label-md font-bold text-on-surface">96.8%</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 96.8%;"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-text-muted mt-1">
+<span>Benchmark: 90.0%</span>
+<span class="text-primary-active">+6.8% surplus</span>
+</div>
+</div>
+<!-- Skill 2 -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md text-on-surface font-medium">Bhojpuri Dialect Grammar</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary-active font-semibold">Mastery</span>
+<span class="font-mono text-label-md text-label-md font-bold text-on-surface">98.4%</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 98.4%;"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-text-muted mt-1">
+<span>Benchmark: 92.0%</span>
+<span class="text-primary-active">+6.4% surplus</span>
+</div>
+</div>
+<!-- Skill 3 -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md text-on-surface font-medium">Code-Switching (Hinglish)</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary-active font-semibold">Mastery</span>
+<span class="font-mono text-label-md text-label-md font-bold text-on-surface">95.9%</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 95.9%;"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-text-muted mt-1">
+<span>Benchmark: 88.0%</span>
+<span class="text-primary-active">+7.9% surplus</span>
+</div>
+</div>
+<!-- Skill 4 (Target area) -->
+<div class="p-2.5 rounded-lg bg-tertiary-fixed/30 -mx-1">
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+                  Time Boundary (±15ms)
+                  <span class="material-symbols-outlined text-[15px] text-tertiary-container">arrow_forward</span>
+</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold">Target Area</span>
+<span class="font-mono text-label-md text-label-md font-bold text-tertiary-container">92.1%</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 92.1%;"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mt-1">
+<span>Lead Target: ≥95.0%</span>
+<span class="font-medium text-tertiary">Need +2.9% for Tier-3</span>
+</div>
+</div>
+<!-- Skill 5 -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md text-on-surface font-medium">Devanagari Orthography</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary-active font-semibold">Mastery</span>
+<span class="font-mono text-label-md text-label-md font-bold text-on-surface">98.8%</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 98.8%;"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-text-muted mt-1">
+<span>Benchmark: 94.0%</span>
+<span class="text-primary-active">+4.8% surplus</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD E: Actionable Personalized Recommendations (Accelerator) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Skill Accelerators</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-semibold">AI Generated</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mb-space-md">Targeted interventions based on your recent phoneme offset audits.</p>
+<div class="space-y-space-md">
+<!-- Rec 1: High Priority Plosive Boundary Precision -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-tertiary-container">High Impact Fix</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Module 3.2: Sub-frame Plosive Precision</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Calibrate phoneme envelope endpoints around voiceless dental plosives (/t̪/) and retroflex stops (/ʈ/). Addresses the +18ms offset noted in submission #TSK-8942-0041.
+              </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-surface-container-highest">
+<span class="font-label-sm text-label-sm text-text-muted">10 min • Interactive Audio Lab</span>
+<button class="px-3 py-1.5 bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors" onclick="alert('Opening Interactive Audio Calibration Lab: Module 3.2')" type="button">
+                  Take 10-Min Lab →
+                </button>
+</div>
+</div>
+<!-- Rec 2: Optional Growth Qualification -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Earnings Expansion</span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Maithili Dialect Specialization Exam</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                You have completed 34 Maithili tasks with 97.8% accuracy. Taking the official qualification unlocks the $42/hr Northern Bihar Speech Cohort.
+              </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-surface-container-highest">
+<span class="font-label-sm text-label-sm text-text-muted">15 min • Exam format</span>
+<button class="px-3 py-1.5 bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold rounded-lg hover:bg-surface-container-high transition-colors shadow-sm" onclick="alert('Enrolling in Northern Bihar Speech Cohort Exam...')" type="button">
+                  Enroll in Exam
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD F: Project Eligibility & Rate Card Impact -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Project Eligibility</h3>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Tier-2 Active</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-active text-[16px]">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Standard Indic Audio</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Baseline Tier ($28 - $34/hr)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">Unlocked</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-active text-[16px]">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dialect Acoustic QA</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Specialist Tier ($34 - $38/hr)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">Unlocked</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-active text-[16px]">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Bhojpuri Dialect Pool</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Adjudicator Status ($40/hr)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary font-label-sm text-label-sm font-medium">Active</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low/70 flex items-center justify-between opacity-85">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface-variant">Tier-3 Lead Adjudicator</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Requires ≥95% boundary precision ($44/hr)</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold">94% Done</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Trust, Dispute & Governance Footer Banner -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md mt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">gavel</span>
+<span>Evaluated under Svara Precision Linguistic Protocol v4.8 • All quality records are cryptographically timestamped and immutable.</span>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm">
+<a class="text-primary hover:underline" href="#">Scoring Algorithms Explanation</a>
+<a class="text-primary hover:underline" href="#">Dispute &amp; Appeal Policy</a>
+<a class="text-primary hover:underline" href="#">Tier-3 Promotion Criteria</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive dropdown feedback for Contributor UX
+  const dateBtn = document.getElementById('dateRangeBtn');
+  if (dateBtn) {
+    dateBtn.addEventListener('click', () => {
+      const options = ['Last 7 Days', 'Last 30 Days (Oct 13 - Nov 12, 2026)', 'Last 90 Days', 'Quarter-to-Date (Q4 2026)'];
+      const current = dateBtn.querySelector('span:nth-child(2)').innerText;
+      const nextIndex = (options.indexOf(current) + 1) % options.length;
+      dateBtn.querySelector('span:nth-child(2)').innerText = options[nextIndex];
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="w-full px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-bold">S</div><span class="font-label-md text-label-md text-on-surface-variant">© 2025 Svara Technical Infrastructure Inc. High-dimensional acoustic labeling framework.</span></div><div class="flex items-center gap-space-lg"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">Documentation</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="performance" href="#">System Status</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">Terms of Service</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">Privacy Policy</a></div></div></footer></body></html>

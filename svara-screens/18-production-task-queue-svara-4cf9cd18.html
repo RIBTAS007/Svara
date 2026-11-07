@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; } body { overscroll-behavior: none; } } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; } ::-webkit-scrollbar-track { background: transparent; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#0066cc", "primary-hover": "#0052a3", "primary-active": "#004080", "primary-subtle": "#ebf4ff", "primary-container": "#0066cc", "surface": "#f9f9fb", "surface-base": "#ffffff", "surface-container-lowest": "#ffffff", "surface-container-low": "#f3f4f6", "surface-container": "#eeeef0", "surface-container-high": "#e5e7eb", "surface-dim": "#d9dadc", "on-surface": "#1d1d1f", "on-surface-variant": "#4b5563", "outline-variant": "#e2e4e8", "border-subtle": "#e2e4e8", "border-muted": "#d1d5db", "success": "#10b981", "success-subtle": "#ecfdf5", "warning": "#f59e0b", "warning-subtle": "#fffbeb", "error": "#ef4444", "error-subtle": "#fef2f2", "tertiary": "#883700", "tertiary-container": "#af4900", "tertiary-fixed": "#ffdbcb", "tertiary-fixed-dim": "#ffb692" } } } };</script></head><body class="bg-surface font-normal text-sm text-on-surface antialiased selection:bg-primary-subtle selection:text-primary"><header class="fixed top-0 left-0 right-0 w-full z-40 bg-surface-base/95 backdrop-blur-md border-b border-border-subtle"><div class="h-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-6"><div class="flex items-center gap-3"><a class="flex items-center gap-2.5 text-decoration-none group" href="#"><div class="w-8 h-8 rounded-lg bg-black flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:scale-105 transition-transform"><svg class="w-5 h-5" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M5 16C5 12 7 8 11 8" stroke="#0066cc" stroke-linecap="round" stroke-width="2.5"></path><path d="M27 16C27 20 25 24 21 24" stroke="#06b6d4" stroke-width="2.5"></path><path d="M22 10.5C20.5 8.5 17.5 7.5 14.5 9C11.5 10.5 11 13.5 13.5 15.5L18.5 17.5C21 19.5 20.5 22.5 17.5 24C14.5 25.5 11.5 24.5 10 22.5" stroke="#10b981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg></div><span class="text-xl font-bold tracking-tight text-on-surface">Svara</span></a><div class="relative"><button class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low border border-border-subtle hover:bg-surface-container text-xs font-medium text-on-surface transition-colors"><span class="material-symbols-outlined text-[15px] text-primary">badge</span><span>Contributor</span><span class="material-symbols-outlined text-[15px] text-on-surface-variant">expand_more</span></button></div></div><nav class="hidden xl:flex items-center gap-1"><a class="px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" href="#">Dashboard</a><a class="px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" href="#">Assessments</a><a class="px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" href="#">Projects</a><a aria-current="page" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary-subtle text-primary border border-primary/20 flex items-center gap-1.5 shadow-xs" href="#"><span>Tasks</span><span class="text-[10px] font-semibold tracking-wide bg-primary text-white px-1.5 py-0.2 rounded-full uppercase">Queue Live • v2.4 Spec</span></a><a class="px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" href="#">Earnings</a><a class="px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" href="#">Performance</a></nav></div><div class="flex items-center gap-3"><div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Operational / Sync Live</span></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-base"></span></button><div class="flex items-center gap-2 pl-2 border-l border-border-subtle"><div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-semibold text-xs shadow-sm ring-2 ring-primary/20">AK</div><div class="hidden md:flex flex-col text-left"><span class="text-xs font-semibold leading-tight text-on-surface">Ananya K.</span><span class="text-[11px] text-on-surface-variant font-mono">Tier-1 Phonologist</span></div></div></div></div></header><main class="w-full pt-16 min-h-screen bg-surface pb-16"><div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+<!-- Exception State Preview Switcher Bar (Interactive demo helper) -->
+<div class="bg-surface-container-low/80 border border-border-subtle rounded-lg p-2.5 px-3 flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-medium text-on-surface">Queue Safety Simulation:</span>
+<span>Toggle state previews:</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container border border-border-subtle text-[11px] font-medium text-on-surface transition-colors" onclick="toggleCapacityBanner()">Toggle Cap Banner (5/5)</button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container border border-border-subtle text-[11px] font-medium text-on-surface transition-colors" onclick="showExpiredToast()">Simulate Expired Toast</button>
+<button class="px-2 py-1 rounded bg-white hover:bg-surface-container border border-border-subtle text-[11px] font-medium text-on-surface transition-colors" onclick="openClaimModal('TSK-8942-0899', 'Magahi (Patna)', '$2.45')">Open Claim Modal</button>
+</div>
+</div>
+<!-- Alert Banner: Capacity Warning (Toggled dynamically or visible if capacity reached) -->
+<div class="hidden p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex-items-center justify-between gap-4" id="capacityBanner">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-amber-600 text-[20px]">warning</span>
+<div><strong class="font-semibold">Concurrent Claim Capacity Reached (5/5 Slots Allocated):</strong> You have reached your maximum active reservation ceiling. Submit or release active tasks before claiming new batches.</div>
+</div>
+<button class="text-amber-800 hover:text-amber-950 font-medium underline shrink-0" onclick="toggleCapacityBanner()">Dismiss</button>
+</div>
+<!-- Top Breadcrumbs & Queue Title -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border-subtle pb-5">
+<div class="space-y-1.5">
+<nav class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Contributor Portal</a>
+<span class="material-symbols-outlined text-[13px] text-border-muted">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Tasks</a>
+<span class="material-symbols-outlined text-[13px] text-border-muted">chevron_right</span>
+<span class="text-primary font-medium bg-primary-subtle px-2 py-0.5 rounded-md border border-primary/20">Indic Conversational Audio QA (#PRJ-8842)</span>
+</nav>
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-on-surface">Production Task Queue</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+Queue Live • v2.4 Spec
+</span>
+</div>
+<p class="text-xs sm:text-sm text-on-surface-variant max-w-3xl">
+Acoustic alignment, diarization markers, and phoneme-level validation for Indic conversational corpora.
+</p>
+</div>
+<!-- Right Controls: Refresh & Auto-Claim Toggle -->
+<div class="flex flex-wrap items-center gap-3 shrink-0">
+<div class="flex items-center gap-2 bg-surface-container-lowest border border-border-subtle rounded-lg px-2.5 py-1.5 shadow-2xs">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" id="refreshQueueBtn" title="Refresh Live Queue">
+<span class="material-symbols-outlined text-[18px] transition-transform duration-500" id="refreshIcon">sync</span>
+</button>
+<span class="text-[11px] text-on-surface-variant font-mono whitespace-nowrap" id="lastUpdatedLabel">Updated 12s ago</span>
+</div>
+<!-- Auto Claim Toggle Component -->
+<div class="flex items-center gap-2.5 bg-surface-container-lowest border border-border-subtle rounded-lg px-3 py-1.5 shadow-2xs">
+<div class="flex flex-col text-left">
+<div class="flex items-center gap-1">
+<span class="text-xs font-semibold text-on-surface">Auto-Claim</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors" onclick="alert('Auto-Claim automatically holds the highest-yield certified task when you finish an active assignment, up to your 5-slot cap.')" title="Explain Auto-Claim rules">
+<span class="material-symbols-outlined text-[14px]">info</span>
+</button>
+</div>
+<span class="text-[10px] text-emerald-600 font-medium">Ready: Active (Max 3/5 slots)</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="autoClaimCheckbox" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Presets Dropdown -->
+<div class="relative">
+<button class="px-3 py-2 rounded-lg bg-surface-container-lowest border border-border-subtle hover:bg-surface-container-low text-xs font-semibold text-on-surface transition-all flex items-center gap-1.5 shadow-2xs">
+<span class="material-symbols-outlined text-[17px] text-on-surface-variant">tune</span>
+<span>Batch Presets</span>
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION A: Unified Summary Metrics (5 Precise, Non-ambiguous Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+<!-- Card 1: Available in Pool -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-xs transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Available in Pool</span>
+<div class="mt-1 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-on-surface font-mono">142</span>
+<span class="text-xs text-on-surface-variant font-medium">Tasks</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle/60 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+18 Urgent Boost
+</span>
+<span class="font-mono text-gray-500">4 Dialect Groups</span>
+</div>
+</div>
+<!-- Card 2: Claimed & Reserved -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-xs transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Claimed &amp; Reserved</span>
+<div class="mt-1 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-primary font-mono">2</span>
+<span class="text-xs text-on-surface-variant font-medium">Tasks (Hold Lock)</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle/60 flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant">Active lock hold:</span>
+<span class="font-mono font-semibold text-tertiary bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200">51m 40s left</span>
+</div>
+</div>
+<!-- Card 3: In Progress (Active Workspace) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-xs transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">In Progress (Active)</span>
+<div class="mt-1 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-emerald-700 font-mono">1</span>
+<span class="text-xs text-on-surface-variant font-medium">Workspace Active</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle/60 flex items-center justify-between text-[11px] text-emerald-800 font-medium">
+<span>Turn 3/8 drafted</span>
+<span class="inline-flex items-center gap-1 font-mono text-[10px] text-emerald-600">✓ Autosaved</span>
+</div>
+</div>
+<!-- Card 4: Under Review -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-xs transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Under Review</span>
+<div class="mt-1 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-on-surface font-mono">8</span>
+<span class="text-xs text-on-surface-variant font-medium">In Inspection</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-gray-100 text-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle/60 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>4 ASR Algorithmic</span>
+<span class="text-gray-300">•</span>
+<span>4 Human Audit</span>
+</div>
+</div>
+<!-- Card 5: Approved & Completed -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-xs transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Approved &amp; Completed</span>
+<div class="mt-1 flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-on-surface font-mono">184</span>
+<span class="text-xs text-on-surface-variant font-medium">Accepted</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle/60 flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant">Yield: <strong class="text-on-surface font-mono font-semibold">$1,416.80</strong></span>
+<span class="text-emerald-700 font-semibold">99.1% Pass</span>
+</div>
+</div>
+</div>
+<!-- MAIN LAYOUT GRID: Left (Task Marketplace & Controls) + Right (Capacity & Security Panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- PRIMARY WORKSPACE & TASK QUEUE (8 cols on desktop) -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Comprehensive Filter & Sort System (Section E) -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs space-y-3">
+<!-- Status Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs">
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-medium transition-colors whitespace-nowrap">
+All Tasks <span class="ml-1 text-gray-500 font-mono text-[11px]">337</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-medium transition-colors whitespace-nowrap">
+Available <span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-mono text-[11px]">142</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-white font-semibold shadow-xs whitespace-nowrap flex items-center gap-1.5">
+<span>Reserved &amp; Active</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-white font-mono text-[11px]">3</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-medium transition-colors whitespace-nowrap">
+In QA Review <span class="ml-1 text-gray-500 font-mono text-[11px]">8</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-200 font-medium transition-colors whitespace-nowrap flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span>Rework Required</span>
+<span class="px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-950 font-mono text-[11px] font-bold">1 Actionable!</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-medium transition-colors whitespace-nowrap">
+Approved <span class="ml-1 text-gray-500 font-mono text-[11px]">184</span>
+</button>
+</div>
+<!-- Search Input & Advanced Dropdown Filters -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 pt-1">
+<div class="sm:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[17px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface-container-low border border-border-subtle placeholder:text-gray-400 text-on-surface text-xs focus:outline-none focus:border-primary focus:bg-white transition-all" placeholder="Search Task ID, dialect, duration, keywords..." type="text"/>
+</div>
+<div class="sm:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-2">
+<select class="w-full px-2 py-2 rounded-lg bg-surface-container-low border border-border-subtle text-on-surface text-xs focus:outline-none focus:border-primary">
+<option value="">All Dialects</option>
+<option value="bhojpuri">Bhojpuri (Rohtas)</option>
+<option value="maithili">Maithili (Mithila)</option>
+<option value="magahi">Magahi (Patna)</option>
+<option value="awadhi">Awadhi</option>
+</select>
+<select class="w-full px-2 py-2 rounded-lg bg-surface-container-low border border-border-subtle text-on-surface text-xs focus:outline-none focus:border-primary">
+<option value="">Task Type</option>
+<option value="alignment">Transcription + Pinning</option>
+<option value="dialect">Dialect Classification</option>
+<option value="noise">Noise Tagging</option>
+</select>
+<select class="w-full px-2 py-2 rounded-lg bg-surface-container-low border border-border-subtle text-on-surface text-xs focus:outline-none focus:border-primary">
+<option value="">Duration</option>
+<option value="short">&lt; 15s</option>
+<option value="mid">15s - 30s</option>
+<option value="long">30s - 60s</option>
+</select>
+<select class="w-full px-2 py-2 rounded-lg bg-surface-container-low border border-border-subtle text-on-surface text-xs focus:outline-none focus:border-primary font-medium text-primary">
+<option value="qualified">Qualified Only (Verified)</option>
+<option value="all">All Opportunities</option>
+</select>
+</div>
+</div>
+<!-- Secondary Sort & Filter Indicators -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-border-subtle/50 text-[11px] text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">Active Filter:</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-gray-700">Dialects: Indic Bihari Cluster <button class="hover:text-error">×</button></span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded text-gray-700">Eligibility: L2 Certified Only <button class="hover:text-error">×</button></span>
+<button class="text-primary hover:underline ml-1">Clear all</button>
+</div>
+<div class="flex items-center gap-1.5 ml-auto">
+<span class="text-on-surface-variant">Sort by:</span>
+<select class="px-2 py-1 rounded bg-transparent font-semibold text-on-surface text-xs border-none focus:ring-0 cursor-pointer">
+<option>Best Match (Default)</option>
+<option>Highest Compensation</option>
+<option>Due Soon / Expiring</option>
+<option>Shortest Duration</option>
+<option>Recently Released</option>
+</select>
+</div>
+</div>
+</div>
+<!-- TASK CARDS CONTAINER (Sections B, C, D) -->
+<div class="space-y-3.5">
+<!-- CARD 1: Claimed / In-Progress (Interactive Active Card) -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border-l-4 border-l-primary border border-border-subtle shadow-2xs hover:shadow-sm transition-all space-y-3.5">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold text-primary bg-primary-subtle px-2 py-0.5 rounded border border-primary/20">#TSK-8942-0192</span>
+<span class="text-gray-400">•</span>
+<span class="text-xs font-medium text-gray-600">Batch Alpha-9</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+In Progress - Active Draft
+</span>
+<span class="px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-[11px] font-semibold">Gold Validation Seed</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span>
+Verified: Indic Speech L2 + Bhojpuri Native
+</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Eastern Bhojpuri <span class="font-normal text-on-surface-variant text-sm">(Rohtas Rural Sub-dialect)</span></h3>
+</div>
+<!-- Timer badge & Escrow hold -->
+<div class="flex flex-col sm:items-end text-left sm:text-right shrink-0">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-900 font-mono text-xs font-semibold">
+<span class="material-symbols-outlined text-[15px] text-amber-600">timer</span>
+<span>Expires in 42m 10s</span>
+</div>
+<span class="text-[10px] text-on-surface-variant mt-0.5">Lease lock active • Atomic hold</span>
+</div>
+</div>
+<!-- Audio Player Waveform Visualizer -->
+<div class="flex flex-wrap items-center gap-4 p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-hover shadow-xs transition-colors" title="Play audio">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+<div class="h-6 flex items-center gap-0.5 px-1 bg-white rounded border border-border-subtle">
+<span class="w-1 h-2 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<span class="w-1 h-3 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-2 bg-gray-400 rounded-full"></span>
+<span class="w-1 h-3 bg-gray-400 rounded-full"></span>
+<span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+</div>
+<span class="font-mono text-xs text-on-surface font-medium">24.8s • 48kHz Stereo</span>
+</div>
+<div class="text-xs text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-gray-500">record_voice_over</span>
+<span>Conversational Phone Call (2 Speakers overlapping)</span>
+</div>
+</div>
+<!-- Why you match rationale -->
+<div class="text-xs text-emerald-800 bg-emerald-50/70 border border-emerald-100 rounded-lg p-2 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600 shrink-0">check_circle</span>
+<span><strong>Why you match:</strong> Meets Indic L2 (96.4%) &amp; Bhojpuri Dialect Certification. Zero quality flags on current batch.</span>
+</div>
+<!-- Transparent Compensation Breakdown & CTAs -->
+<div class="pt-2 border-t border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-2">
+<span class="text-xs text-on-surface-variant font-medium">Transparent Compensation:</span>
+<span class="text-base font-bold text-on-surface font-mono">$1.92 Total</span>
+<span class="text-xs text-emerald-600 font-medium font-mono">(Est. Yield ~$38.40/hr)</span>
+</div>
+<div class="text-[11px] text-on-surface-variant flex items-center gap-1.5 font-mono">
+<span>Base: $1.45</span>
+<span>+</span>
+<span>Complexity: $0.32</span>
+<span>+</span>
+<span class="text-primary font-medium">Tier-1 Bonus: $0.15</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-error hover:bg-red-50 border border-transparent hover:border-red-200 transition-colors" onclick="confirmRelease('TSK-8942-0192')">
+Release Reservation
+</button>
+<a class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" href="#">
+<span>Open Workspace</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CARD 2: Rework Required (Actionable Priority Alert State) -->
+<div class="p-5 rounded-xl bg-amber-50/30 border-l-4 border-l-amber-500 border border-amber-200 shadow-2xs hover:shadow-sm transition-all space-y-3.5">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded border border-amber-300">#TSK-8942-0041</span>
+<span class="text-amber-400">•</span>
+<span class="text-xs font-medium text-amber-800">Batch Delta-3</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold flex items-center gap-1 border border-amber-300">
+<span class="material-symbols-outlined text-[14px] text-amber-700">priority_high</span>
+! Rework Requested
+</span>
+<span class="px-2 py-0.5 rounded-full bg-white text-gray-700 border border-border-subtle text-[11px]">
+Reviewer: Dr. A. Verma / QC-Agent #12
+</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Maithili <span class="font-normal text-on-surface-variant text-sm">(Mithila Standard Register)</span></h3>
+</div>
+<div class="flex flex-col sm:items-end text-left sm:text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-800 font-mono">
+<span class="material-symbols-outlined text-[15px] text-amber-600">hourglass_top</span>
+18h remaining to fix
+</span>
+<span class="text-[10px] text-amber-700 mt-0.5">Task auto-reassigns after deadline</span>
+</div>
+</div>
+<!-- Audio Player Waveform Visualizer -->
+<div class="flex flex-wrap items-center gap-4 p-2.5 rounded-lg bg-white border border-amber-200">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center hover:bg-amber-600 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+<div class="h-6 flex items-center gap-0.5 px-1 bg-amber-50 rounded border border-amber-200">
+<span class="w-1 h-3 bg-amber-600 rounded-full"></span>
+<span class="w-1 h-5 bg-amber-600 rounded-full"></span>
+<span class="w-1 h-6 bg-amber-600 rounded-full"></span>
+<span class="w-1 h-4 bg-amber-600 rounded-full"></span>
+<span class="w-1 h-2 bg-amber-400 rounded-full"></span>
+</div>
+<span class="font-mono text-xs text-on-surface font-medium">18.2s • 48kHz Stereo</span>
+</div>
+<div class="text-xs text-amber-900 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px] text-amber-700">warning</span>
+<span>Issue detected in Turn 2 boundary pinning</span>
+</div>
+</div>
+<!-- Actionable Feedback Callout -->
+<div class="p-3 rounded-lg bg-white border border-amber-300 text-xs text-on-surface space-y-1">
+<div class="flex items-center gap-1.5 font-semibold text-amber-900">
+<span class="material-symbols-outlined text-[16px] text-amber-700">comment</span>
+<span>Reviewer Feedback &amp; Correction Guide:</span>
+</div>
+<p class="text-gray-700 pl-5 leading-relaxed font-sans">
+"Boundary marker off by +18ms on turn 2 speaker transition. Please realign plosive onset before vocal cord vibration tag."
+</p>
+</div>
+<!-- Compensation Details & CTAs -->
+<div class="pt-2 border-t border-amber-200/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-baseline gap-2">
+<span class="text-xs text-amber-900 font-medium">Escrow Value:</span>
+<span class="text-base font-bold text-on-surface font-mono">$1.80 USD</span>
+<span class="text-[11px] text-gray-500">(Held in escrow pending revision)</span>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Revise &amp; Resubmit →</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Available & Eligible (High Priority Boost) -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-sm transition-all space-y-3.5">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold text-gray-800 bg-gray-100 px-2 py-0.5 rounded border border-gray-300">#TSK-8942-0899</span>
+<span class="text-gray-400">•</span>
+<span class="text-xs font-medium text-gray-600">Batch Beta-1</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold">Available to Claim</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-subtle text-primary border border-primary/20 text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+Urgent +15% Boost
+</span>
+<span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-[11px]">Standard Difficulty • Zero Ambient Noise</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Magahi <span class="font-normal text-on-surface-variant text-sm">(Patna Peripheral Register)</span></h3>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-gray-500">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+60-minute claim lock applies
+</span>
+</div>
+</div>
+<!-- Audio Snippet Info -->
+<div class="flex flex-wrap items-center gap-4 p-2.5 rounded-lg bg-surface-container-low border border-border-subtle/60">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-surface-container-high hover:bg-gray-300 text-on-surface flex items-center justify-center transition-colors" title="Preview Audio 5s snippet">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+<div class="h-6 flex items-center gap-0.5 px-1 bg-white rounded border border-border-subtle">
+<span class="w-1 h-2 bg-gray-600 rounded-full"></span>
+<span class="w-1 h-4 bg-gray-600 rounded-full"></span>
+<span class="w-1 h-5 bg-gray-600 rounded-full"></span>
+<span class="w-1 h-6 bg-gray-600 rounded-full"></span>
+<span class="w-1 h-3 bg-gray-600 rounded-full"></span>
+</div>
+<span class="font-mono text-xs text-on-surface font-medium">31.4s • 44.1kHz Dual-Channel</span>
+</div>
+<span class="text-xs text-on-surface-variant">Linguistic Task: Clean Turn Alignment + Tagging</span>
+</div>
+<!-- Eligibility Rationale -->
+<div class="text-xs text-gray-700 bg-surface-container-low rounded-lg p-2 flex items-start gap-1.5 border border-border-subtle/60">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">verified</span>
+<span><strong>Eligibility:</strong> Certified Magahi Phonology. 60-min reservation lock applies immediately upon claim confirmation.</span>
+</div>
+<!-- Transparent Compensation & Actions -->
+<div class="pt-2 border-t border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-0.5">
+<div class="flex items-baseline gap-2">
+<span class="text-xs text-on-surface-variant font-medium">Transparent Compensation:</span>
+<span class="text-base font-bold text-primary font-mono">$2.45 Total</span>
+<span class="text-xs text-emerald-600 font-medium font-mono">(Est. ~$42.00/hr)</span>
+</div>
+<div class="text-[11px] text-on-surface-variant flex items-center gap-1.5 font-mono">
+<span>Base: $1.90</span>
+<span>+</span>
+<span>Speed Boost: $0.35</span>
+<span>+</span>
+<span class="text-primary font-medium">Dialect Incentive: $0.20</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-700 hover:bg-surface-container border border-border-subtle transition-colors flex items-center gap-1" onclick="alert('Playing 5-second acoustic snippet preview...')">
+<span class="material-symbols-outlined text-[15px]">graphic_eq</span>
+Preview Audio (5s)
+</button>
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" onclick="openClaimModal('TSK-8942-0899', 'Magahi (Patna Register)', '$2.45')">
+<span class="material-symbols-outlined text-[16px]">add_task</span>
+<span>Claim Task (60m Hold) →</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 4: Available but Capacity Warning / High Complexity -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs hover:shadow-sm transition-all space-y-3.5">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold text-gray-800 bg-gray-100 px-2 py-0.5 rounded border border-gray-300">#TSK-8942-0544</span>
+<span class="text-gray-400">•</span>
+<span class="text-xs font-medium text-gray-600">Batch Gamma-2</span>
+<span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-800 text-[11px] font-semibold">Available</span>
+<span class="px-2 py-0.5 rounded-full bg-orange-50 text-orange-800 border border-orange-200 text-[11px] font-semibold">Complexity: Tier-3 Overlapping Speech</span>
+</div>
+<h3 class="text-base font-semibold text-on-surface">Bhojpuri <span class="font-normal text-on-surface-variant text-sm">(Buxar Rural Dialect)</span></h3>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 text-[11px] text-gray-500 font-mono">42.5s Audio File</span>
+</div>
+</div>
+<div class="text-xs text-on-surface-variant flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-gray-600">shield_lock</span>
+<span><strong>Atomic Claim Reservation:</strong> High complexity tier gives 90-minute holding duration. Capacity slot available (3/5 currently utilized).</span>
+</div>
+<div class="pt-2 border-t border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-baseline gap-2">
+<span class="text-xs text-on-surface-variant font-medium">Payout Rate:</span>
+<span class="text-base font-bold text-on-surface font-mono">$3.10 Total</span>
+<span class="text-xs text-gray-500 font-mono">(Includes +$0.80 Heavy Overlap Multiplier)</span>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container border border-border-subtle text-primary hover:text-primary-hover text-xs font-semibold shadow-2xs flex items-center gap-1.5 transition-all" onclick="openClaimModal('TSK-8942-0544', 'Bhojpuri (Buxar Dialect)', '$3.10')">
+<span class="material-symbols-outlined text-[16px]">add_task</span>
+<span>Claim Task (90m Hold)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 5: Under QA Review -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs space-y-3 opacity-95">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">#TSK-8942-0118</span>
+<span class="text-gray-300">•</span>
+<span class="text-xs text-gray-500">Batch Alpha-8</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+In ASR Verification &amp; Double-blind Audit
+</span>
+</div>
+<h3 class="text-sm font-semibold text-gray-800">Bhojpuri (Buxar Rural) • 12.0s snippet</h3>
+</div>
+<div class="text-right shrink-0">
+<span class="text-[11px] text-gray-500">Submitted 3h ago • Est turnaround ~1.2 hrs</span>
+</div>
+</div>
+<div class="pt-2 border-t border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-baseline gap-2 text-xs">
+<span class="text-gray-600 font-medium">Credit Status:</span>
+<span class="font-bold text-on-surface font-mono">$1.20 Pending Escrow Release</span>
+<span class="text-emerald-700 text-[11px] font-semibold">(Algorithmic confidence: 98.4%)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-medium border border-border-subtle transition-colors flex items-center gap-1" onclick="alert('Double-blind QA Status: Reviewer #1 passed (100%). Waiting for secondary ASR alignment score sync.')">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+<span>View QA Audit Log</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination & Queue Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs text-xs text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span>Showing</span>
+<span class="font-bold text-on-surface font-mono">1 - 5</span>
+<span>of</span>
+<span class="font-bold text-on-surface font-mono">142</span>
+<span>available tasks in pool</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<button class="p-1.5 rounded-lg border border-border-subtle text-gray-400 hover:text-on-surface disabled:opacity-30 transition-colors" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-primary text-white font-semibold flex items-center justify-center shadow-xs">1</button>
+<button class="w-7 h-7 rounded-lg border border-border-subtle hover:bg-surface-container flex items-center justify-center transition-colors">2</button>
+<button class="w-7 h-7 rounded-lg border border-border-subtle hover:bg-surface-container flex items-center justify-center transition-colors">3</button>
+<span class="px-1 text-gray-400">...</span>
+<button class="w-7 h-7 rounded-lg border border-border-subtle hover:bg-surface-container flex items-center justify-center transition-colors">29</button>
+<button class="p-1.5 rounded-lg border border-border-subtle text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION F: RIGHT SIDEBAR — RESERVED CAPACITY, WORKLOAD ALLOCATION & SAFETY RAILS (4 cols desktop) -->
+<div class="lg:col-span-4 space-y-4">
+<!-- Panel 1: Work Capacity & Queue Allocation -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs space-y-4">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<span class="text-[11px] uppercase font-semibold text-on-surface-variant tracking-wider">Queue Safety &amp; Guardrails</span>
+<h3 class="text-base font-bold text-on-surface">Work Capacity &amp; Allocation</h3>
+</div>
+<div class="p-2 rounded-lg bg-primary-subtle text-primary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+</div>
+<!-- Progress Bar Graphic: Concurrent Slots -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs">
+<span class="font-medium text-on-surface">Concurrent Claims Cap</span>
+<span class="font-bold text-primary font-mono">3 of 5 Slots Reserved (60%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden flex">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+<p class="text-[11px] text-gray-500">Contributors may hold a maximum of 5 concurrent unsubmitted tasks.</p>
+</div>
+<!-- Weekly Committed Hours -->
+<div class="p-3 rounded-lg bg-surface-container-low border border-border-subtle/80 space-y-1.5">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-on-surface-variant">Weekly Committed Hours</span>
+<span class="font-mono text-on-surface font-semibold">8.5 / 15.0 hrs (57%)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-gray-200 overflow-hidden flex">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 57%"></div>
+</div>
+<div class="flex justify-between text-[10px] text-gray-500">
+<span>Optimal pace: 15h/week</span>
+<span class="text-emerald-700 font-semibold">Healthy load ✓</span>
+</div>
+</div>
+<!-- 60-Minute Atomic Lock Policy -->
+<div class="p-3.5 rounded-lg bg-blue-50/50 border border-blue-200 text-xs space-y-2">
+<div class="flex items-center gap-1.5 text-blue-900 font-semibold">
+<span class="material-symbols-outlined text-[17px] text-primary">security</span>
+<span>60-Minute Atomic Lock Policy</span>
+</div>
+<p class="text-blue-950/80 text-[11px] leading-relaxed">
+Claimed tasks are held exclusively for 60 minutes with zero risk of concurrency collisions. Unsubmitted tasks will auto-release cleanly to the contributor pool without quality penalties.
+</p>
+</div>
+<!-- Live Active Reservations List -->
+<div class="space-y-2 pt-1">
+<span class="text-xs font-semibold text-on-surface flex items-center justify-between">
+<span>Active Held Leases:</span>
+<span class="text-[11px] text-gray-500 font-normal">Auto-countdown</span>
+</span>
+<div class="space-y-1.5 text-xs font-mono">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-border-subtle">
+<span class="text-primary font-bold">#TSK-8942-0192</span>
+<span class="text-amber-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+42m 10s left
+</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-border-subtle">
+<span class="text-gray-800 font-medium">#TSK-8942-0204</span>
+<span class="text-gray-600 font-medium">51m 40s left</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-border-subtle">
+<span class="text-gray-800 font-medium">#TSK-8942-0211</span>
+<span class="text-gray-600 font-medium">58m 15s left</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 2: Yield Calculator & Earnings Forecast -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-base font-bold text-on-surface">Yield &amp; Pace Forecast</h3>
+<span class="text-[11px] font-mono text-primary bg-primary-subtle border border-primary/20 px-2 py-0.5 rounded-md font-semibold">Live Model</span>
+</div>
+<p class="text-xs text-on-surface-variant">
+Calculated from your verified average throughput of <strong class="text-on-surface font-semibold">19.2 tasks/hr</strong> with <strong class="text-emerald-700 font-semibold">99.1% QA accuracy</strong>.
+</p>
+<div class="space-y-2.5 p-3.5 rounded-xl bg-surface-container-low border border-border-subtle text-xs">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Current Hourly Pace</span>
+<span class="font-mono font-bold text-on-surface">~$38.40 / hr</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Quality Tier Multiplier</span>
+<span class="font-mono font-semibold text-primary">1.15x (Tier-1 Contributor)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Completed Today (4 tasks)</span>
+<span class="font-mono font-semibold text-emerald-700">+$8.64 USD</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-border-subtle">
+<span class="text-on-surface font-semibold">Pending in Queue (3 Active)</span>
+<span class="font-mono font-bold text-on-surface">+$5.76 USD</span>
+</div>
+</div>
+</div>
+<!-- Panel 3: Exception & Eligibility Health Banner -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-border-subtle shadow-2xs space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[20px]">verified_user</span>
+<h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Contributor Credential Health</h4>
+</div>
+<span class="text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">Active ✓</span>
+</div>
+<div class="space-y-1.5 text-xs text-on-surface-variant">
+<div class="flex justify-between py-1 border-b border-border-subtle/50">
+<span>Bhojpuri &amp; Magahi Native Cert</span>
+<span class="text-emerald-700 font-semibold font-mono">100% Passed</span>
+</div>
+<div class="flex justify-between py-1 border-b border-border-subtle/50">
+<span>ASR Audio Boundary Precision</span>
+<span class="text-emerald-700 font-semibold font-mono">99.1% (Tier-1)</span>
+</div>
+<div class="flex justify-between py-1">
+<span>Next Recertification Cycle</span>
+<span class="font-mono text-gray-700">in 42 days</span>
+</div>
+</div>
+<div class="pt-2 border-t border-border-subtle">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-gray-500">menu_book</span>
+<span>Annotation Guidelines Spec</span>
+</div>
+<a class="text-xs font-semibold text-primary hover:underline flex items-center gap-0.5" href="#">
+<span>v2.4 Spec</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<p class="text-[11px] text-gray-500 mt-1">Dialect boundary rules, code-switched Hindi-Bhojpuri markers, and phoneme clipping criteria.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION G: INTERACTIVE CLAIM CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 hidden" id="claimModal">
+<div class="bg-surface-base rounded-2xl max-w-md w-full border border-border-subtle shadow-xl overflow-hidden animate-in fade-in zoom-in duration-150">
+<div class="p-5 border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</div>
+<h3 class="font-bold text-base text-on-surface">Confirm Task Reservation</h3>
+</div>
+<button class="p-1 rounded text-gray-400 hover:text-gray-700" onclick="closeClaimModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-5 space-y-4 text-xs">
+<div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle space-y-1.5">
+<div class="flex justify-between">
+<span class="text-gray-500 font-mono">Task ID:</span>
+<span class="font-mono font-bold text-on-surface" id="modalTaskId">#TSK-8942-0899</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Target Register:</span>
+<span class="font-medium text-on-surface" id="modalDialect">Magahi (Patna Register)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Total Compensation:</span>
+<span class="font-mono font-bold text-primary text-sm" id="modalPayout">$2.45 USD</span>
+</div>
+</div>
+<div class="space-y-2 text-on-surface-variant">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">timer</span>
+<p><strong>60-Minute Guaranteed Holding Window:</strong> You will have 60 minutes of exclusive access. If not submitted, the task auto-returns to the pool with zero quality rating impact.</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[18px] shrink-0">check_circle</span>
+<p><strong>Capacity Check:</strong> This claim will allocate slot 4 of your 5 concurrent allowed tasks.</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low border-t border-border-subtle flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg text-xs font-semibold text-gray-700 hover:bg-gray-200 transition-colors" onclick="closeClaimModal()">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover active:bg-primary-active text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" onclick="confirmClaimAction()">
+<span>Confirm &amp; Hold Lease (60m)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION: EXPIRED RESERVATION / ACTIONS -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="bg-gray-900 text-white px-4 py-3 rounded-xl shadow-lg border border-gray-800 flex items-center gap-3 text-xs max-w-sm">
+<span class="material-symbols-outlined text-amber-400 text-[20px]" id="toastIcon">alarm</span>
+<div class="flex-1">
+<div class="font-semibold text-white" id="toastTitle">Reservation Lease Notice</div>
+<div class="text-gray-300 text-[11px]" id="toastMessage">Task lease updated in real-time engine.</div>
+</div>
+<button class="text-gray-400 hover:text-white" onclick="hideToast()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</main><footer class="w-full bg-surface-container-lowest border-t border-border-subtle"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant"><div class="flex items-center gap-3"><span class="text-sm font-bold tracking-tight text-on-surface">Svara</span><span class="text-gray-300">•</span><span>AI Workforce Orchestration Engine</span><span class="text-gray-300">•</span><span class="text-emerald-700 font-medium">Cluster Indic-Beta Online</span></div><div class="flex items-center gap-4"><a class="hover:text-on-surface transition-colors" href="#">Documentation</a><a class="hover:text-on-surface transition-colors" href="#">Status</a><a class="hover:text-on-surface transition-colors" href="#">Terms</a><a class="hover:text-on-surface transition-colors" href="#">Privacy</a></div><div class="text-gray-400 font-mono text-[11px]">© 2025 Svara Systems Inc.</div></div></footer><script>
+  let secondsAgo = 12;
+  const timerLabel = document.getElementById('lastUpdatedLabel');
+  setInterval(() => {
+    secondsAgo += 1;
+    if (timerLabel) {
+      timerLabel.textContent = `Updated ${secondsAgo}s ago`;
+    }
+  }, 1000);
+
+  const refreshBtn = document.getElementById('refreshQueueBtn');
+  const refreshIcon = document.getElementById('refreshIcon');
+  if (refreshBtn && refreshIcon) {
+    refreshBtn.addEventListener('click', () => {
+      refreshIcon.classList.add('rotate-180');
+      secondsAgo = 0;
+      if (timerLabel) timerLabel.textContent = `Updated just now`;
+      showToast('Queue Synchronized', 'Task list and active pool refreshed with 0 ms latency.', 'sync');
+      setTimeout(() => {
+        refreshIcon.classList.remove('rotate-180');
+      }, 600);
+    });
+  }
+
+  function toggleCapacityBanner() {
+    const banner = document.getElementById('capacityBanner');
+    if (banner) {
+      banner.classList.toggle('hidden');
+    }
+  }
+
+  function showExpiredToast() {
+    showToast('Reservation Expired', 'Task #TSK-8942-0099 has auto-released cleanly to pool after 60m holding window.', 'schedule');
+  }
+
+  function showToast(title, message, icon = 'info') {
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIco = document.getElementById('toastIcon');
+    if (toast) {
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+      if (toastIco) toastIco.textContent = icon;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        hideToast();
+      }, 4500);
+    }
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toastNotification');
+    if (toast) {
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+    }
+  }
+
+  function openClaimModal(taskId, dialect, payout) {
+    const modal = document.getElementById('claimModal');
+    document.getElementById('modalTaskId').textContent = '#' + taskId;
+    document.getElementById('modalDialect').textContent = dialect;
+    document.getElementById('modalPayout').textContent = payout + ' USD';
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeClaimModal() {
+    const modal = document.getElementById('claimModal');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+
+  function confirmClaimAction() {
+    closeClaimModal();
+    showToast('Task Claimed & Locked', 'Atomic lock granted for 60 minutes. Opening annotation workspace...', 'verified');
+  }
+
+  function confirmRelease(taskId) {
+    if (confirm(`Are you sure you want to release task ${taskId}? It will immediately be made available to other qualified contributors with no penalty.`)) {
+      showToast('Task Released', `${taskId} released back to pool safely.`, 'check');
+    }
+  }
+</script></body></html>
