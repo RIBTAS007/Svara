@@ -1,13 +1,13 @@
 # Svara — Product, Quality & Architecture Package
 
-**Version:** 2.1  
+**Version:** 1
 **Date:** 7 November 2026  
 
-This package consolidates Svara's contributor lifecycle and strengthens the quality strategy behind it. It covers the product from sign-up and language profiling through platform assessment, project onboarding, training, project certification, task production, human/automated quality review, contributor performance, earnings and support.
+This package covers the product from sign-up and language profiling through platform assessment, project onboarding, training, project certification, task production, human/automated quality review, contributor performance, earnings and support.
 
 ## Documents
 
-1. `Svara_Product_Decision_Log.md` — Manager-facing decision register. Each decision records the problem, decision, trade-off, expected business impact and approval status. Includes the new training-quality, contributor-screening, sample-access, anti-gaming, accuracy-improvement and assessment-validity decisions (PD-59–PD-68).
+1. `Svara_Product_Decision_Log.md` — It contains all the decsions. Each decision records the problem, decision, trade-off, expected business impact. Includes the new training-quality, contributor-screening, sample-access, anti-gaming, accuracy-improvement and assessment-validity decisions (PD-59–PD-68).
 2. `Svara_HLD.md` — Product and high-level architecture. Describes user journeys, product principles, system boundaries, quality and integrity strategy, training governance, sample access classes, assessment validity, architecture, security, roadmap and open decisions.
 3. `Svara_LLD.md` — Implementation-level design. Describes data structures, state machines, APIs, workflows, analytics, access controls, background jobs, error handling and tests for the expanded quality framework.
 
@@ -49,7 +49,7 @@ Svara should not optimize only for assessment pass rates, training completion, a
 
 ## Important interpretation and limitations
 
-- These documents are proposed design artifacts based on the product journeys and screen designs discussed. They are not evidence that all controls, integrations or policies have already been implemented.
+- These documents are proposed design artifacts based on the product journeys and screen designs discussed. 
 - The initial planning cohort of approximately 100 contributors is an assumption to validate with pilot traffic and workload measurements.
 - Early assessment/training analytics will be descriptive and provisional. Statistical claims about item quality, reliability, fairness or predictive validity require adequate, representative evidence. Small cohorts should not be used to make unsupported conclusions.
 - A high-stakes assessment should have an approved competency blueprint and expert-reviewed content before being used as a qualification gate.
@@ -57,17 +57,3 @@ Svara should not optimize only for assessment pass rates, training completion, a
 - AI/ASR output and integrity telemetry are signals, not ground truth. High-impact decisions require the configured human review and appeal process.
 - Mockup values such as scores, compensation, thresholds, durations, SLAs, payout dates and sample counts are illustrative until approved and configured.
 - Technology choices in the documents remain proposed baselines, not claims about an already deployed stack.
-
-## Decisions requiring cross-functional approval
-
-Before production, confirm:
-
-- Screening stages and any project-specific identity checks.
-- Required training SME roles, publication gates and review cadence.
-- Sample rights, de-identification, download/replay and exposure policies.
-- Assessment blueprint, item bank governance, pass policy, pilot evidence and proctoring levels.
-- Item-analysis interpretation, minimum sample policy and assessment validity review cadence.
-- Gold-task frequency and security.
-- Production ramp, sampling and quality intervention policy.
-- Language/dialect normalization and accepted variants.
-- Rework, rejection, appeal, payout and data-retention rules.
