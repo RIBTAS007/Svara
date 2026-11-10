@@ -7,7 +7,7 @@ This package covers the product from sign-up and language profiling through plat
 
 ## Documents
 
-1. `Svara_Product_Decision_Log.md` — It contains all the decsions. Each decision records the problem, decision, trade-off, expected business impact. Includes the new training-quality, contributor-screening, sample-access, anti-gaming, accuracy-improvement and assessment-validity decisions (PD-59–PD-68).
+1. `Svara_Product_Decision_Log.md` — It contains all the decisions. Each decision records the problem, decision, trade-off, expected business impact. Includes the new training-quality, contributor-screening, sample-access, anti-gaming, accuracy-improvement and assessment-validity decisions (PD-59–PD-68).
 2. `Svara_HLD.md` — Product and high-level architecture. Describes user journeys, product principles, system boundaries, quality and integrity strategy, training governance, sample access classes, assessment validity, architecture, security, roadmap and open decisions.
 3. `Svara_LLD.md` — Implementation-level design. Describes data structures, state machines, APIs, workflows, analytics, access controls, background jobs, error handling and tests for the expanded quality framework.
 
